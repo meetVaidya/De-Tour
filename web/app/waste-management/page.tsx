@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { supabase } from "@/lib/supabaseClient";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 
 interface Location {
     latitude: number;
@@ -12,9 +11,23 @@ interface Location {
     address: string;
 }
 
+// Dynamically import both Leaflet and the WasteMap component
 const DynamicWasteMap = dynamic(() => import("@/components/WasteMap"), {
     ssr: false,
 });
+
+// Dynamically import Leaflet
+const initializeLeaflet = async () => {
+    if (typeof window !== "undefined") {
+        const L = (await import("leaflet")).default;
+        delete (L.Icon.Default.prototype as any)._getIconUrl;
+        L.Icon.Default.mergeOptions({
+            iconRetinaUrl: "/marker-icon-2x.png",
+            iconUrl: "/marker-icon.png",
+            shadowUrl: "/marker-shadow.png",
+        });
+    }
+};
 
 export default function UploadPage() {
     const [file, setFile] = useState<File | null>(null);
@@ -28,15 +41,8 @@ export default function UploadPage() {
     >(null);
 
     useEffect(() => {
-        // Fix Leaflet marker icon issues in Next.js
-        if (typeof window !== "undefined") {
-            delete (L.Icon.Default.prototype as any)._getIconUrl;
-            L.Icon.Default.mergeOptions({
-                iconRetinaUrl: "/marker-icon-2x.png",
-                iconUrl: "/marker-icon.png",
-                shadowUrl: "/marker-shadow.png",
-            });
-        }
+        // Initialize Leaflet when component mounts
+        initializeLeaflet();
     }, []);
 
     useEffect(() => {
