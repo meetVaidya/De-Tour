@@ -3,127 +3,133 @@ import { TripItineraryComponent } from "@/components/TripItinerary";
 import type { TripItinerary } from "@/types/itinerary";
 
 const sampleItinerary: TripItinerary = {
-    title: "Cape Town Adventure",
-    startDate: "2024-03-15",
-    endDate: "2024-03-17",
-    accommodation: {
-        name: "Hotel Southern Sun Cape Sun",
-        address:
-            "Strand Street, Cape Town City Centre, Cape Town, 8001, South Africa",
-        phone: "+27 21 488 5100",
+    dates: "2025-01-10 to 2025-01-12",
+    location: "Sanjay Gandhi National Park, Mumbai",
+    stay: {
+        hotel: "JW Marriott",
+        check_in: "2025-01-10",
+        check_out: "2025-01-12",
     },
-    contacts: [
-        {
-            name: "John Smith",
-            role: "Tour Guide",
-            phone: "+27 123 456 789",
-            email: "john@example.com",
-        },
-        {
-            name: "Emergency Support",
-            role: "24/7 Assistance",
-            phone: "+27 987 654 321",
-        },
-    ],
-    days: [
-        {
-            day: 1,
-            date: "March 15, 2024",
-            title: "Mumbai - Cape Town",
-            activities: [
+    schedule: {
+        day_1: {
+            morning: {
+                time: "07:30 - 09:30",
+                activities: [
+                    {
+                        activity: "Visit Kanheri Caves",
+                        details:
+                            "Explore ancient rock-cut Buddhist caves. Start early to avoid crowds.",
+                    },
+                ],
+            },
+            afternoon: {
+                time: "12:00 - 14:00",
+                lunch: {
+                    place: "Soup & Salad",
+                    details:
+                        "Enjoy fresh, healthy options with a view of nature.",
+                },
+            },
+            evening: {
+                time: "17:00 - 20:00",
+                activities: [
+                    {
+                        activity: "Nature Walk",
+                        details:
+                            "Take a guided walk in the park during sunset.",
+                    },
+                    {
+                        activity: "Dinner",
+                        place: "Masala Library",
+                        details: "Experience modern Indian cuisine.",
+                    },
+                ],
+            },
+            sidequests: [
                 {
-                    time: "10:00",
-                    title: "Departure from Mumbai",
-                    location: "Chhatrapati Shivaji International Terminal",
-                    description:
-                        "Assemble at Mumbai's Chatrapati Shivaji international terminal to board your flight for Cape Town via Addis Ababa / Nairobi / Seychelles.",
-                    type: "transport",
+                    hidden_gem: "Banyan Tree",
+                    details:
+                        "A hidden spot perfect for relaxation and meditation.",
                 },
                 {
-                    time: "20:00",
-                    title: "Arrival & Hotel Transfer",
-                    location: "Cape Town International Airport",
-                    description:
-                        "On arrival in Cape Town after clearing customs & immigrations formalities we shall proceed to board our coach for transfer to the hotel.",
-                    type: "transport",
-                },
-                {
-                    time: "21:30",
-                    title: "Dinner",
-                    location: "Hotel Restaurant",
-                    description: "Welcome dinner at the hotel restaurant",
-                    type: "meal",
-                    included: true,
-                },
-            ],
-        },
-        {
-            day: 2,
-            date: "March 16, 2024",
-            title: "Cape Town Exploration",
-            activities: [
-                {
-                    time: "07:30",
-                    title: "Breakfast",
-                    location: "Hotel Restaurant",
-                    description: "Breakfast at the hotel",
-                    type: "meal",
-                    included: true,
-                },
-                {
-                    time: "09:00",
-                    title: "Cape Town City Tour",
-                    location: "Various Locations",
-                    description:
-                        "Tour including the Malay Quarter, Castle, and Table Bay to Millerton lighthouse",
-                    type: "sightseeing",
-                    included: true,
-                },
-                {
-                    time: "13:00",
-                    title: "Lunch",
-                    location: "Local Restaurant",
-                    description: "Lunch at a local restaurant",
-                    type: "meal",
-                    included: true,
-                },
-                {
-                    time: "14:30",
-                    title: "Table Mountain",
-                    location: "Table Mountain",
-                    description:
-                        "Experience Table Mountain by Aerial Cable Car which trips you 1089 meters above Cape Town",
-                    type: "sightseeing",
-                    included: true,
+                    hidden_gem: "Lion Safari",
+                    details:
+                        "Take a small safari and see the Asiatic lions up close.",
                 },
             ],
         },
-        {
-            day: 3,
-            date: "March 17, 2024",
-            title: "Cape Peninsula Tour",
-            activities: [
-                {
-                    time: "08:00",
-                    title: "Breakfast",
-                    location: "Hotel Restaurant",
-                    description: "Breakfast at the hotel",
-                    type: "meal",
-                    included: true,
+        day_2: {
+            morning: {
+                time: "08:00 - 10:00",
+                activities: [
+                    {
+                        activity: "Visit the Butterfly Garden",
+                        details:
+                            "Admire various butterfly species; arrive early for tranquility.",
+                    },
+                ],
+            },
+            afternoon: {
+                time: "12:30 - 14:30",
+                lunch: {
+                    place: "Café Madras",
+                    details: "Savor traditional South Indian dishes.",
                 },
-                {
-                    time: "09:00",
-                    title: "Peninsula Tour",
-                    location: "Cape Peninsula",
-                    description:
-                        "Full day tour of the Cape Peninsula. Travel at a pace that allows you to explore the beauty of the Cape Peninsula.",
-                    type: "sightseeing",
-                    included: true,
-                },
-            ],
+            },
+            evening: {
+                time: "18:00 - 21:00",
+                activities: [
+                    {
+                        activity: "Cultural Performance",
+                        details:
+                            "Attend a local dance or music event scheduled at a nearby venue.",
+                    },
+                    {
+                        activity: "Dinner",
+                        place: "The Bombay Canteen",
+                        details:
+                            "Enjoy a vibrant atmosphere and innovative Indian cuisine.",
+                    },
+                ],
+            },
         },
-    ],
-    notes: "Please carry comfortable walking shoes and don't forget your camera! Weather can be unpredictable, so pack accordingly.",
+        day_3: {
+            morning: {
+                time: "08:00 - 10:00",
+                activities: [
+                    {
+                        activity: "Visit Tulsi Lake",
+                        details:
+                            "Enjoy a peaceful morning by the lake with birdwatching.",
+                    },
+                ],
+            },
+            afternoon: {
+                time: "12:00 - 14:00",
+                lunch: {
+                    place: "The Great Indian Diner",
+                    details:
+                        "Savor North Indian specialties in a cozy setting.",
+                },
+            },
+            evening: {
+                time: "17:00 - 20:00",
+                activities: [
+                    {
+                        activity: "Visit the Aarey Milk Colony",
+                        details:
+                            "Explore this green oasis for a relaxing evening.",
+                    },
+                    {
+                        activity: "Dinner",
+                        place: "Barbeque Nation",
+                        details:
+                            "Enjoy a lively dinner with a grill-your-own-concept.",
+                    },
+                ],
+            },
+        },
+    },
 };
 
 export default function ItineraryPage() {

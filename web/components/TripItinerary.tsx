@@ -8,105 +8,147 @@ import {
     MapPin,
     Clock,
     Utensils,
-    Car,
-    Building2,
     Landmark,
-    Phone,
-    Mail,
+    Building2,
 } from "lucide-react";
 import type { TripItinerary, Activity } from "@/types/itinerary";
 
-const ActivityIcon = ({ type }: { type: Activity["type"] }) => {
-    switch (type) {
-        case "meal":
-            return <Utensils className="w-5 h-5 text-orange-500" />;
-        case "transport":
-            return <Car className="w-5 h-5 text-blue-500" />;
-        case "accommodation":
-            return <Building2 className="w-5 h-5 text-purple-500" />;
-        case "sightseeing":
-            return <Landmark className="w-5 h-5 text-green-500" />;
-        default:
-            return null;
-    }
-};
+// A helper component for rendering a timeslot’s activities (for morning/evening)
+const ActivityList: React.FC<{
+    title: string;
+    slot: Exclude<
+        NonNullable<TripItinerary["schedule"]["day_1"]["morning"]>,
+        undefined
+    >;
+}> = ({ title, slot }) => (
+    <div className="mb-4">
+        <h4 className="font-semibold">
+            {title} ({slot.time})
+        </h4>
+        {slot.activities &&
+            slot.activities.map((act, i) => (
+                <div key={i} className="flex items-start gap-2 mt-2">
+                    {/* Choose an icon based on type */}
+                    <div className="mt-1">
+                        {act.type === "meal" ? (
+                            <Utensils className="w-5 h-5 text-orange-500" />
+                        ) : act.type === "sightseeing" ? (
+                            <Landmark className="w-5 h-5 text-green-500" />
+                        ) : null}
+                    </div>
+                    <div>
+                        <p className="text-sm text-gray-700 font-medium">
+                            {act.activity}
+                        </p>
+                        <p className="text-sm text-gray-600">{act.details}</p>
+                        {act.place && (
+                            <p className="text-xs text-gray-500 flex items-center gap-1">
+                                <MapPin className="w-4 h-4" />
+                                {act.place}
+                            </p>
+                        )}
+                    </div>
+                </div>
+            ))}
+    </div>
+);
+
+// A helper component for an afternoon “lunch” timeslot
+const LunchCard: React.FC<{
+    slot: Exclude<
+        NonNullable<TripItinerary["schedule"]["day_1"]["afternoon"]>,
+        undefined
+    >;
+}> = ({ slot }) => (
+    <div className="mb-4">
+        <h4 className="font-semibold">Afternoon Lunch ({slot.time})</h4>
+        {slot.lunch && (
+            <div className="flex items-start gap-2 mt-2">
+                <Utensils className="w-5 h-5 text-orange-500" />
+                <div>
+                    <p className="text-sm text-gray-700 font-medium">
+                        {slot.lunch.place}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                        {slot.lunch.details}
+                    </p>
+                </div>
+            </div>
+        )}
+    </div>
+);
 
 interface DayCardProps {
-    day: number;
-    date: string;
-    title: string;
-    activities: Activity[];
+    dayNumber: number;
+    schedule: DaySchedule;
 }
 
-const DayCard: React.FC<DayCardProps> = ({ day, date, title, activities }) => {
-    const [isExpanded, setIsExpanded] = useState(day === 1);
+const DayCard: React.FC<DayCardProps> = ({ dayNumber, schedule }) => {
+    // Allow collapse/expand per day.
+    const [isExpanded, setIsExpanded] = useState(dayNumber === 1);
 
     return (
         <div className="relative">
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200" />
-
-            <div className="relative z-10 mb-8">
+            <div className="relative z-10 mb-8 border rounded-lg shadow-md overflow-hidden">
                 <div
-                    className="ml-12 bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                    className="cursor-pointer bg-gradient-to-r from-blue-50 to-white p-4 flex justify-between items-center"
                     onClick={() => setIsExpanded(!isExpanded)}
                 >
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-white">
-                        <div className="flex items-center gap-4">
-                            <div className="flex-shrink-0 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
-                                {day}
-                            </div>
-                            <div>
-                                <h3 className="font-semibold text-lg">
-                                    {title}
-                                </h3>
-                                <p className="text-sm text-gray-600">{date}</p>
-                            </div>
+                    <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                            {dayNumber}
                         </div>
-                        {isExpanded ? (
-                            <ChevronUp className="w-5 h-5 text-gray-500" />
-                        ) : (
-                            <ChevronDown className="w-5 h-5 text-gray-500" />
-                        )}
+                        <div>
+                            <h3 className="text-lg font-semibold">
+                                Day {dayNumber}
+                            </h3>
+                        </div>
                     </div>
-
-                    {isExpanded && (
-                        <div className="p-4">
-                            {activities.map((activity, index) => (
-                                <div
-                                    key={index}
-                                    className="flex gap-4 mb-4 last:mb-0"
-                                >
-                                    <div className="flex-shrink-0 mt-1">
-                                        <ActivityIcon type={activity.type} />
-                                    </div>
-                                    <div>
-                                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                                            <Clock className="w-4 h-4" />
-                                            <span>{activity.time}</span>
-                                        </div>
-                                        <h4 className="font-medium">
-                                            {activity.title}
-                                        </h4>
-                                        {activity.location && (
-                                            <div className="flex items-center gap-1 text-sm text-gray-600 mt-1">
-                                                <MapPin className="w-4 h-4" />
-                                                <span>{activity.location}</span>
-                                            </div>
-                                        )}
-                                        <p className="text-gray-600 mt-1">
-                                            {activity.description}
-                                        </p>
-                                        {activity.included && (
-                                            <span className="inline-block mt-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                                                Included
-                                            </span>
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    {isExpanded ? (
+                        <ChevronUp className="w-5 h-5 text-gray-600" />
+                    ) : (
+                        <ChevronDown className="w-5 h-5 text-gray-600" />
                     )}
                 </div>
+
+                {isExpanded && (
+                    <div className="p-4 space-y-4">
+                        {schedule.morning && (
+                            <ActivityList
+                                title="Morning"
+                                slot={schedule.morning}
+                            />
+                        )}
+                        {schedule.afternoon && schedule.afternoon.lunch && (
+                            <LunchCard slot={schedule.afternoon} />
+                        )}
+                        {schedule.evening && (
+                            <ActivityList
+                                title="Evening"
+                                slot={schedule.evening}
+                            />
+                        )}
+                        {schedule.sidequests &&
+                            schedule.sidequests.length > 0 && (
+                                <div>
+                                    <h4 className="font-semibold">
+                                        Sidequests
+                                    </h4>
+                                    {schedule.sidequests.map((sq, i) => (
+                                        <div
+                                            key={i}
+                                            className="mt-2 ml-6 text-sm text-gray-700"
+                                        >
+                                            <p className="font-medium">
+                                                {sq.hidden_gem}
+                                            </p>
+                                            <p>{sq.details}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                    </div>
+                )}
             </div>
         </div>
     );
@@ -119,11 +161,12 @@ interface TripItineraryProps {
 export const TripItineraryComponent: React.FC<TripItineraryProps> = ({
     itinerary,
 }) => {
+    // For sharing or printing the itinerary
     const handleShare = () => {
         if (navigator.share) {
             navigator.share({
-                title: itinerary.title,
-                text: `Check out my trip itinerary: ${itinerary.title}`,
+                title: "Trip Itinerary",
+                text: `Check out my trip itinerary for ${itinerary.location} from ${itinerary.dates}`,
                 url: window.location.href,
             });
         }
@@ -133,13 +176,21 @@ export const TripItineraryComponent: React.FC<TripItineraryProps> = ({
         window.print();
     };
 
+    // Convert the schedule object into an array for iteration.
+    const days = Object.entries(itinerary.schedule).map(([key, sched]) => {
+        // Extract number from key (e.g., "day_1" becomes 1).
+        const dayNumber = parseInt(key.split("_")[1], 10);
+        return { dayNumber, schedule: sched };
+    });
+
     return (
         <div className="max-w-3xl mx-auto p-4 md:p-8">
+            {/* Header Section */}
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold">{itinerary.title}</h1>
+                    <h1 className="text-3xl font-bold">Trip Itinerary</h1>
                     <p className="text-gray-600">
-                        {itinerary.startDate} - {itinerary.endDate}
+                        {itinerary.dates} – {itinerary.location}
                     </p>
                 </div>
                 <div className="flex gap-2">
@@ -158,67 +209,33 @@ export const TripItineraryComponent: React.FC<TripItineraryProps> = ({
                 </div>
             </div>
 
+            {/* Accommodation Section */}
             <div className="mb-8 bg-white rounded-lg shadow-md p-4">
                 <h2 className="text-xl font-semibold mb-4">Accommodation</h2>
                 <div className="flex items-start gap-4">
                     <Building2 className="w-5 h-5 text-gray-500 mt-1" />
                     <div>
-                        <h3 className="font-medium">
-                            {itinerary.accommodation.name}
-                        </h3>
+                        <h3 className="font-medium">{itinerary.stay.hotel}</h3>
                         <p className="text-gray-600">
-                            {itinerary.accommodation.address}
+                            Check In: {itinerary.stay.check_in}
                         </p>
                         <p className="text-gray-600">
-                            {itinerary.accommodation.phone}
+                            Check Out: {itinerary.stay.check_out}
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">
-                    Important Contacts
-                </h2>
-                <div className="grid md:grid-cols-2 gap-4">
-                    {itinerary.contacts.map((contact, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-lg shadow-md p-4"
-                        >
-                            <h3 className="font-medium">{contact.name}</h3>
-                            <p className="text-sm text-gray-600">
-                                {contact.role}
-                            </p>
-                            <div className="mt-2 space-y-1">
-                                <div className="flex items-center gap-2 text-gray-600">
-                                    <Phone className="w-4 h-4" />
-                                    <span>{contact.phone}</span>
-                                </div>
-                                {contact.email && (
-                                    <div className="flex items-center gap-2 text-gray-600">
-                                        <Mail className="w-4 h-4" />
-                                        <span>{contact.email}</span>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
+            {/* Schedule Section */}
             <div className="space-y-4">
-                {itinerary.days.map((day) => (
-                    <DayCard key={day.day} {...day} />
+                {days.map(({ dayNumber, schedule }) => (
+                    <DayCard
+                        key={dayNumber}
+                        dayNumber={dayNumber}
+                        schedule={schedule}
+                    />
                 ))}
             </div>
-
-            {itinerary.notes && (
-                <div className="mt-8 bg-yellow-50 rounded-lg p-4">
-                    <h2 className="text-xl font-semibold mb-2">Notes</h2>
-                    <p className="text-gray-700">{itinerary.notes}</p>
-                </div>
-            )}
         </div>
     );
 };

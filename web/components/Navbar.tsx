@@ -57,14 +57,14 @@ export function Navbar() {
                     </motion.div>
 
                     <div className="hidden md:flex items-center space-x-8">
-                        {["Merchant", "Itinerary"].map((item) => (
+                        {["MERCHANTS", "ITINERARY"].map((item) => (
                             <motion.div
                                 key={item}
                                 whileHover={{ y: -2 }}
                                 className="group"
                             >
                                 <Link
-                                    href="#"
+                                    href={item.toLowerCase()}
                                     className="text-forest-700 hover:text-forest-900 font-medium relative"
                                 >
                                     {item}
