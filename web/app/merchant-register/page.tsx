@@ -7,6 +7,7 @@ import { Select } from "@/components/Select";
 import { useStore } from "@/utils/store";
 import { toast } from "sonner";
 import { supabase } from "@/lib/supabaseClient";
+import { Navbar } from "@/components/Navbar";
 
 const businessTypes = [
   { value: "retail", label: "Retail" },
@@ -74,7 +75,9 @@ export default function MerchantRegistration() {
     <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100">
       <div className="absolute inset-0 bg-[url('/leaf-pattern.png')] opacity-5" />
 
-      <main className="relative container mx-auto px-4 py-12 max-w-2xl">
+      <Navbar />
+
+      <main className="relative container mx-auto px-4 py-12 pt-32 pb-16 max-w-2xl">
         <motion.div
           initial="hidden"
           animate="visible"

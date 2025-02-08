@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { login } from "@/lib/actions";
+import Link from "next/link";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -75,7 +76,29 @@ export function LoginForm() {
                             )}
                         </div>
 
-                        <SubmitButton />
+                        <div className="space-y-4">
+                            <SubmitButton />
+
+                            <motion.div
+                                initial="hidden"
+                                animate="visible"
+                                variants={fadeIn}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="text-center"
+                            >
+                                <p className="text-forest-600">
+                                    Don't have an account?{" "}
+                                    <Link
+                                        href="/register"
+                                        className="text-forest-700 hover:text-forest-800 font-medium
+                                                underline decoration-2 decoration-forest-300
+                                                hover:decoration-forest-500 transition-all duration-200"
+                                    >
+                                        Register here
+                                    </Link>
+                                </p>
+                            </motion.div>
+                        </div>
                     </form>
                 </motion.div>
             </main>
@@ -123,3 +146,5 @@ function SubmitButton() {
         </motion.button>
     );
 }
+
+export default LoginForm;

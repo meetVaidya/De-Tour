@@ -1,17 +1,14 @@
-import Link from "next/link";
+"use client";
+
 import { LoginForm } from "@/components/LoginForm";
 
 export default function Login() {
     return (
-        <div>
-            <h1>Login</h1>
-            <LoginForm />
-            <p>
-                Don't have an account?{" "}
-                <Link href="/register" className="text-blue-500">
-                    Register
-                </Link>
-            </p>
+        <div className="h-screen bg-gradient-to-b from-forest-50 to-sage-100">
+            <div className="absolute inset-0 bg-[url('/leaf-pattern.png')] opacity-5" />
+            <div className="relative container mx-auto px-4 py-8">
+                <LoginForm />
+            </div>
         </div>
     );
 }

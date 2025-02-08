@@ -5,6 +5,7 @@ import { useParams } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { Navbar } from "@/components/Navbar"
 
 interface Merchant {
   id: string
@@ -46,6 +47,7 @@ export default function MerchantDetails() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100 flex items-center justify-center">
+        <Navbar />
         <div className="animate-spin h-8 w-8 border-4 border-forest-500 border-t-transparent rounded-full" />
       </div>
     )
@@ -54,6 +56,7 @@ export default function MerchantDetails() {
   if (!merchant) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100 flex items-center justify-center text-forest-800">
+        <Navbar />
         Merchant not found
       </div>
     )
@@ -62,8 +65,9 @@ export default function MerchantDetails() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100">
       <div className="absolute inset-0 bg-[url('/leaf-pattern.png')] opacity-5" />
+      <Navbar />
 
-      <div className="relative container mx-auto px-4 py-12 max-w-2xl">
+      <div className="relative container mx-auto px-6 pt-32 pb-16 max-w-2xl">
         <Link
           href="/merchants"
           className="inline-flex items-center space-x-2 text-forest-600 hover:text-forest-700 mb-6 group"
@@ -79,7 +83,7 @@ export default function MerchantDetails() {
           animate="visible"
           variants={fadeIn}
           transition={{ duration: 0.5 }}
-          className="backdrop-blur-sm bg-white/90 rounded-2xl shadow-xl p-8 md:p-10 border border-forest-200"
+          className="backdrop-blur-sm bg-white/90 rounded-2xl shadow-xl p-8 md:p-12 border border-forest-200"
         >
           <h1 className="text-3xl font-bold text-forest-800 mb-6 group">
             {merchant.business_name}

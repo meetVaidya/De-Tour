@@ -9,6 +9,8 @@ interface RegistrationFormProps {
   onSuccess: (merchantId: string) => void;
 }
 
+type Gender = 'male' | 'female' | 'other' | 'prefer-not-to-say';
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
@@ -29,6 +31,9 @@ export function RegistrationForm({ onSuccess }: RegistrationFormProps) {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+    const age = parseInt(formData.get("age") as string);
+    const gender = formData.get("gender") as Gender;
+    const disabled = formData.get("disabled") === "true";
 
     try {
       // Insert a new merchant record into your "merchants" table.
@@ -38,7 +43,10 @@ export function RegistrationForm({ onSuccess }: RegistrationFormProps) {
           {
             name: name.trim(),
             email: email.trim(),
-            password, // Process/hash your password as needed
+            password,
+            age,
+            gender,
+            disabled,
             status: "pending",
           },
         ])
@@ -64,26 +72,25 @@ export function RegistrationForm({ onSuccess }: RegistrationFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100 relative">
-      {/* Nature inspired subtle overlay */}
-      <div className="absolute inset-0 bg-[url('/leaf-pattern.png')] opacity-5" />
-      <main className="relative container mx-auto px-4 py-12 max-w-md">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.5 }}
-          className="backdrop-blur-sm bg-white/90 rounded-2xl shadow-xl p-8 md:p-10 border border-forest-200"
-        >
-          <div className="space-y-4 mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-forest-800 group">
-              Create Account
-              <span className="block h-1 w-20 bg-forest-500 mt-2 group-hover:w-32 transition-all duration-300" />
-            </h1>
-            <p className="text-forest-600 text-lg">
-              Join our community and enjoy natural inspiration.
-            </p>
-          </div>
+    <div className="h-full bg-gradient-to-b from-forest-50 to-sage-100 relative py-6"> {/* Changed min-h-screen to h-full and added py-6 */}
+          <div className="absolute inset-0 bg-[url('/leaf-pattern.png')] opacity-5" />
+          <main className="relative container mx-auto px-4 max-w-md"> {/* Removed py-12 */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              transition={{ duration: 0.5 }}
+              className="backdrop-blur-sm bg-white/90 rounded-2xl shadow-xl p-6 border border-forest-200" // Changed p-8 md:p-10 to p-6
+            >
+              <div className="space-y-2 mb-4"> {/* Changed space-y-4 mb-8 to space-y-2 mb-4 */}
+                <h1 className="text-2xl font-bold text-forest-800 group"> {/* Reduced text size */}
+                  Create Account
+                  <span className="block h-1 w-20 bg-forest-500 mt-1 group-hover:w-32 transition-all duration-300" />
+                </h1>
+                <p className="text-forest-600 text-base"> {/* Reduced text size */}
+                  Join our community and enjoy natural inspiration.
+                </p>
+              </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Field */}
@@ -144,6 +151,70 @@ export function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                 <p className="text-red-500 text-sm mt-1">{errors.password}</p>
               )}
             </div>
+
+            {/* Age Field */}
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="age"
+                      className="block text-sm font-medium text-forest-700"
+                    >
+                      Age
+                    </label>
+                    <input
+                      id="age"
+                      name="age"
+                      type="number"
+                      min="18"
+                      max="120"
+                      placeholder="Enter your age"
+                      className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:ring-forest-500 focus:border-forest-500 placeholder-forest-400 text-forest-900"
+                    />
+                    {errors?.age && (
+                      <p className="text-red-500 text-sm mt-1">{errors.age}</p>
+                    )}
+                  </div>
+
+                  {/* Gender Field */}
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="gender"
+                      className="block text-sm font-medium text-forest-700"
+                    >
+                      Gender
+                    </label>
+                    <select
+                      id="gender"
+                      name="gender"
+                      className="w-full px-4 py-3 rounded-xl border border-forest-200 focus:ring-forest-500 focus:border-forest-500 text-forest-900"
+                    >
+                      <option value="">Select gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                      <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                    {errors?.gender && (
+                      <p className="text-red-500 text-sm mt-1">{errors.gender}</p>
+                    )}
+                  </div>
+
+                  {/* Disabled Field */}
+                  <div className="space-y-2">
+                    <label className="flex items-center space-x-3">
+                      <input
+                        type="checkbox"
+                        name="disabled"
+                        value="true"
+                        className="h-5 w-5 rounded border-forest-300 text-forest-600 focus:ring-forest-500"
+                      />
+                      <span className="text-sm font-medium text-forest-700">
+                        Do you have any disabilities?
+                      </span>
+                    </label>
+                    {errors?.disabled && (
+                      <p className="text-red-500 text-sm mt-1">{errors.disabled}</p>
+                    )}
+                  </div>
 
             <SubmitButton isSubmitting={isSubmitting} />
           </form>
