@@ -5,6 +5,13 @@ import { cookies } from "next/headers";
 const SECRET_KEY = process.env.SESSION_SECRET || "your-secure-secret-key";
 const secret = new TextEncoder().encode(SECRET_KEY);
 
+export async function getSession() {
+    const cookieStore = await cookies();
+    const session = cookieStore.get("session");
+    if (!session) return null;
+    return await decrypt(session.value);
+}
+
 export async function encrypt(payload: any) {
     try {
         return await new SignJWT(payload)

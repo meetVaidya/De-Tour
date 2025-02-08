@@ -9,24 +9,17 @@ import { useRouter } from "next/navigation";
 
 export function Navbar() {
     // Retrieve our login state and actions from Zustand
-    const { isLoggedIn, login, logout } = useAuthStore();
-    const router = useRouter();
+    const { isLoggedIn, logout } = useAuthStore();
+        const router = useRouter();
 
-    const handleAuthAction = async () => {
-        if (isLoggedIn) {
-            // Call your server logout action which might clear cookies / session and redirect
-            await serverLogout();
-            // Update Zustand state
-            logout();
-            // Optionally, navigate to login (if not already redirected by serverLogout)
-            router.push("/login");
-        } else {
-            // Update Zustand state immediately
-            login();
-            // Redirect to login page
-            router.push("/login");
-        }
-    };
+        const handleAuthAction = async () => {
+            if (isLoggedIn) {
+                logout(); // Update Zustand state first
+                await serverLogout(); // This will redirect to login page
+            } else {
+                router.push("/login");
+            }
+        };
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-forest-50/90 border-b border-forest-200">
