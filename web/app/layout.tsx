@@ -1,5 +1,6 @@
 import { Host_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 
 const hostGrotesk = Host_Grotesk({
     variable: "--font-host-grotesk",
@@ -14,7 +15,8 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={`${hostGrotesk.variable} antialiased`}>
-                {children}
+                <Navbar />
+                <main>{children}</main>
             </body>
         </html>
     );
