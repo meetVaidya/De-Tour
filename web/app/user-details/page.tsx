@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react"; // Import useEffect and useCallback
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,9 +17,24 @@ import { cn } from "@/lib/utils";
 import type React from "react";
 
 interface NominatimResult {
+    description: string;
+    type: string;
     display_name: string;
     lat: string;
     lon: string;
+}
+
+interface OverpassResult {
+    id: number;
+    tags: {
+        name?: string;
+        tourism?: string;
+        historic?: string;
+        amenity?: string;
+        description?: string;
+    };
+    lat: number;
+    lon: number;
 }
 
 export default function TravelForm() {
@@ -29,10 +44,11 @@ export default function TravelForm() {
         currentLocation: "",
         dateOfVisit: undefined as Date | undefined,
         daysOfVisit: "",
-        placesToVisit: "",
+        placesToVisit: [] as string[],
         currentStay: "",
     });
 
+    const [placesInput, setPlacesInput] = useState("");
     const [locationSuggestions, setLocationSuggestions] = useState<
         NominatimResult[]
     >([]);
@@ -42,8 +58,29 @@ export default function TravelForm() {
     const [currentStaySuggestions, setCurrentStaySuggestions] = useState<
         NominatimResult[]
     >([]);
+    const [currentLocationCoords, setCurrentLocationCoords] = useState<{
+        lat: string;
+        lon: string;
+    } | null>(null);
+    const [isPlacesDropdownOpen, setIsPlacesDropdownOpen] = useState(false);
+    const placesDropdownRef = useRef<HTMLDivElement>(null);
 
-    // Debounce function to limit API calls
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                placesDropdownRef.current &&
+                !placesDropdownRef.current.contains(event.target as Node)
+            ) {
+                setIsPlacesDropdownOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     const debounce = (func: Function, delay: number) => {
         let timeoutId: NodeJS.Timeout;
         return (...args: any[]) => {
@@ -52,7 +89,6 @@ export default function TravelForm() {
         };
     };
 
-    // Function to fetch location suggestions from Nominatim
     const fetchLocationSuggestions = useCallback(async (query: string) => {
         try {
             const response = await fetch(
@@ -67,88 +103,166 @@ export default function TravelForm() {
             setLocationSuggestions(data);
         } catch (error: any) {
             console.error("Error fetching location suggestions:", error);
-            setLocationSuggestions([]); // Clear suggestions on error
+            setLocationSuggestions([]);
         }
     }, []);
 
-    // Function to fetch places to visit suggestions from Nominatim based on lat/lon
+    const debouncedFetchLocationSuggestions = useCallback(
+        debounce(fetchLocationSuggestions, 300),
+        [fetchLocationSuggestions],
+    );
+
     const fetchPlacesToVisitSuggestions = useCallback(
         async (lat: string, lon: string) => {
             try {
+                const radius = 5000;
+                const query = `
+          [out:json][timeout:25];
+          (
+            node["tourism"~"attraction|museum|viewpoint|artwork|theme_park|gallery|zoo"]
+              (around:${radius},${lat},${lon});
+            node["historic"~"monument|castle|ruins|archaeological_site|memorial"]
+              (around:${radius},${lat},${lon});
+            way["tourism"~"attraction|museum|viewpoint|artwork|theme_park|gallery|zoo"]
+              (around:${radius},${lat},${lon});
+            way["historic"~"monument|castle|ruins|archaeological_site|memorial"]
+              (around:${radius},${lat},${lon});
+          );
+          out body;
+          >;
+          out skel qt;
+        `;
+
                 const response = await fetch(
-                    `https://nominatim.openstreetmap.org/search?q=tourism&format=json&limit=5&lat=${lat}&lon=${lon}`,
+                    "https://overpass-api.de/api/interpreter",
+                    {
+                        method: "POST",
+                        body: query,
+                    },
                 );
+
                 if (!response.ok) {
                     throw new Error(
                         `Failed to fetch places to visit suggestions: ${response.status}`,
                     );
                 }
-                const data: NominatimResult[] = await response.json();
-                setPlacesToVisitSuggestions(data);
-            } catch (error: any) {
+
+                const data = await response.json();
+                const places = data.elements
+                    .filter(
+                        (element: OverpassResult) =>
+                            element.tags?.name &&
+                            element.lat != null &&
+                            element.lon != null,
+                    )
+                    .map((element: OverpassResult) => ({
+                        display_name: element.tags.name,
+                        lat: element.lat.toString(),
+                        lon: element.lon.toString(),
+                        description: element.tags.description || "",
+                        type:
+                            element.tags.tourism ||
+                            element.tags.historic ||
+                            element.tags.amenity,
+                    }))
+                    .slice(0, 10);
+
+                setPlacesToVisitSuggestions(places);
+            } catch (error) {
                 console.error(
                     "Error fetching places to visit suggestions:",
                     error,
                 );
-                setPlacesToVisitSuggestions([]); // Clear suggestions on error
+                setPlacesToVisitSuggestions([]);
             }
         },
         [],
     );
 
-    // Function to fetch current stay suggestions from Nominatim based on lat/lon
     const fetchCurrentStaySuggestions = useCallback(
         async (lat: string, lon: string) => {
             try {
+                const radius = 5000;
+                const query = `
+          [out:json][timeout:25];
+          (
+            node["tourism"~"hotel|hostel|guest_house|apartment|resort"]
+              (around:${radius},${lat},${lon});
+            way["tourism"~"hotel|hostel|guest_house|apartment|resort"]
+              (around:${radius},${lat},${lon});
+          );
+          out body;
+          >;
+          out skel qt;
+        `;
+
                 const response = await fetch(
-                    `https://nominatim.openstreetmap.org/search?q=hotel&format=json&limit=5&lat=${lat}&lon=${lon}`,
+                    "https://overpass-api.de/api/interpreter",
+                    {
+                        method: "POST",
+                        body: query,
+                    },
                 );
+
                 if (!response.ok) {
                     throw new Error(
-                        `Failed to fetch current stay suggestions: ${response.status}`,
+                        `Failed to fetch accommodation suggestions: ${response.status}`,
                     );
                 }
-                const data: NominatimResult[] = await response.json();
-                setCurrentStaySuggestions(data);
-            } catch (error: any) {
+
+                const data = await response.json();
+                const accommodations = data.elements
+                    .filter(
+                        (element: OverpassResult) =>
+                            element.tags?.name &&
+                            element.lat != null &&
+                            element.lon != null,
+                    )
+                    .map((element: OverpassResult) => ({
+                        display_name: element.tags.name,
+                        lat: element.lat.toString(),
+                        lon: element.lon.toString(),
+                        type: element.tags.tourism,
+                    }))
+                    .slice(0, 10);
+
+                setCurrentStaySuggestions(accommodations);
+            } catch (error) {
                 console.error(
-                    "Error fetching current stay suggestions:",
+                    "Error fetching accommodation suggestions:",
                     error,
                 );
-                setCurrentStaySuggestions([]); // Clear suggestions on error
+                setCurrentStaySuggestions([]);
             }
         },
         [],
-    );
-
-    // Debounced version of fetchLocationSuggestions
-    const debouncedFetchLocationSuggestions = useCallback(
-        debounce(fetchLocationSuggestions, 300),
-        [fetchLocationSuggestions],
     );
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
 
         if (name === "currentLocation") {
+            setFormData((prev) => ({ ...prev, [name]: value }));
             if (value.length > 2) {
                 debouncedFetchLocationSuggestions(value);
             } else {
-                setLocationSuggestions([]); // Clear suggestions if input is too short
+                setLocationSuggestions([]);
             }
             setPlacesToVisitSuggestions([]);
             setCurrentStaySuggestions([]);
-        }
-
-        if (name === "placesToVisit") {
-            setPlacesToVisitSuggestions([]);
-        }
-
-        if (name === "currentStay") {
-            setCurrentStaySuggestions([]);
+        } else if (name === "placesInput") {
+            setPlacesInput(value);
+            setIsPlacesDropdownOpen(true);
+            if (currentLocationCoords) {
+                fetchPlacesToVisitSuggestions(
+                    currentLocationCoords.lat,
+                    currentLocationCoords.lon,
+                );
+            }
+        } else {
+            setFormData((prev) => ({ ...prev, [name]: value }));
         }
     };
 
@@ -158,16 +272,54 @@ export default function TravelForm() {
             currentLocation: suggestion.display_name,
         }));
         setLocationSuggestions([]);
+        setCurrentLocationCoords({ lat: suggestion.lat, lon: suggestion.lon });
         fetchPlacesToVisitSuggestions(suggestion.lat, suggestion.lon);
         fetchCurrentStaySuggestions(suggestion.lat, suggestion.lon);
     };
 
+    useEffect(() => {
+        if (currentLocationCoords) {
+            fetchPlacesToVisitSuggestions(
+                currentLocationCoords.lat,
+                currentLocationCoords.lon,
+            );
+            fetchCurrentStaySuggestions(
+                currentLocationCoords.lat,
+                currentLocationCoords.lon,
+            );
+        }
+    }, [
+        currentLocationCoords,
+        fetchPlacesToVisitSuggestions,
+        fetchCurrentStaySuggestions,
+    ]);
+
     const handlePlacesToVisitSelect = (suggestion: NominatimResult) => {
+        setFormData((prev) => {
+            if (prev.placesToVisit.includes(suggestion.display_name)) {
+                return prev;
+            }
+            return {
+                ...prev,
+                placesToVisit: [...prev.placesToVisit, suggestion.display_name],
+            };
+        });
+        setPlacesInput("");
+    };
+
+    // Add function to remove a place from the selected places
+    const handleRemovePlace = (placeToRemove: string) => {
         setFormData((prev) => ({
             ...prev,
-            placesToVisit: suggestion.display_name,
+            placesToVisit: prev.placesToVisit.filter(
+                (place) => place !== placeToRemove,
+            ),
         }));
-        setPlacesToVisitSuggestions([]);
+    };
+
+    // Modify the location suggestions rendering to include unique keys
+    const getUniqueKey = (suggestion: NominatimResult, index: number) => {
+        return `${suggestion.display_name}-${suggestion.lat}-${suggestion.lon}-${index}`;
     };
 
     const handleCurrentStaySelect = (suggestion: NominatimResult) => {
@@ -187,7 +339,6 @@ export default function TravelForm() {
 
         console.log("Form submitted:", formData);
 
-        // Send the data to an API route that will insert it into the database
         const response = await fetch("/api/travel", {
             method: "POST",
             headers: {
@@ -198,10 +349,8 @@ export default function TravelForm() {
 
         if (response.ok) {
             console.log("Travel data successfully inserted");
-            // Optionally reset the form or navigate to another page
         } else {
             console.error("Failed to insert travel data");
-            // Handle error here (show a message, etc.)
         }
     };
 
@@ -248,9 +397,9 @@ export default function TravelForm() {
                 />
                 {locationSuggestions.length > 0 && (
                     <ul className="border rounded mt-1 bg-white shadow-sm">
-                        {locationSuggestions.map((suggestion) => (
+                        {locationSuggestions.map((suggestion, index) => (
                             <li
-                                key={suggestion.display_name}
+                                key={getUniqueKey(suggestion, index)}
                                 className="p-2 hover:bg-gray-100 cursor-pointer"
                                 onClick={() => handleLocationSelect(suggestion)}
                             >
@@ -305,30 +454,80 @@ export default function TravelForm() {
                 />
             </div>
 
-            <div>
-                <Label htmlFor="placesToVisit">Places to Visit</Label>
+            <div ref={placesDropdownRef}>
+                <Label>Places to Visit</Label>
                 <Input
-                    id="placesToVisit"
-                    name="placesToVisit"
-                    value={formData.placesToVisit}
+                    id="placesInput"
+                    name="placesInput"
+                    value={placesInput}
                     onChange={handleInputChange}
-                    required
+                    onFocus={() => setIsPlacesDropdownOpen(true)}
+                    placeholder="Search places..."
                     autoComplete="off"
                 />
-                {placesToVisitSuggestions.length > 0 && (
-                    <ul className="border rounded mt-1 bg-white shadow-sm">
-                        {placesToVisitSuggestions.map((suggestion) => (
-                            <li
-                                key={suggestion.display_name}
-                                className="p-2 hover:bg-gray-100 cursor-pointer"
-                                onClick={() =>
-                                    handlePlacesToVisitSelect(suggestion)
-                                }
-                            >
-                                {suggestion.display_name}
-                            </li>
-                        ))}
-                    </ul>
+                {isPlacesDropdownOpen &&
+                    placesToVisitSuggestions.length > 0 && (
+                        <ul className="border rounded mt-1 bg-white shadow-sm max-h-60 overflow-y-auto">
+                            {placesToVisitSuggestions.map(
+                                (suggestion, index) => (
+                                    <li
+                                        key={getUniqueKey(suggestion, index)}
+                                        className="p-2 hover:bg-gray-100 cursor-pointer border-b"
+                                        onClick={() =>
+                                            handlePlacesToVisitSelect(
+                                                suggestion,
+                                            )
+                                        }
+                                    >
+                                        <div className="font-medium">
+                                            {suggestion.display_name}
+                                        </div>
+                                        <div className="text-sm text-gray-500">
+                                            {suggestion.type && (
+                                                <span className="capitalize">
+                                                    Type:{" "}
+                                                    {suggestion.type.replace(
+                                                        /_/g,
+                                                        " ",
+                                                    )}
+                                                </span>
+                                            )}
+                                        </div>
+                                        {suggestion.description && (
+                                            <div className="text-sm text-gray-600 mt-1">
+                                                {suggestion.description}
+                                            </div>
+                                        )}
+                                    </li>
+                                ),
+                            )}
+                        </ul>
+                    )}
+                {formData.placesToVisit.length > 0 && (
+                    <div className="mt-2">
+                        <Label className="block text-sm font-medium text-gray-700">
+                            Selected Places:
+                        </Label>
+                        <ul className="space-y-2">
+                            {formData.placesToVisit.map((place, index) => (
+                                <li
+                                    key={`selected-${place}-${index}`}
+                                    className="flex items-center justify-between bg-gray-50 p-2 rounded"
+                                >
+                                    <span>{place}</span>
+                                    <Button
+                                        type="button"
+                                        variant="destructive"
+                                        size="sm"
+                                        onClick={() => handleRemovePlace(place)}
+                                        className="ml-2"
+                                    >
+                                        Remove
+                                    </Button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 )}
             </div>
 
@@ -343,16 +542,26 @@ export default function TravelForm() {
                     autoComplete="off"
                 />
                 {currentStaySuggestions.length > 0 && (
-                    <ul className="border rounded mt-1 bg-white shadow-sm">
-                        {currentStaySuggestions.map((suggestion) => (
+                    <ul className="border rounded mt-1 bg-white shadow-sm max-h-60 overflow-y-auto">
+                        {currentStaySuggestions.map((suggestion, index) => (
                             <li
-                                key={suggestion.display_name}
-                                className="p-2 hover:bg-gray-100 cursor-pointer"
+                                key={getUniqueKey(suggestion, index)}
+                                className="p-2 hover:bg-gray-100 cursor-pointer border-b"
                                 onClick={() =>
                                     handleCurrentStaySelect(suggestion)
                                 }
                             >
-                                {suggestion.display_name}
+                                <div className="font-medium">
+                                    {suggestion.display_name}
+                                </div>
+                                <div className="text-sm text-gray-500">
+                                    {suggestion.type && (
+                                        <span className="capitalize">
+                                            Type:{" "}
+                                            {suggestion.type.replace(/_/g, " ")}
+                                        </span>
+                                    )}
+                                </div>
                             </li>
                         ))}
                     </ul>

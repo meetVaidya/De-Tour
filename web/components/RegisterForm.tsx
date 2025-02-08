@@ -13,6 +13,13 @@ export function RegisterForm() {
             className="flex max-w-[300px] flex-col gap-2"
         >
             <div className="flex flex-col gap-2">
+                <input id="name" name="name" placeholder="Name" />
+            </div>
+            {state?.errors && "name" in state.errors && state.errors.name && (
+                <p className="text-red-500">{state.errors.name.join(", ")}</p>
+            )}
+
+            <div className="flex flex-col gap-2">
                 <input id="email" name="email" placeholder="Email" />
             </div>
             {state?.errors && "email" in state.errors && state.errors.email && (

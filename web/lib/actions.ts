@@ -15,6 +15,10 @@ const loginSchema = z.object({
 });
 
 const registerSchema = z.object({
+    name: z
+        .string()
+        .min(2, { message: "Name must be at least 2 characters" })
+        .trim(),
     email: z.string().email({ message: "Invalid email address" }).trim(),
     password: z
         .string()
@@ -29,7 +33,7 @@ export async function register(prevState: any, formData: FormData) {
         return { errors: result.error.flatten().fieldErrors };
     }
 
-    const { email, password } = result.data;
+    const { name, email, password } = result.data;
 
     // Check if a user with the given email already exists
     const { data: existingUser, error: fetchError } = await supabase
@@ -48,7 +52,7 @@ export async function register(prevState: any, formData: FormData) {
     // Insert the new user into the Supabase "users" table
     const { data: user, error: insertError } = await supabase
         .from("users")
-        .insert({ email, password_hash: passwordHash })
+        .insert({ name, email, password_hash: passwordHash })
         .select() // To return the inserted row
         .maybeSingle();
 
