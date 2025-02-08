@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react"; // Import useEffect and useCallback
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,6 +16,12 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import type React from "react";
 
+interface NominatimResult {
+    display_name: string;
+    lat: string;
+    lon: string;
+}
+
 export default function TravelForm() {
     const [formData, setFormData] = useState({
         name: "",
@@ -27,11 +33,149 @@ export default function TravelForm() {
         currentStay: "",
     });
 
+    const [locationSuggestions, setLocationSuggestions] = useState<
+        NominatimResult[]
+    >([]);
+    const [placesToVisitSuggestions, setPlacesToVisitSuggestions] = useState<
+        NominatimResult[]
+    >([]);
+    const [currentStaySuggestions, setCurrentStaySuggestions] = useState<
+        NominatimResult[]
+    >([]);
+
+    // Debounce function to limit API calls
+    const debounce = (func: Function, delay: number) => {
+        let timeoutId: NodeJS.Timeout;
+        return (...args: any[]) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => func(...args), delay);
+        };
+    };
+
+    // Function to fetch location suggestions from Nominatim
+    const fetchLocationSuggestions = useCallback(async (query: string) => {
+        try {
+            const response = await fetch(
+                `https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=5`,
+            );
+            if (!response.ok) {
+                throw new Error(
+                    `Failed to fetch location suggestions: ${response.status}`,
+                );
+            }
+            const data: NominatimResult[] = await response.json();
+            setLocationSuggestions(data);
+        } catch (error: any) {
+            console.error("Error fetching location suggestions:", error);
+            setLocationSuggestions([]); // Clear suggestions on error
+        }
+    }, []);
+
+    // Function to fetch places to visit suggestions from Nominatim based on lat/lon
+    const fetchPlacesToVisitSuggestions = useCallback(
+        async (lat: string, lon: string) => {
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/search?q=tourism&format=json&limit=5&lat=${lat}&lon=${lon}`,
+                );
+                if (!response.ok) {
+                    throw new Error(
+                        `Failed to fetch places to visit suggestions: ${response.status}`,
+                    );
+                }
+                const data: NominatimResult[] = await response.json();
+                setPlacesToVisitSuggestions(data);
+            } catch (error: any) {
+                console.error(
+                    "Error fetching places to visit suggestions:",
+                    error,
+                );
+                setPlacesToVisitSuggestions([]); // Clear suggestions on error
+            }
+        },
+        [],
+    );
+
+    // Function to fetch current stay suggestions from Nominatim based on lat/lon
+    const fetchCurrentStaySuggestions = useCallback(
+        async (lat: string, lon: string) => {
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/search?q=hotel&format=json&limit=5&lat=${lat}&lon=${lon}`,
+                );
+                if (!response.ok) {
+                    throw new Error(
+                        `Failed to fetch current stay suggestions: ${response.status}`,
+                    );
+                }
+                const data: NominatimResult[] = await response.json();
+                setCurrentStaySuggestions(data);
+            } catch (error: any) {
+                console.error(
+                    "Error fetching current stay suggestions:",
+                    error,
+                );
+                setCurrentStaySuggestions([]); // Clear suggestions on error
+            }
+        },
+        [],
+    );
+
+    // Debounced version of fetchLocationSuggestions
+    const debouncedFetchLocationSuggestions = useCallback(
+        debounce(fetchLocationSuggestions, 300),
+        [fetchLocationSuggestions],
+    );
+
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
+
+        if (name === "currentLocation") {
+            if (value.length > 2) {
+                debouncedFetchLocationSuggestions(value);
+            } else {
+                setLocationSuggestions([]); // Clear suggestions if input is too short
+            }
+            setPlacesToVisitSuggestions([]);
+            setCurrentStaySuggestions([]);
+        }
+
+        if (name === "placesToVisit") {
+            setPlacesToVisitSuggestions([]);
+        }
+
+        if (name === "currentStay") {
+            setCurrentStaySuggestions([]);
+        }
+    };
+
+    const handleLocationSelect = (suggestion: NominatimResult) => {
+        setFormData((prev) => ({
+            ...prev,
+            currentLocation: suggestion.display_name,
+        }));
+        setLocationSuggestions([]);
+        fetchPlacesToVisitSuggestions(suggestion.lat, suggestion.lon);
+        fetchCurrentStaySuggestions(suggestion.lat, suggestion.lon);
+    };
+
+    const handlePlacesToVisitSelect = (suggestion: NominatimResult) => {
+        setFormData((prev) => ({
+            ...prev,
+            placesToVisit: suggestion.display_name,
+        }));
+        setPlacesToVisitSuggestions([]);
+    };
+
+    const handleCurrentStaySelect = (suggestion: NominatimResult) => {
+        setFormData((prev) => ({
+            ...prev,
+            currentStay: suggestion.display_name,
+        }));
+        setCurrentStaySuggestions([]);
     };
 
     const handleDateChange = (date: Date | undefined) => {
@@ -100,7 +244,21 @@ export default function TravelForm() {
                     value={formData.currentLocation}
                     onChange={handleInputChange}
                     required
+                    autoComplete="off"
                 />
+                {locationSuggestions.length > 0 && (
+                    <ul className="border rounded mt-1 bg-white shadow-sm">
+                        {locationSuggestions.map((suggestion) => (
+                            <li
+                                key={suggestion.display_name}
+                                className="p-2 hover:bg-gray-100 cursor-pointer"
+                                onClick={() => handleLocationSelect(suggestion)}
+                            >
+                                {suggestion.display_name}
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
 
             <div>
@@ -149,13 +307,29 @@ export default function TravelForm() {
 
             <div>
                 <Label htmlFor="placesToVisit">Places to Visit</Label>
-                <Textarea
+                <Input
                     id="placesToVisit"
                     name="placesToVisit"
                     value={formData.placesToVisit}
                     onChange={handleInputChange}
                     required
+                    autoComplete="off"
                 />
+                {placesToVisitSuggestions.length > 0 && (
+                    <ul className="border rounded mt-1 bg-white shadow-sm">
+                        {placesToVisitSuggestions.map((suggestion) => (
+                            <li
+                                key={suggestion.display_name}
+                                className="p-2 hover:bg-gray-100 cursor-pointer"
+                                onClick={() =>
+                                    handlePlacesToVisitSelect(suggestion)
+                                }
+                            >
+                                {suggestion.display_name}
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
 
             <div>
@@ -166,7 +340,23 @@ export default function TravelForm() {
                     value={formData.currentStay}
                     onChange={handleInputChange}
                     required
+                    autoComplete="off"
                 />
+                {currentStaySuggestions.length > 0 && (
+                    <ul className="border rounded mt-1 bg-white shadow-sm">
+                        {currentStaySuggestions.map((suggestion) => (
+                            <li
+                                key={suggestion.display_name}
+                                className="p-2 hover:bg-gray-100 cursor-pointer"
+                                onClick={() =>
+                                    handleCurrentStaySelect(suggestion)
+                                }
+                            >
+                                {suggestion.display_name}
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
 
             <Button type="submit" className="w-full">
