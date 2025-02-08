@@ -1,9 +1,19 @@
-// this will be our landing page
+import Image from "next/image";
 
 export default function Home() {
-  return (
-      <div>
-        <h1>Welcome to our landing page!</h1>
-      </div>
-  );
+    return (
+        <div>
+            <div className="">
+                <Image
+                    src="/app/assets/background.jpg"
+                    alt="Image description"
+                    width={500}
+                    height={500}
+                />
+            </div>
+            <div>
+                <h1>Extraordinary Natural and Cultural Charm</h1>
+            </div>
+        </div>
+    );
 }
