@@ -35,7 +35,7 @@ export async function decrypt(token: string | undefined) {
 export async function createSession(userId: string) {
     try {
         const session = await encrypt({ userId });
-        const cookieStore = cookies();
+        const cookieStore = await cookies();
         cookieStore.set("session", session, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
@@ -50,6 +50,6 @@ export async function createSession(userId: string) {
 }
 
 export async function deleteSession() {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     cookieStore.delete("session");
 }

@@ -1,15 +1,14 @@
-import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { decrypt } from "@/lib/sessions";
 
 // Define all routes that should be protected (require authentication)
 const protectedRoutes = [
-    "/dashboard",
     "/main",
     "/user-details",
     "/merchants",
-    "/merchantregister"  // Added this route
+    "/merchantregister",
+    "/dashboard"  // Added dashboard to protected routes
 ];
 
 // Define public routes (accessible without authentication)
@@ -41,8 +40,8 @@ export async function middleware(request: NextRequest) {
 
         // Check if trying to access auth pages while logged in
         if (publicRoutes.includes(pathname) && session?.userId) {
-            console.log('Redirecting to dashboard...');
-            return NextResponse.redirect(new URL('/dashboard', request.url));
+            console.log('Redirecting to main...');
+            return NextResponse.redirect(new URL('/', request.url)); // Changed from /dashboard to /main
         }
 
         return NextResponse.next();
