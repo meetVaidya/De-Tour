@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,7 +13,16 @@ import {
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
-import type React from "react";
+
+export interface TravelFormData {
+    name: string;
+    numberOfPeople: string;
+    currentLocation: string;
+    dateOfVisit?: Date;
+    daysOfVisit: string;
+    placesToVisit: string[];
+    currentStay: string;
+}
 
 interface NominatimResult {
     description: string;
@@ -37,18 +45,20 @@ interface OverpassResult {
     lon: number;
 }
 
-export default function TravelForm() {
-    const router = useRouter();
-    const [formData, setFormData] = useState({
+interface TravelFormProps {
+    onSubmit: (data: TravelFormData) => Promise<void>;
+}
+
+export default function TravelForm({ onSubmit }: TravelFormProps) {
+    const [formData, setFormData] = useState<TravelFormData>({
         name: "",
         numberOfPeople: "",
         currentLocation: "",
-        dateOfVisit: undefined as Date | undefined,
+        dateOfVisit: undefined,
         daysOfVisit: "",
-        placesToVisit: [] as string[],
+        placesToVisit: [],
         currentStay: "",
     });
-
     const [placesInput, setPlacesInput] = useState("");
     const [locationSuggestions, setLocationSuggestions] = useState<
         NominatimResult[]
@@ -332,40 +342,15 @@ export default function TravelForm() {
         setFormData((prev) => ({ ...prev, dateOfVisit: date }));
     };
 
-    // On form submission call the ML backend and navigate to itinerary page.
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        console.log("Form submitted:", formData);
-        try {
-            const response = await fetch(
-                "http://localhost:5000/generate-itinerary",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData),
-                },
-            );
-
-            if (response.ok) {
-                const itinerary = await response.json();
-                // Save the generated itinerary to localStorage (or use a global state)
-                localStorage.setItem(
-                    "generatedItinerary",
-                    JSON.stringify(itinerary),
-                );
-                router.push("/itinerary"); // Navigate to the itinerary page.
-            } else {
-                console.error("Failed to generate itinerary");
-            }
-        } catch (error) {
-            console.error("Error submitting travel form:", error);
-        }
+        // Pass the form data to the parent component
+        await onSubmit(formData);
     };
 
     return (
         <form
-            onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
             className="space-y-6 max-w-md mx-auto p-6 bg-white rounded-lg shadow"
         >
             <div>
