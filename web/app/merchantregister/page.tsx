@@ -6,7 +6,7 @@ import { Input } from "@/components/Input";
 import { Select } from "@/components/Select";
 import { useStore } from "@/utils/store";
 import { toast } from "sonner";
-import { supabase } from "@/utils/supabase";
+import { supabase } from "@/lib/supabaseClient";
 
 const businessTypes = [
   { value: "retail", label: "Retail" },
