@@ -9,6 +9,9 @@ export default {
     ],
     theme: {
         extend: {
+          gridTemplateRows: {
+                  'auto-140': 'repeat(auto-fill, 140px)',
+                },
             colors: {
                 earth: {
                     50: "#f8f9f7",

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import RegisterForm from "@/components/RegisterForm";
-import AdditionalInfoForm from "@/components/AdditionalInfoForm";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -21,7 +20,7 @@ export default function Register() {
       <div className="absolute inset-0 bg-[url('/leaf-pattern.png')] opacity-5" />
 
       <div className="relative container mx-auto px-4 py-8 max-w-md">
-        {step === "registration" ? (
+
           <>
             <RegisterForm
               onSuccess={(id: string) => {
@@ -50,9 +49,7 @@ export default function Register() {
               </p>
             </motion.div>
           </>
-        ) : (
-          <AdditionalInfoForm merchantId={merchantId} />
-        )}
+
       </div>
 
       {/* Optional: Footer with additional links or information */}

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useAuthStore } from "@/utils/authStore"; // import our Zustand store
 import { logout as serverLogout } from "@/lib/actions";
 import { useRouter } from "next/navigation";
+import { LevelDisplay } from "./LevelDisplay";
 
 export function Navbar() {
     // Retrieve our login state and actions from Zustand
@@ -74,20 +75,14 @@ export function Navbar() {
                             className="text-forest-600 hover:text-forest-800 transition-colors duration-200"
                         >
                             {/* Search icon */}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-6 h-6"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                                />
-                            </svg>
+                            {isLoggedIn && (
+                              <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                <LevelDisplay />
+                              </motion.div>
+                            )}
                         </motion.button>
 
                         <motion.div

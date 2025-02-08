@@ -30,39 +30,57 @@ export function RegistrationForm({ onSuccess }: RegistrationFormProps) {
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+    const password_hash = formData.get("password") as string;
     const age = parseInt(formData.get("age") as string);
     const gender = formData.get("gender") as Gender;
     const disabled = formData.get("disabled") === "true";
 
     try {
       // Insert a new merchant record into your "merchants" table.
-      const { data, error } = await supabase
-        .from("merchants")
+      const { data: userData, error: userError } = await supabase
+        .from("users")
         .insert([
           {
             name: name.trim(),
             email: email.trim(),
-            password,
+            password_hash,
             age,
             gender,
             disabled,
-            status: "pending",
           },
         ])
         .select();
 
-      if (error) {
-        setErrors(error);
-        toast.error(error.message || "Registration failed");
+      if (userError) {
+        setErrors(userError);
+        toast.error(userError.message || "Registration failed");
         return;
       }
 
-      // Assume the inserted record is returned as the first item.
-      if (data && data[0] && data[0].id) {
-        toast.success("Registration successful!");
-        onSuccess(data[0].id);
-      }
+      if (userData && userData[0] && userData[0].id) {
+              const { error: pointsError } = await supabase
+                .from("user_points")
+                .insert([
+                  {
+                    user_id: userData[0].id,
+                    points: 0,
+                  },
+                ]);
+
+              if (pointsError) {
+                console.error("Failed to initialize user points:", pointsError);
+                // Optionally delete the user if points initialization fails
+                await supabase
+                  .from("users")
+                  .delete()
+                  .eq("id", userData[0].id);
+                toast.error("Failed to complete registration");
+                return;
+              }
+
+              toast.success("Registration successful!");
+              onSuccess(userData[0].id);
+            }
     } catch (err: any) {
       console.error(err);
       toast.error(err.message || "Registration failed");

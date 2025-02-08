@@ -11,7 +11,7 @@ import {
     Landmark,
     Building2,
 } from "lucide-react";
-import type { TripItinerary, Activity } from "@/types/itinerary";
+import type { TripItinerary, Activity, DaySchedule } from "@/types/itinerary";
 
 // A helper component for rendering a timeslot’s activities (for morning/evening)
 const ActivityList: React.FC<{
