@@ -15,8 +15,8 @@ export function RegisterForm() {
             <div className="flex flex-col gap-2">
                 <input id="email" name="email" placeholder="Email" />
             </div>
-            {state?.errors?.email && (
-                <p className="text-red-500">{state.errors.email}</p>
+            {state?.errors && "email" in state.errors && state.errors.email && (
+                <p className="text-red-500">{state.errors.email.join(", ")}</p>
             )}
 
             <div className="flex flex-col gap-2">
@@ -27,9 +27,13 @@ export function RegisterForm() {
                     placeholder="Password"
                 />
             </div>
-            {state?.errors?.password && (
-                <p className="text-red-500">{state.errors.password}</p>
-            )}
+            {state?.errors &&
+                "password" in state.errors &&
+                state.errors.password && (
+                    <p className="text-red-500">
+                        {state.errors.password.join(", ")}
+                    </p>
+                )}
             <SubmitButton />
         </form>
     );
