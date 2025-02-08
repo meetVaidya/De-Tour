@@ -10,6 +10,42 @@ export default {
   theme: {
   	extend: {
   		colors: {
+      earth: {
+                50: '#f8f9f7',
+                100: '#e8eae6',
+                200: '#d1d6cd',
+                300: '#b3bca9',
+                400: '#919c85',
+                500: '#738264',
+                600: '#5d684f',
+                700: '#4a523f',
+                800: '#3c4233',
+                900: '#32372b',
+              },
+              forest: {
+                        50: '#f3f8f3',
+                        100: '#e0ede0',
+                        200: '#bcd9bc',
+                        300: '#92c092',
+                        400: '#5fa45f',
+                        500: '#3b833b',
+                        600: '#2d682d',
+                        700: '#245224',
+                        800: '#1c401c',
+                        900: '#132b13',
+                      },
+                      sage: {
+                        50: '#f5f8f5',
+                        100: '#e7efe7',
+                        200: '#c5d8c5',
+                        300: '#a3c1a3',
+                        400: '#739973',
+                        500: '#497849',
+                        600: '#385d38',
+                        700: '#2c482c',
+                        800: '#213721',
+                        900: '#162516',
+                      },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -51,6 +87,18 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+    fontFamily: {
+            sans: ['Inter var', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -58,5 +106,8 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/forms'),
+  ],
 } satisfies Config;
