@@ -456,6 +456,27 @@ export default function TravelForm({ onSubmit }: TravelFormProps) {
                     </Popover>
                 </div>
 
+                {/* Days of Visit Card */}
+                <div className="bg-white shadow rounded-lg p-4">
+                    <Label
+                        htmlFor="daysOfVisit"
+                        className="text-forest-700 font-medium mb-1 block"
+                    >
+                        Days of Visit
+                    </Label>
+                    <Input
+                        id="daysOfVisit"
+                        name="daysOfVisit"
+                        type="number"
+                        min="1"
+                        value={formData.daysOfVisit}
+                        onChange={handleInputChange}
+                        required
+                        className="border-forest-200 focus:border-forest-400 focus:ring-forest-400"
+                        placeholder="Number of days for your visit"
+                    />
+                </div>
+
                 {/* Places to Visit Card */}
                 <div
                     ref={placesDropdownRef}

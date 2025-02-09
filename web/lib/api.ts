@@ -1,4 +1,5 @@
 import type { TravelFormData } from "@/components/TravelForm";
+import { supabase } from "./supabaseClient";
 
 export interface TripItinerary {
     dates: string;
@@ -17,6 +18,21 @@ export async function generateItinerary(
     formData: TravelFormData,
 ): Promise<TripItinerary> {
     try {
+        // Save the form data to Supabase
+        const { error } = await supabase.from("itineraries").insert({
+            user_name: formData.name,
+            number_of_people: parseInt(formData.numberOfPeople),
+            current_location: formData.currentLocation,
+            date_of_visit: formData.dateOfVisit,
+            days_of_visit: parseInt(formData.daysOfVisit),
+            places_to_visit: formData.placesToVisit,
+            current_stay: formData.currentStay,
+        });
+
+        if (error) {
+            throw new Error(`Failed to save itinerary: ${error.message}`);
+        }
+
         const response = await fetch(`${API_URL}/generate-itinerary`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
