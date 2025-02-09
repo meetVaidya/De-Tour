@@ -9,9 +9,9 @@ export default {
     ],
     theme: {
         extend: {
-          gridTemplateRows: {
-                  'auto-140': 'repeat(auto-fill, 140px)',
-                },
+            gridTemplateRows: {
+                "auto-140": "repeat(auto-fill, 140px)",
+            },
             colors: {
                 earth: {
                     50: "#f8f9f7",
@@ -26,16 +26,16 @@ export default {
                     900: "#32372b",
                 },
                 forest: {
-                    50: "#f3f8f3",
-                    100: "#e0ede0",
-                    200: "#bcd9bc",
-                    300: "#92c092",
-                    400: "#5fa45f",
-                    500: "#3b833b",
-                    600: "#2d682d",
-                    700: "#245224",
-                    800: "#1c401c",
-                    900: "#132b13",
+                    50: "#f2f7f4",
+                    100: "#e0ede5",
+                    200: "#c1dccb",
+                    300: "#94c3a6",
+                    400: "#62a67f",
+                    500: "#3f8a5f",
+                    600: "#2d6f4a",
+                    700: "#245b3d",
+                    800: "#1f4832",
+                    900: "#1b3c2b",
                 },
                 sage: {
                     50: "#f5f8f5",
@@ -48,6 +48,18 @@ export default {
                     700: "#2c482c",
                     800: "#213721",
                     900: "#162516",
+                },
+                moss: {
+                    50: "#f3f8f3",
+                    100: "#e7f1e7",
+                    200: "#d1e4d1",
+                    300: "#a9cba9",
+                    400: "#7aad7a",
+                    500: "#558c55",
+                    600: "#417041",
+                    700: "#355935",
+                    800: "#2d482d",
+                    900: "#263c26",
                 },
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",

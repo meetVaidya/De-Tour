@@ -252,7 +252,6 @@ export default function TravelForm({ onSubmit }: TravelFormProps) {
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
-
         if (name === "currentLocation") {
             setFormData((prev) => ({ ...prev, [name]: value }));
             if (value.length > 2) {
@@ -344,227 +343,265 @@ export default function TravelForm({ onSubmit }: TravelFormProps) {
 
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Pass the form data to the parent component
         await onSubmit(formData);
     };
 
     return (
-        <form
-            onSubmit={handleFormSubmit}
-            className="space-y-6 max-w-md mx-auto p-6 bg-white rounded-lg shadow"
-        >
-            <div>
-                <Label htmlFor="name">Name</Label>
-                <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
+        <form onSubmit={handleFormSubmit} className="max-w-6xl mx-auto p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Name Card */}
+                <div className="bg-white shadow rounded-lg p-4">
+                    <Label
+                        htmlFor="name"
+                        className="text-forest-700 font-medium mb-1 block"
+                    >
+                        Your Name
+                    </Label>
+                    <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="border-forest-200 focus:border-forest-400 focus:ring-forest-400"
+                        placeholder="Enter your name"
+                    />
+                </div>
 
-            <div>
-                <Label htmlFor="numberOfPeople">
-                    Number of People (including yourself)
-                </Label>
-                <Input
-                    id="numberOfPeople"
-                    name="numberOfPeople"
-                    type="number"
-                    min="1"
-                    value={formData.numberOfPeople}
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
+                {/* Number of People Card */}
+                <div className="bg-white shadow rounded-lg p-4">
+                    <Label
+                        htmlFor="numberOfPeople"
+                        className="text-forest-700 font-medium mb-1 block"
+                    >
+                        Number of People
+                    </Label>
+                    <Input
+                        id="numberOfPeople"
+                        name="numberOfPeople"
+                        type="number"
+                        min="1"
+                        value={formData.numberOfPeople}
+                        onChange={handleInputChange}
+                        required
+                        className="border-forest-200 focus:border-forest-400 focus:ring-forest-400"
+                        placeholder="Including yourself"
+                    />
+                </div>
 
-            <div>
-                <Label htmlFor="currentLocation">Current Location</Label>
-                <Input
-                    id="currentLocation"
-                    name="currentLocation"
-                    value={formData.currentLocation}
-                    onChange={handleInputChange}
-                    required
-                    autoComplete="off"
-                />
-                {locationSuggestions.length > 0 && (
-                    <ul className="border rounded mt-1 bg-white shadow-sm">
-                        {locationSuggestions.map((suggestion, index) => (
-                            <li
-                                key={getUniqueKey(suggestion, index)}
-                                className="p-2 hover:bg-gray-100 cursor-pointer"
-                                onClick={() => handleLocationSelect(suggestion)}
-                            >
-                                {suggestion.display_name}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
-
-            <div>
-                <Label htmlFor="dateOfVisit">Date of Visit</Label>
-                <Popover>
-                    <PopoverTrigger asChild>
-                        <Button
-                            variant={"outline"}
-                            className={cn(
-                                "w-full justify-start text-left font-normal",
-                                !formData.dateOfVisit &&
-                                    "text-muted-foreground",
-                            )}
-                        >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
-                            {formData.dateOfVisit ? (
-                                format(formData.dateOfVisit, "PPP")
-                            ) : (
-                                <span>Pick a date</span>
-                            )}
-                        </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
-                        <Calendar
-                            mode="single"
-                            selected={formData.dateOfVisit}
-                            onSelect={handleDateChange}
-                            initialFocus
-                        />
-                    </PopoverContent>
-                </Popover>
-            </div>
-
-            <div>
-                <Label htmlFor="daysOfVisit">Days of Visit</Label>
-                <Input
-                    id="daysOfVisit"
-                    name="daysOfVisit"
-                    type="number"
-                    min="1"
-                    value={formData.daysOfVisit}
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
-
-            <div ref={placesDropdownRef}>
-                <Label>Places to Visit</Label>
-                <Input
-                    id="placesInput"
-                    name="placesInput"
-                    value={placesInput}
-                    onChange={handleInputChange}
-                    onFocus={() => setIsPlacesDropdownOpen(true)}
-                    placeholder="Search places..."
-                    autoComplete="off"
-                />
-                {isPlacesDropdownOpen &&
-                    placesToVisitSuggestions.length > 0 && (
-                        <ul className="border rounded mt-1 bg-white shadow-sm max-h-60 overflow-y-auto">
-                            {placesToVisitSuggestions.map(
-                                (suggestion, index) => (
-                                    <li
-                                        key={getUniqueKey(suggestion, index)}
-                                        className="p-2 hover:bg-gray-100 cursor-pointer border-b"
-                                        onClick={() =>
-                                            handlePlacesToVisitSelect(
-                                                suggestion,
-                                            )
-                                        }
-                                    >
-                                        <div className="font-medium">
-                                            {suggestion.display_name}
-                                        </div>
-                                        <div className="text-sm text-gray-500">
-                                            {suggestion.type && (
-                                                <span className="capitalize">
-                                                    Type:{" "}
-                                                    {suggestion.type.replace(
-                                                        /_/g,
-                                                        " ",
-                                                    )}
-                                                </span>
-                                            )}
-                                        </div>
-                                        {suggestion.description && (
-                                            <div className="text-sm text-gray-600 mt-1">
-                                                {suggestion.description}
-                                            </div>
-                                        )}
-                                    </li>
-                                ),
-                            )}
-                        </ul>
-                    )}
-                {formData.placesToVisit.length > 0 && (
-                    <div className="mt-2">
-                        <Label className="block text-sm font-medium text-gray-700">
-                            Selected Places:
-                        </Label>
-                        <ul className="space-y-2">
-                            {formData.placesToVisit.map((place, index) => (
+                {/* Current Location Card */}
+                <div className="bg-white shadow rounded-lg p-4 relative">
+                    <Label
+                        htmlFor="currentLocation"
+                        className="text-forest-700 font-medium mb-1 block"
+                    >
+                        Current Location
+                    </Label>
+                    <Input
+                        id="currentLocation"
+                        name="currentLocation"
+                        value={formData.currentLocation}
+                        onChange={handleInputChange}
+                        required
+                        autoComplete="off"
+                        className="border-forest-200 focus:border-forest-400 focus:ring-forest-400"
+                        placeholder="Search for a location"
+                    />
+                    {locationSuggestions.length > 0 && (
+                        <ul className="absolute z-10 w-full mt-1 bg-white rounded-lg shadow max-h-60 overflow-y-auto">
+                            {locationSuggestions.map((suggestion, index) => (
                                 <li
-                                    key={`selected-${place}-${index}`}
-                                    className="flex items-center justify-between bg-gray-50 p-2 rounded"
+                                    key={getUniqueKey(suggestion, index)}
+                                    className="p-3 hover:bg-forest-50 cursor-pointer border-b border-forest-100 transition-colors"
+                                    onClick={() =>
+                                        handleLocationSelect(suggestion)
+                                    }
                                 >
-                                    <span>{place}</span>
-                                    <Button
-                                        type="button"
-                                        variant="destructive"
-                                        size="sm"
-                                        onClick={() => handleRemovePlace(place)}
-                                        className="ml-2"
-                                    >
-                                        Remove
-                                    </Button>
+                                    {suggestion.display_name}
                                 </li>
                             ))}
                         </ul>
-                    </div>
-                )}
-            </div>
+                    )}
+                </div>
 
-            <div>
-                <Label htmlFor="currentStay">Current Stay</Label>
-                <Input
-                    id="currentStay"
-                    name="currentStay"
-                    value={formData.currentStay}
-                    onChange={handleInputChange}
-                    required
-                    autoComplete="off"
-                />
-                {currentStaySuggestions.length > 0 && (
-                    <ul className="border rounded mt-1 bg-white shadow-sm max-h-60 overflow-y-auto">
-                        {currentStaySuggestions.map((suggestion, index) => (
-                            <li
-                                key={getUniqueKey(suggestion, index)}
-                                className="p-2 hover:bg-gray-100 cursor-pointer border-b"
-                                onClick={() =>
-                                    handleCurrentStaySelect(suggestion)
-                                }
+                {/* Date of Visit Card */}
+                <div className="bg-white shadow rounded-lg p-4">
+                    <Label className="text-forest-700 font-medium mb-1 block">
+                        Date of Visit
+                    </Label>
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button
+                                variant="outline"
+                                className={cn(
+                                    "w-full justify-start text-left font-normal border-forest-200 hover:bg-forest-50",
+                                    !formData.dateOfVisit && "text-forest-400",
+                                )}
                             >
-                                <div className="font-medium">
-                                    {suggestion.display_name}
-                                </div>
-                                <div className="text-sm text-gray-500">
-                                    {suggestion.type && (
-                                        <span className="capitalize">
-                                            Type:{" "}
-                                            {suggestion.type.replace(/_/g, " ")}
+                                <CalendarIcon className="mr-2 h-4 w-4 text-forest-500" />
+                                {formData.dateOfVisit
+                                    ? format(formData.dateOfVisit, "PPP")
+                                    : "Select your visit date"}
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0 bg-white">
+                            <Calendar
+                                mode="single"
+                                selected={formData.dateOfVisit}
+                                onSelect={handleDateChange}
+                                initialFocus
+                                className="rounded-lg"
+                            />
+                        </PopoverContent>
+                    </Popover>
+                </div>
+
+                {/* Places to Visit Card */}
+                <div
+                    ref={placesDropdownRef}
+                    className="bg-white shadow rounded-lg p-4"
+                >
+                    <Label className="text-forest-700 font-medium mb-1 block">
+                        Places to Visit
+                    </Label>
+                    <Input
+                        id="placesInput"
+                        name="placesInput"
+                        value={placesInput}
+                        onChange={handleInputChange}
+                        onFocus={() => setIsPlacesDropdownOpen(true)}
+                        placeholder="Search for attractions, landmarks..."
+                        autoComplete="off"
+                        className="border-forest-200 focus:border-forest-400 focus:ring-forest-400"
+                    />
+                    {isPlacesDropdownOpen &&
+                        placesToVisitSuggestions.length > 0 && (
+                            <ul className="border border-forest-200 rounded-lg mt-1 bg-white shadow max-h-60 overflow-y-auto">
+                                {placesToVisitSuggestions.map(
+                                    (suggestion, index) => (
+                                        <li
+                                            key={getUniqueKey(
+                                                suggestion,
+                                                index,
+                                            )}
+                                            className="p-3 hover:bg-forest-50 cursor-pointer border-b border-forest-100"
+                                            onClick={() =>
+                                                handlePlacesToVisitSelect(
+                                                    suggestion,
+                                                )
+                                            }
+                                        >
+                                            <div className="font-medium text-forest-700">
+                                                {suggestion.display_name}
+                                            </div>
+                                            <div className="text-sm text-forest-500">
+                                                {suggestion.type && (
+                                                    <span className="capitalize">
+                                                        {suggestion.type.replace(
+                                                            /_/g,
+                                                            " ",
+                                                        )}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            {suggestion.description && (
+                                                <div className="text-sm text-forest-600 mt-1">
+                                                    {suggestion.description}
+                                                </div>
+                                            )}
+                                        </li>
+                                    ),
+                                )}
+                            </ul>
+                        )}
+                    {formData.placesToVisit.length > 0 && (
+                        <div className="mt-4 p-4 bg-forest-50 rounded-lg">
+                            <Label className="block text-forest-700 font-medium mb-2">
+                                Selected Places
+                            </Label>
+                            <ul className="space-y-2">
+                                {formData.placesToVisit.map((place, index) => (
+                                    <li
+                                        key={`selected-${place}-${index}`}
+                                        className="flex items-center justify-between bg-white p-3 rounded-lg"
+                                    >
+                                        <span className="text-forest-700">
+                                            {place}
                                         </span>
-                                    )}
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+                                        <Button
+                                            type="button"
+                                            variant="destructive"
+                                            size="sm"
+                                            onClick={() =>
+                                                handleRemovePlace(place)
+                                            }
+                                            className="bg-red-500 hover:bg-red-600 text-white"
+                                        >
+                                            Remove
+                                        </Button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
+
+                {/* Accommodation Card */}
+                <div className="bg-white shadow rounded-lg p-4">
+                    <Label
+                        htmlFor="currentStay"
+                        className="text-forest-700 font-medium mb-1 block"
+                    >
+                        Accommodation
+                    </Label>
+                    <Input
+                        id="currentStay"
+                        name="currentStay"
+                        value={formData.currentStay}
+                        onChange={handleInputChange}
+                        required
+                        autoComplete="off"
+                        className="border-forest-200 focus:border-forest-400 focus:ring-forest-400"
+                        placeholder="Search for hotels, resorts..."
+                    />
+                    {currentStaySuggestions.length > 0 && (
+                        <ul className="border border-forest-200 rounded-lg mt-1 bg-white shadow max-h-60 overflow-y-auto">
+                            {currentStaySuggestions.map((suggestion, index) => (
+                                <li
+                                    key={getUniqueKey(suggestion, index)}
+                                    className="p-3 hover:bg-forest-50 cursor-pointer border-b border-forest-100"
+                                    onClick={() =>
+                                        handleCurrentStaySelect(suggestion)
+                                    }
+                                >
+                                    <div className="font-medium text-forest-700">
+                                        {suggestion.display_name}
+                                    </div>
+                                    <div className="text-sm text-forest-500">
+                                        {suggestion.type && (
+                                            <span className="capitalize">
+                                                {suggestion.type.replace(
+                                                    /_/g,
+                                                    " ",
+                                                )}
+                                            </span>
+                                        )}
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
             </div>
 
-            <Button type="submit" className="w-full">
-                Submit
-            </Button>
+            <div className="mt-8">
+                <Button
+                    type="submit"
+                    className="w-full bg-forest-600 hover:bg-forest-700 text-white transition-colors duration-200 py-6 text-lg font-medium rounded-lg shadow-md hover:shadow-lg"
+                >
+                    Plan Your Trip
+                </Button>
+            </div>
         </form>
     );
 }
