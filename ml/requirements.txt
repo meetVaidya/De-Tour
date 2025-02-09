@@ -1,0 +1,8 @@
+groq
+Pillow
+piexif
+geopy
+python-dotenv
+Flask
+langchain-openai
+textblob

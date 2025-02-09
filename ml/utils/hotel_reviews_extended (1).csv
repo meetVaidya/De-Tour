@@ -1,0 +1,1000 @@
+"Hotel, City",Review,sentiment_score,Price (INR per night)
+"Taj Mahal Palace, Mumbai","The hotel's sustainability initiatives are impressive, with solar panels and water recycling systems. The staff was incredibly courteous and helpful. The food was delicious, especially the local cuisine.",7.788459,40000
+"Oberoi Udaivilas, Udaipur","A luxurious stay with a strong focus on eco-friendly practices. The customer service was top-notch, and the spa experience was rejuvenating. However, the food was overpriced for the quality.",1.9146807,45000
+"ITC Gardenia, Bangalore","Excellent sustainable practices, including waste management and energy efficiency. The staff was polite, but the room service was slow. The buffet spread was diverse and tasty.",7.672583,25000
+"Leela Palace, New Delhi","The hotel's commitment to sustainability is commendable. The staff went above and beyond to make our stay comfortable. The food, however, was average and not worth the price.",1.51999,30000
+"Taj Lake Palace, Udaipur","A breathtaking location with a strong emphasis on sustainability. The service was impeccable, and the food was exceptional. Highly recommend for an eco-conscious luxury experience.",9.03938,50000
+"Lemon Tree Hotel, Pune","The hotel claims to be eco-friendly, but I didn't see much evidence of it. The staff was friendly, but the rooms were poorly maintained. The food was decent but nothing special.",-2.3199391,6000
+"Treebo Trend Sunrise, Varanasi","A budget-friendly option with basic amenities. The hotel lacks sustainability efforts. The staff was rude, and the food was below average. Would not recommend.",-5.4031277,3000
+"Radisson Blu, Goa","Great location and decent sustainability practices. The staff was helpful, but the rooms were noisy. The seafood at the restaurant was fresh and delicious.",1.50377,12000
+"Vivanta by Taj, Srinagar","The hotel's eco-friendly initiatives are noteworthy. The staff was warm and welcoming. The food was excellent, especially the Kashmiri dishes. A memorable stay!",9.85146,15000
+"FabHotel Prime, Mumbai","The hotel has minimal sustainability efforts. The staff was unprofessional, and the rooms were unclean. The food was mediocre at best. Disappointing experience.",-8.8743,2500
+"The Lalit, Jaipur","A beautiful property with a focus on sustainability. The staff was attentive and courteous. The food was good, but the breakfast options could be improved.",4.9156046,12000
+"Hyatt Regency, Chennai","The hotel has strong sustainability practices, including waste reduction. The staff was efficient and friendly. The food was outstanding, with a great variety of cuisines.",7.477195,20000
+"Taj Falaknuma Palace, Hyderabad","A royal experience with a commitment to sustainability. The staff was exceptional, and the food was divine. Highly recommend for a luxurious and eco-friendly stay.",9.403553,48000
+"Ginger Hotel, Ahmedabad","A budget hotel with limited sustainability efforts. The staff was average, and the rooms were small. The food was basic but edible. Good for a short stay.",-1.098582,3500
+"The Oberoi, Rajvilas Jaipur","A stunning property with excellent sustainability practices. The staff was incredibly professional and attentive. The food was exquisite, especially the Rajasthani thali.",9.081783,47000
+"JW Marriott, Mumbai","A luxurious hotel with strong sustainability initiatives. The staff was excellent, and the food was exquisite.",8.92047,35000
+"The Park, Kolkata","A well-maintained property with eco-friendly practices. The service was good, but the food was just average.",2.761802,10000
+"Novotel, Hyderabad","Great business hotel with good sustainability efforts. Rooms were comfortable, and the breakfast was delicious.",8.000774,12000
+"The Leela, Goa",A stunning beachside property with strong eco-friendly measures. The seafood was fresh and amazing.,9.064873,45000
+"Taj Bengal, Kolkata","An elegant hotel with excellent service. The green initiatives are commendable, and the food was top-notch.",9.178716,42000
+"ITC Grand Chola, Chennai","A grand hotel with a strong focus on sustainability. The hospitality was superb, and the food was outstanding.",8.3702,48000
+"Shangri-La, Bangalore","A premium stay with eco-conscious operations. The views were breathtaking, and the service was flawless.",5.948423,37000
+"Courtyard by Marriott, Pune","A comfortable business hotel with decent sustainability practices. The rooms were modern, and the food was good.",4.8620987,15000
+"The Westin, Mumbai","An upscale hotel with green initiatives. The staff was courteous, and the breakfast buffet was excellent.",6.459014,25000
+"Lemon Tree Premier, Delhi","A budget-friendly hotel with some sustainability efforts. The service was good, but the food needed improvement.",1.1374104,8000
+"Holiday Inn, Jaipur","A well-located hotel with basic sustainability practices. The rooms were spacious, but the food was average.",3.8450153,9000
+"Radisson Blu, Ludhiana","A well-maintained property with eco-friendly measures. The service was prompt, and the food was delicious.",7.2945766,14000
+"Taj Coromandel, Chennai","A luxurious hotel with a sustainability commitment. The rooms were elegant, and the food was exceptional.",8.693234,45000
+"Hyatt Place, Gurgaon","A modern hotel with limited green efforts. The staff was attentive, and the breakfast was good.",4.7404013,11000
+"The Zuri, Bangalore","An eco-conscious property with a relaxing ambiance. The rooms were clean, and the food was great.",7.724392,16000
+"Ibis, Kochi","A budget hotel with basic amenities. The sustainability practices were lacking, and the food was below average.",-1.6492041,5000
+"Sarovar Portico, Ahmedabad","A mid-range hotel with a focus on reducing waste. The rooms were comfortable, and the food was decent.",3.4888759,8500
+"Fairmont, Jaipur","A palatial property with strong sustainability measures. The service was world-class, and the food was divine.",7.985473,48000
+"The LaLiT, Chandigarh","An elegant property with eco-friendly operations. The hospitality was fantastic, and the food was great.",8.966786,30000
+"The Imperial, Delhi","A heritage hotel with a commitment to sustainability. The ambiance was regal, and the food was impeccable.",8.229349,47000
+"Welcomhotel, Coimbatore","A sustainable hotel with comfortable rooms. The staff was helpful, and the breakfast was delicious.",7.2050695,14000
+"Neemrana Fort Palace, Alwar","A heritage property with green initiatives. The views were amazing, and the food was authentic.",8.809483,20000
+"Jaypee Palace, Agra","A beautiful hotel with decent eco-friendly practices. The service was good, and the Mughlai cuisine was excellent.",7.2689567,18000
+"The Tamara, Coorg","An eco-luxury resort with a deep sustainability commitment. The nature views were mesmerizing, and the food was fresh.",7.401005,46000
+"Sterling Resorts, Ooty","A nature-friendly resort with some sustainability efforts. The service was decent, and the food was good.",3.2950063,12000
+"Club Mahindra, Munnar","A scenic resort with an emphasis on eco-tourism. The rooms were cozy, and the staff was friendly.",5.891301,15000
+"Evolve Back, Kabini","A premium wildlife resort with strong conservation efforts. The jungle experience was incredible, and the food was organic.",8.200202,50000
+"VITS Hotel, Mumbai","A business hotel with limited sustainability focus. The stay was comfortable, but the food was mediocre.",-1.3201184,7000
+"Ramada, Lucknow","A mid-range hotel with some green efforts. The rooms were spacious, and the food was good.",1.9666835,9000
+"Golden Tulip, Jaipur","A stylish hotel with a moderate focus on sustainability. The service was good, and the food was tasty.",4.3214884,12500
+"Trident, Udaipur","A luxurious lakefront hotel with eco-friendly initiatives. The service was exceptional, and the food was gourmet.",8.742412,47000
+"The Gateway Hotel, Nashik","A peaceful property with sustainability in mind. The vineyard tour was delightful, and the food was fresh.",7.43735,17000
+"Le Meridien, Kochi","A riverside hotel with green operations. The service was excellent, and the seafood was outstanding.",8.558943,25000
+"Marriott Resort & Spa, Jaisalmer","A desert resort with commendable sustainability efforts. The ambiance was magical, and the food was authentic Rajasthani.",8.165862,45000
+"The Oberoi Bangalore, Jaipur",The hotel's sustainability initiatives are impressive.,5.268148,41718
+"The Oberoi Bangalore, Goa",A breathtaking location with a strong emphasis on green energy.,6.244078,16861
+"Taj Mahal Palace, Mumbai","Excellent sustainable practices, including waste management.",2.938428,25703
+"JW Marriott Mumbai, New Delhi",A breathtaking location with a strong emphasis on green energy.,1.035863,22967
+"Leela Palace, Chennai",The hotel's commitment to sustainability is commendable.,7.119635,41737
+"The Oberoi Bangalore, Mumbai",Amazing experience with a conscious approach towards sustainability.,1.257212,29666
+"Hyatt Regency Chennai, Kolkata",The hotel's sustainability initiatives are impressive.,2.193706,46476
+"ITC Gardenia, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,3.632905,11159
+"Radisson Blu Jaipur, Pune",The hotel's commitment to sustainability is commendable.,3.038035,31201
+"JW Marriott Mumbai, Mumbai",The hotel's commitment to sustainability is commendable.,7.692275,14311
+"Hyatt Regency Chennai, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,6.171968,36099
+"Taj Mahal Palace, New Delhi",The eco-friendly policies of this hotel make the stay even better.,9.309809,26631
+"Taj Mahal Palace, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,2.60302,42280
+"Hyatt Regency Chennai, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,7.48627,8478
+"Leela Palace, Bangalore",Great hospitality with responsible tourism initiatives.,9.232818,13463
+"Hyatt Regency Chennai, New Delhi",Amazing experience with a conscious approach towards sustainability.,1.152357,28623
+"Taj Mahal Palace, Jaipur",A breathtaking location with a strong emphasis on green energy.,8.663973,44055
+"The Oberoi Bangalore, Goa",Great hospitality with responsible tourism initiatives.,9.69866,22697
+"ITC Gardenia, Hyderabad",Great hospitality with responsible tourism initiatives.,6.036862,10614
+"JW Marriott Mumbai, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,7.806698,46458
+"Radisson Blu Jaipur, Udaipur",A perfect mix of luxury and responsibility towards the environment.,6.640096,41575
+"Taj Mahal Palace, Kolkata",Amazing experience with a conscious approach towards sustainability.,4.217049,21923
+"Radisson Blu Jaipur, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,8.991057,11751
+"ITC Gardenia, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,5.158292,24987
+"Radisson Blu Jaipur, Chennai",The eco-friendly policies of this hotel make the stay even better.,3.44311,29221
+"JW Marriott Mumbai, Chennai",The hotel's sustainability initiatives are impressive.,3.874957,17470
+"Hyatt Regency Chennai, Chennai",Amazing experience with a conscious approach towards sustainability.,5.815834,42383
+"Oberoi Udaivilas, Jaipur",Great hospitality with responsible tourism initiatives.,4.717699,45160
+"Taj Lake Palace, New Delhi",A perfect mix of luxury and responsibility towards the environment.,2.531873,18551
+"Hyatt Regency Chennai, Pune",Amazing experience with a conscious approach towards sustainability.,9.145965,27708
+"ITC Gardenia, Kolkata",The eco-friendly policies of this hotel make the stay even better.,2.174918,33154
+"Hyatt Regency Chennai, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,2.340994,28358
+"Taj Mahal Palace, Goa",A luxurious stay with a strong focus on eco-friendly practices.,4.667047,10091
+"The Oberoi Bangalore, Chennai",A perfect mix of luxury and responsibility towards the environment.,9.917988,13073
+"Taj Lake Palace, Chennai",The eco-friendly policies of this hotel make the stay even better.,5.826657,8857
+"ITC Gardenia, Kolkata",I love how this hotel focuses on renewable energy sources.,2.126178,15017
+"Taj Mahal Palace, Pune",The hotel's commitment to sustainability is commendable.,4.835538,36703
+"JW Marriott Mumbai, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,4.378167,13506
+"Oberoi Udaivilas, Udaipur",A breathtaking location with a strong emphasis on green energy.,1.912579,6262
+"Hyatt Regency Chennai, Chennai",Amazing experience with a conscious approach towards sustainability.,3.411986,26456
+"Radisson Blu Jaipur, Udaipur",I love how this hotel focuses on renewable energy sources.,3.185682,27272
+"Taj Mahal Palace, New Delhi",Great hospitality with responsible tourism initiatives.,3.73605,27416
+"The Leela Goa, Udaipur",The eco-friendly policies of this hotel make the stay even better.,9.831877,30689
+"Radisson Blu Jaipur, Jaipur",Amazing experience with a conscious approach towards sustainability.,7.444083,39703
+"Oberoi Udaivilas, Udaipur",Great hospitality with responsible tourism initiatives.,8.192363,47440
+"The Leela Goa, Hyderabad",The hotel's sustainability initiatives are impressive.,3.179577,34484
+"The Leela Goa, Bangalore",A perfect mix of luxury and responsibility towards the environment.,7.079574,35631
+"Taj Lake Palace, Mumbai",A breathtaking location with a strong emphasis on green energy.,8.020233,44345
+"Hyatt Regency Chennai, Jaipur",Great hospitality with responsible tourism initiatives.,7.275541,21480
+"The Oberoi Bangalore, Chennai",I love how this hotel focuses on renewable energy sources.,7.91592,32598
+"Oberoi Udaivilas, Jaipur",I love how this hotel focuses on renewable energy sources.,5.470614,24550
+"Taj Lake Palace, Jaipur",Great hospitality with responsible tourism initiatives.,1.921082,20925
+"Taj Mahal Palace, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,2.329856,13668
+"Oberoi Udaivilas, Chennai",A perfect mix of luxury and responsibility towards the environment.,3.780319,48529
+"The Oberoi Bangalore, Pune",Great hospitality with responsible tourism initiatives.,1.294695,6731
+"ITC Gardenia, Chennai",Amazing experience with a conscious approach towards sustainability.,4.986457,33497
+"Radisson Blu Jaipur, Goa",I love how this hotel focuses on renewable energy sources.,2.704185,34478
+"Leela Palace, Goa",A luxurious stay with a strong focus on eco-friendly practices.,3.725344,12272
+"The Oberoi Bangalore, Mumbai",A perfect mix of luxury and responsibility towards the environment.,8.75908,20414
+"The Oberoi Bangalore, Bangalore",The hotel's commitment to sustainability is commendable.,7.786463,45948
+"JW Marriott Mumbai, Pune",A breathtaking location with a strong emphasis on green energy.,8.131802,26787
+"JW Marriott Mumbai, Kolkata",A breathtaking location with a strong emphasis on green energy.,2.893986,44191
+"The Oberoi Bangalore, Mumbai",Great hospitality with responsible tourism initiatives.,3.512993,11218
+"ITC Gardenia, Jaipur",Great hospitality with responsible tourism initiatives.,4.74639,5626
+"The Oberoi Bangalore, New Delhi",The eco-friendly policies of this hotel make the stay even better.,6.515024,22917
+"JW Marriott Mumbai, Udaipur",I love how this hotel focuses on renewable energy sources.,7.22296,37278
+"ITC Gardenia, Hyderabad","Excellent sustainable practices, including waste management.",5.81769,49493
+"Taj Mahal Palace, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,9.237839,39767
+"The Oberoi Bangalore, Mumbai",Great hospitality with responsible tourism initiatives.,9.258177,15761
+"Hyatt Regency Chennai, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.236148,47341
+"JW Marriott Mumbai, Mumbai","Excellent sustainable practices, including waste management.",8.738509,32105
+"Leela Palace, Chennai","Excellent sustainable practices, including waste management.",5.826777,5172
+"Oberoi Udaivilas, Goa",I love how this hotel focuses on renewable energy sources.,7.173053,43031
+"Taj Mahal Palace, Chennai",Great hospitality with responsible tourism initiatives.,2.172838,33138
+"The Leela Goa, Chennai","Excellent sustainable practices, including waste management.",8.507498,38386
+"ITC Gardenia, Jaipur",The eco-friendly policies of this hotel make the stay even better.,2.095731,40262
+"Hyatt Regency Chennai, Goa",Amazing experience with a conscious approach towards sustainability.,9.869095,17714
+"Taj Mahal Palace, New Delhi",The eco-friendly policies of this hotel make the stay even better.,4.229781,10775
+"Oberoi Udaivilas, Chennai",The hotel's sustainability initiatives are impressive.,8.338594,42053
+"Leela Palace, Hyderabad","Excellent sustainable practices, including waste management.",1.072945,35184
+"The Oberoi Bangalore, Chennai",A perfect mix of luxury and responsibility towards the environment.,6.240016,27413
+"Taj Lake Palace, Goa",Great hospitality with responsible tourism initiatives.,7.238073,24766
+"Taj Mahal Palace, Mumbai",A breathtaking location with a strong emphasis on green energy.,1.522419,25772
+"The Leela Goa, Chennai",A breathtaking location with a strong emphasis on green energy.,7.692542,43727
+"Hyatt Regency Chennai, Goa",The hotel's sustainability initiatives are impressive.,6.348898,38102
+"Leela Palace, Pune",Great hospitality with responsible tourism initiatives.,9.775741,27612
+"The Oberoi Bangalore, Jaipur",A perfect mix of luxury and responsibility towards the environment.,5.733853,45133
+"Hyatt Regency Chennai, Chennai",The hotel's commitment to sustainability is commendable.,2.220887,15035
+"Radisson Blu Jaipur, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,8.644392,27317
+"ITC Gardenia, Pune",Great hospitality with responsible tourism initiatives.,5.507229,11651
+"The Oberoi Bangalore, Goa",I love how this hotel focuses on renewable energy sources.,4.737819,28054
+"JW Marriott Mumbai, Chennai",A breathtaking location with a strong emphasis on green energy.,7.495682,20959
+"Taj Mahal Palace, Hyderabad",A breathtaking location with a strong emphasis on green energy.,6.32387,38837
+"The Leela Goa, Hyderabad",Amazing experience with a conscious approach towards sustainability.,6.693247,26419
+"Taj Lake Palace, Pune",A breathtaking location with a strong emphasis on green energy.,8.11419,49141
+"JW Marriott Mumbai, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,2.550776,5037
+"Taj Lake Palace, Jaipur",Great hospitality with responsible tourism initiatives.,5.806756,13542
+"The Leela Goa, New Delhi",The hotel's sustainability initiatives are impressive.,1.359245,19839
+"ITC Gardenia, Chennai",A breathtaking location with a strong emphasis on green energy.,5.940146,42550
+"Taj Mahal Palace, Jaipur",A breathtaking location with a strong emphasis on green energy.,5.904468,6630
+"The Oberoi Bangalore, Bangalore",I love how this hotel focuses on renewable energy sources.,9.780383,34094
+"Hyatt Regency Chennai, Pune",The hotel's commitment to sustainability is commendable.,7.252544,34583
+"ITC Gardenia, Jaipur",A breathtaking location with a strong emphasis on green energy.,7.428162,38935
+"Hyatt Regency Chennai, Kolkata",Amazing experience with a conscious approach towards sustainability.,8.556746,38694
+"The Oberoi Bangalore, Kolkata",The eco-friendly policies of this hotel make the stay even better.,2.992336,32828
+"The Oberoi Bangalore, Goa",A luxurious stay with a strong focus on eco-friendly practices.,7.363185,32738
+"Taj Mahal Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,7.529682,43846
+"Radisson Blu Jaipur, New Delhi",Great hospitality with responsible tourism initiatives.,2.794994,33554
+"The Leela Goa, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,9.103643,24628
+"ITC Gardenia, New Delhi",A breathtaking location with a strong emphasis on green energy.,1.143087,15699
+"Leela Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,2.80465,49657
+"Leela Palace, Bangalore",The eco-friendly policies of this hotel make the stay even better.,8.349492,9825
+"Radisson Blu Jaipur, Bangalore",Amazing experience with a conscious approach towards sustainability.,4.562561,25854
+"JW Marriott Mumbai, Goa",The hotel's commitment to sustainability is commendable.,5.777091,23420
+"Oberoi Udaivilas, Mumbai",A breathtaking location with a strong emphasis on green energy.,2.033493,18901
+"Hyatt Regency Chennai, Bangalore",A breathtaking location with a strong emphasis on green energy.,9.858227,22856
+"The Leela Goa, Pune",Amazing experience with a conscious approach towards sustainability.,9.159989,28361
+"The Leela Goa, Bangalore",A perfect mix of luxury and responsibility towards the environment.,7.738972,8108
+"The Oberoi Bangalore, Bangalore",Great hospitality with responsible tourism initiatives.,3.792466,46039
+"ITC Gardenia, Chennai","Excellent sustainable practices, including waste management.",6.244321,36277
+"Hyatt Regency Chennai, Bangalore",A breathtaking location with a strong emphasis on green energy.,1.171504,26238
+"The Oberoi Bangalore, Hyderabad","Excellent sustainable practices, including waste management.",3.030054,19201
+"Leela Palace, Pune",Amazing experience with a conscious approach towards sustainability.,4.985911,24841
+"Oberoi Udaivilas, Goa",I love how this hotel focuses on renewable energy sources.,7.903074,7512
+"JW Marriott Mumbai, Pune",Great hospitality with responsible tourism initiatives.,5.332341,31375
+"ITC Gardenia, Bangalore",Great hospitality with responsible tourism initiatives.,2.361537,26111
+"Leela Palace, Kolkata","Excellent sustainable practices, including waste management.",7.79496,49801
+"Oberoi Udaivilas, Chennai",Great hospitality with responsible tourism initiatives.,8.632541,5561
+"Radisson Blu Jaipur, Hyderabad",The hotel's commitment to sustainability is commendable.,7.768966,42192
+"Leela Palace, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,7.717949,46159
+"Hyatt Regency Chennai, Pune",The hotel's commitment to sustainability is commendable.,3.972596,45991
+"Hyatt Regency Chennai, Pune",Amazing experience with a conscious approach towards sustainability.,2.104417,45579
+"Oberoi Udaivilas, Mumbai",The hotel's commitment to sustainability is commendable.,8.199948,44494
+"Hyatt Regency Chennai, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,4.130684,20807
+"Oberoi Udaivilas, Chennai",I love how this hotel focuses on renewable energy sources.,6.070394,46699
+"Hyatt Regency Chennai, Udaipur",A perfect mix of luxury and responsibility towards the environment.,3.439785,19924
+"The Oberoi Bangalore, Bangalore",Amazing experience with a conscious approach towards sustainability.,2.838247,35735
+"ITC Gardenia, Mumbai",Great hospitality with responsible tourism initiatives.,6.614217,21021
+"The Oberoi Bangalore, Hyderabad","Excellent sustainable practices, including waste management.",8.516813,19390
+"Taj Lake Palace, Hyderabad",A breathtaking location with a strong emphasis on green energy.,8.566221,24870
+"The Oberoi Bangalore, Chennai",A perfect mix of luxury and responsibility towards the environment.,9.497208,25009
+"Hyatt Regency Chennai, Bangalore",A perfect mix of luxury and responsibility towards the environment.,3.623353,7029
+"JW Marriott Mumbai, Chennai",A breathtaking location with a strong emphasis on green energy.,6.501527,29230
+"Hyatt Regency Chennai, New Delhi",A perfect mix of luxury and responsibility towards the environment.,7.867183,40274
+"Taj Mahal Palace, Chennai",I love how this hotel focuses on renewable energy sources.,6.505071,43276
+"Taj Lake Palace, Pune",A perfect mix of luxury and responsibility towards the environment.,1.162357,43323
+"Oberoi Udaivilas, Pune",Amazing experience with a conscious approach towards sustainability.,6.812689,34081
+"Taj Mahal Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,6.254709,40377
+"Oberoi Udaivilas, Kolkata",The hotel's commitment to sustainability is commendable.,9.766739,24547
+"The Leela Goa, Jaipur",I love how this hotel focuses on renewable energy sources.,1.161716,19214
+"Oberoi Udaivilas, Jaipur","Excellent sustainable practices, including waste management.",9.464745,42920
+"JW Marriott Mumbai, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,9.085347,13488
+"The Leela Goa, Jaipur",The hotel's sustainability initiatives are impressive.,3.221482,23098
+"Taj Mahal Palace, Hyderabad",The hotel's sustainability initiatives are impressive.,5.535231,49259
+"Leela Palace, Jaipur",A perfect mix of luxury and responsibility towards the environment.,3.080603,35766
+"ITC Gardenia, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,6.089472,40258
+"Taj Lake Palace, Hyderabad",A breathtaking location with a strong emphasis on green energy.,5.000528,5040
+"Taj Lake Palace, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,1.376822,34205
+"Oberoi Udaivilas, Goa",Amazing experience with a conscious approach towards sustainability.,5.19628,34170
+"Oberoi Udaivilas, Udaipur","Excellent sustainable practices, including waste management.",2.946902,42183
+"Hyatt Regency Chennai, Udaipur",Great hospitality with responsible tourism initiatives.,2.099876,44504
+"The Oberoi Bangalore, Mumbai","Excellent sustainable practices, including waste management.",3.011178,15979
+"Hyatt Regency Chennai, Pune",The hotel's commitment to sustainability is commendable.,9.562066,31316
+"Oberoi Udaivilas, New Delhi",I love how this hotel focuses on renewable energy sources.,1.81341,26235
+"Hyatt Regency Chennai, Chennai",Great hospitality with responsible tourism initiatives.,7.344851,12133
+"Hyatt Regency Chennai, Pune",A perfect mix of luxury and responsibility towards the environment.,4.929634,39386
+"Taj Mahal Palace, Goa",A perfect mix of luxury and responsibility towards the environment.,4.948902,28726
+"ITC Gardenia, Udaipur",A breathtaking location with a strong emphasis on green energy.,2.213905,44181
+"The Oberoi Bangalore, Pune",A luxurious stay with a strong focus on eco-friendly practices.,5.049528,5983
+"Leela Palace, Pune",A perfect mix of luxury and responsibility towards the environment.,5.391797,45730
+"JW Marriott Mumbai, Bangalore","Excellent sustainable practices, including waste management.",3.083215,47132
+"Radisson Blu Jaipur, Bangalore",Amazing experience with a conscious approach towards sustainability.,2.900248,41818
+"Taj Lake Palace, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.987403,42921
+"The Leela Goa, Udaipur",The hotel's commitment to sustainability is commendable.,4.37846,8086
+"Taj Mahal Palace, Mumbai",Amazing experience with a conscious approach towards sustainability.,4.353725,38569
+"Leela Palace, Hyderabad",The hotel's commitment to sustainability is commendable.,7.335728,9973
+"Leela Palace, Goa",Amazing experience with a conscious approach towards sustainability.,9.851303,38357
+"Leela Palace, Mumbai",A breathtaking location with a strong emphasis on green energy.,5.687503,20292
+"Hyatt Regency Chennai, Jaipur",Great hospitality with responsible tourism initiatives.,5.369119,37873
+"Taj Lake Palace, New Delhi",Amazing experience with a conscious approach towards sustainability.,8.97672,8833
+"Leela Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,4.108085,48854
+"Taj Lake Palace, Bangalore","Excellent sustainable practices, including waste management.",6.587407,20926
+"The Leela Goa, Chennai",I love how this hotel focuses on renewable energy sources.,3.446999,44643
+"JW Marriott Mumbai, Mumbai",The eco-friendly policies of this hotel make the stay even better.,7.747532,46501
+"ITC Gardenia, Goa",A perfect mix of luxury and responsibility towards the environment.,7.831994,46828
+"Hyatt Regency Chennai, Bangalore",The hotel's commitment to sustainability is commendable.,9.919086,34956
+"Taj Lake Palace, Pune","Excellent sustainable practices, including waste management.",1.49616,5011
+"Radisson Blu Jaipur, New Delhi","Excellent sustainable practices, including waste management.",3.169789,46130
+"ITC Gardenia, Jaipur",A perfect mix of luxury and responsibility towards the environment.,5.372911,15773
+"JW Marriott Mumbai, New Delhi",A breathtaking location with a strong emphasis on green energy.,5.996351,5578
+"Taj Lake Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,7.651456,18995
+"JW Marriott Mumbai, Chennai",The hotel's sustainability initiatives are impressive.,9.332982,34382
+"Taj Mahal Palace, Kolkata",A breathtaking location with a strong emphasis on green energy.,3.151695,28355
+"Taj Mahal Palace, Goa",A luxurious stay with a strong focus on eco-friendly practices.,1.75586,20546
+"Taj Lake Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,1.87839,27662
+"Radisson Blu Jaipur, Bangalore",Great hospitality with responsible tourism initiatives.,7.391693,21951
+"Hyatt Regency Chennai, Udaipur",I love how this hotel focuses on renewable energy sources.,9.408966,24228
+"The Oberoi Bangalore, Udaipur",The eco-friendly policies of this hotel make the stay even better.,2.760321,26912
+"Taj Mahal Palace, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,2.844669,35429
+"The Leela Goa, New Delhi",A breathtaking location with a strong emphasis on green energy.,9.699787,23737
+"The Oberoi Bangalore, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,5.522248,45920
+"The Oberoi Bangalore, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,8.275812,43901
+"The Leela Goa, Hyderabad",Great hospitality with responsible tourism initiatives.,1.003751,23261
+"The Oberoi Bangalore, Kolkata",The hotel's commitment to sustainability is commendable.,8.417336,13207
+"The Oberoi Bangalore, Mumbai",The hotel's commitment to sustainability is commendable.,6.433943,44016
+"ITC Gardenia, New Delhi",The hotel's sustainability initiatives are impressive.,5.893893,41926
+"Taj Mahal Palace, New Delhi",A perfect mix of luxury and responsibility towards the environment.,4.584001,35878
+"Hyatt Regency Chennai, Jaipur","Excellent sustainable practices, including waste management.",4.98854,48623
+"Taj Mahal Palace, New Delhi",The eco-friendly policies of this hotel make the stay even better.,4.228136,41034
+"Taj Lake Palace, Chennai",I love how this hotel focuses on renewable energy sources.,6.277279,46421
+"Hyatt Regency Chennai, Kolkata",The eco-friendly policies of this hotel make the stay even better.,9.395219,16150
+"Radisson Blu Jaipur, Goa",Amazing experience with a conscious approach towards sustainability.,1.415879,8576
+"Leela Palace, Mumbai",I love how this hotel focuses on renewable energy sources.,6.351662,19210
+"ITC Gardenia, Bangalore","Excellent sustainable practices, including waste management.",7.124704,26887
+"JW Marriott Mumbai, New Delhi",A perfect mix of luxury and responsibility towards the environment.,7.889982,45713
+"ITC Gardenia, Kolkata",I love how this hotel focuses on renewable energy sources.,5.288329,24599
+"Radisson Blu Jaipur, Udaipur",The hotel's commitment to sustainability is commendable.,4.321103,18114
+"Hyatt Regency Chennai, Pune","Excellent sustainable practices, including waste management.",6.94216,45532
+"Radisson Blu Jaipur, Bangalore",A perfect mix of luxury and responsibility towards the environment.,3.51085,7271
+"Oberoi Udaivilas, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,1.904117,45668
+"Oberoi Udaivilas, Goa",The hotel's sustainability initiatives are impressive.,9.290888,10483
+"JW Marriott Mumbai, Jaipur",I love how this hotel focuses on renewable energy sources.,8.606436,40723
+"Radisson Blu Jaipur, Kolkata",Great hospitality with responsible tourism initiatives.,5.266982,28507
+"Taj Lake Palace, Jaipur",The hotel's commitment to sustainability is commendable.,6.212842,21996
+"The Oberoi Bangalore, Mumbai",The eco-friendly policies of this hotel make the stay even better.,2.089295,42587
+"Hyatt Regency Chennai, New Delhi",The hotel's sustainability initiatives are impressive.,8.205171,21140
+"Taj Lake Palace, Bangalore",Great hospitality with responsible tourism initiatives.,9.309168,38876
+"ITC Gardenia, Pune",Amazing experience with a conscious approach towards sustainability.,9.479298,34986
+"The Leela Goa, Pune",Great hospitality with responsible tourism initiatives.,1.097526,18925
+"JW Marriott Mumbai, Mumbai",Great hospitality with responsible tourism initiatives.,8.874755,19541
+"ITC Gardenia, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,9.570521,22798
+"Leela Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,9.115453,25624
+"Oberoi Udaivilas, Kolkata",The hotel's commitment to sustainability is commendable.,1.667782,17119
+"Hyatt Regency Chennai, Jaipur","Excellent sustainable practices, including waste management.",5.597047,40713
+"Leela Palace, New Delhi","Excellent sustainable practices, including waste management.",6.413822,28822
+"The Leela Goa, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,8.788674,36838
+"ITC Gardenia, Goa",The eco-friendly policies of this hotel make the stay even better.,9.150962,44796
+"Leela Palace, Kolkata",A perfect mix of luxury and responsibility towards the environment.,3.845869,19821
+"The Leela Goa, Pune",A perfect mix of luxury and responsibility towards the environment.,2.313692,38261
+"Taj Lake Palace, Goa",I love how this hotel focuses on renewable energy sources.,4.777689,28932
+"Taj Lake Palace, Goa",Great hospitality with responsible tourism initiatives.,1.085445,26934
+"Taj Lake Palace, Udaipur",The hotel's sustainability initiatives are impressive.,9.294162,21620
+"Taj Mahal Palace, Pune",Amazing experience with a conscious approach towards sustainability.,7.251926,42814
+"Oberoi Udaivilas, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,7.475029,39080
+"JW Marriott Mumbai, New Delhi",I love how this hotel focuses on renewable energy sources.,2.066032,7478
+"Taj Lake Palace, New Delhi",Great hospitality with responsible tourism initiatives.,9.89298,47017
+"ITC Gardenia, New Delhi",Great hospitality with responsible tourism initiatives.,9.349825,18313
+"The Leela Goa, Goa",A breathtaking location with a strong emphasis on green energy.,3.603586,28284
+"The Oberoi Bangalore, Goa",The hotel's commitment to sustainability is commendable.,7.135411,16550
+"ITC Gardenia, Jaipur",Great hospitality with responsible tourism initiatives.,2.62054,34488
+"Taj Lake Palace, Goa","Excellent sustainable practices, including waste management.",3.181527,46459
+"The Oberoi Bangalore, Udaipur",A breathtaking location with a strong emphasis on green energy.,8.277193,48157
+"Radisson Blu Jaipur, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,5.946383,11808
+"The Oberoi Bangalore, Kolkata",The eco-friendly policies of this hotel make the stay even better.,9.919108,28262
+"Taj Mahal Palace, Pune",A luxurious stay with a strong focus on eco-friendly practices.,6.056253,15307
+"The Leela Goa, Bangalore",A perfect mix of luxury and responsibility towards the environment.,1.389195,46000
+"Hyatt Regency Chennai, Mumbai",The hotel's commitment to sustainability is commendable.,7.712558,14948
+"Leela Palace, Pune",A breathtaking location with a strong emphasis on green energy.,8.473769,14112
+"JW Marriott Mumbai, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,3.570103,31802
+"ITC Gardenia, Pune",A luxurious stay with a strong focus on eco-friendly practices.,9.339649,22609
+"Hyatt Regency Chennai, Udaipur",Amazing experience with a conscious approach towards sustainability.,4.244956,30538
+"Radisson Blu Jaipur, Mumbai",Great hospitality with responsible tourism initiatives.,4.566734,27078
+"Taj Lake Palace, Goa",Great hospitality with responsible tourism initiatives.,4.490091,43758
+"ITC Gardenia, Pune",A breathtaking location with a strong emphasis on green energy.,3.519313,36895
+"Leela Palace, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,3.67305,42029
+"JW Marriott Mumbai, Chennai",A perfect mix of luxury and responsibility towards the environment.,3.38637,21011
+"ITC Gardenia, Mumbai",Amazing experience with a conscious approach towards sustainability.,1.653641,27230
+"Taj Lake Palace, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,9.375402,10750
+"The Oberoi Bangalore, Bangalore",The hotel's commitment to sustainability is commendable.,1.644672,32931
+"ITC Gardenia, Kolkata","Excellent sustainable practices, including waste management.",3.39296,7384
+"The Oberoi Bangalore, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,5.873373,40275
+"Leela Palace, Jaipur",The hotel's sustainability initiatives are impressive.,1.180369,26855
+"Oberoi Udaivilas, Pune","Excellent sustainable practices, including waste management.",1.952424,40357
+"The Leela Goa, New Delhi",A perfect mix of luxury and responsibility towards the environment.,8.47535,36861
+"Radisson Blu Jaipur, Jaipur",A breathtaking location with a strong emphasis on green energy.,5.713023,30835
+"Radisson Blu Jaipur, Chennai",The eco-friendly policies of this hotel make the stay even better.,1.995569,35661
+"Taj Lake Palace, Jaipur",The hotel's sustainability initiatives are impressive.,4.648177,33610
+"JW Marriott Mumbai, Udaipur",Amazing experience with a conscious approach towards sustainability.,9.640799,15755
+"Oberoi Udaivilas, Mumbai",The eco-friendly policies of this hotel make the stay even better.,9.233061,31609
+"JW Marriott Mumbai, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,3.779509,9006
+"Hyatt Regency Chennai, Hyderabad",Amazing experience with a conscious approach towards sustainability.,6.399602,48321
+"The Leela Goa, Jaipur",A perfect mix of luxury and responsibility towards the environment.,3.777923,44799
+"Leela Palace, Chennai",The eco-friendly policies of this hotel make the stay even better.,1.700536,14845
+"Taj Lake Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,7.582182,46330
+"The Oberoi Bangalore, Pune",The hotel's commitment to sustainability is commendable.,6.43161,8444
+"Taj Lake Palace, Pune",The hotel's sustainability initiatives are impressive.,6.066782,22145
+"ITC Gardenia, Mumbai",The hotel's sustainability initiatives are impressive.,4.597456,34386
+"Radisson Blu Jaipur, Udaipur",The hotel's sustainability initiatives are impressive.,8.084158,30210
+"Radisson Blu Jaipur, Kolkata",The hotel's sustainability initiatives are impressive.,2.754424,47427
+"The Oberoi Bangalore, Goa",The hotel's commitment to sustainability is commendable.,8.862118,9593
+"The Leela Goa, Udaipur",Amazing experience with a conscious approach towards sustainability.,7.881074,16221
+"The Leela Goa, Goa",A luxurious stay with a strong focus on eco-friendly practices.,4.07079,22267
+"Radisson Blu Jaipur, Jaipur",I love how this hotel focuses on renewable energy sources.,1.809975,42484
+"Taj Lake Palace, Goa","Excellent sustainable practices, including waste management.",5.485617,12383
+"The Leela Goa, Goa",A luxurious stay with a strong focus on eco-friendly practices.,7.657651,28044
+"The Leela Goa, Pune",A perfect mix of luxury and responsibility towards the environment.,1.804478,49549
+"Radisson Blu Jaipur, Mumbai",Great hospitality with responsible tourism initiatives.,4.644469,16478
+"Leela Palace, New Delhi",The hotel's commitment to sustainability is commendable.,4.023653,16072
+"Hyatt Regency Chennai, Udaipur",The eco-friendly policies of this hotel make the stay even better.,5.163047,36538
+"ITC Gardenia, Bangalore",A breathtaking location with a strong emphasis on green energy.,5.441629,5417
+"Hyatt Regency Chennai, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,2.739853,34703
+"Taj Mahal Palace, New Delhi","Excellent sustainable practices, including waste management.",8.102035,42255
+"The Oberoi Bangalore, Chennai",A breathtaking location with a strong emphasis on green energy.,7.833781,27319
+"Leela Palace, Mumbai",Great hospitality with responsible tourism initiatives.,4.921392,23350
+"Taj Mahal Palace, Kolkata",A breathtaking location with a strong emphasis on green energy.,6.197203,47243
+"Taj Mahal Palace, Bangalore",I love how this hotel focuses on renewable energy sources.,7.396636,29078
+"Oberoi Udaivilas, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,8.157807,47001
+"Taj Mahal Palace, Udaipur",The hotel's sustainability initiatives are impressive.,9.001971,21505
+"Hyatt Regency Chennai, Mumbai","Excellent sustainable practices, including waste management.",7.834869,5041
+"Taj Lake Palace, Chennai",The eco-friendly policies of this hotel make the stay even better.,7.183074,24687
+"Oberoi Udaivilas, Goa",The hotel's sustainability initiatives are impressive.,9.798873,41643
+"Radisson Blu Jaipur, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,7.536283,14151
+"Taj Mahal Palace, Bangalore",A perfect mix of luxury and responsibility towards the environment.,1.345544,30873
+"ITC Gardenia, Hyderabad",The hotel's commitment to sustainability is commendable.,4.472194,39575
+"ITC Gardenia, Jaipur",A perfect mix of luxury and responsibility towards the environment.,3.062492,22789
+"ITC Gardenia, Mumbai",Great hospitality with responsible tourism initiatives.,2.493851,46472
+"ITC Gardenia, Goa",A luxurious stay with a strong focus on eco-friendly practices.,3.125054,22239
+"Hyatt Regency Chennai, Mumbai",Great hospitality with responsible tourism initiatives.,8.296895,10376
+"Leela Palace, Chennai",A perfect mix of luxury and responsibility towards the environment.,7.816569,5559
+"JW Marriott Mumbai, Goa",The eco-friendly policies of this hotel make the stay even better.,9.535013,39866
+"The Leela Goa, Jaipur","Excellent sustainable practices, including waste management.",2.584353,37498
+"Radisson Blu Jaipur, Udaipur",The hotel's sustainability initiatives are impressive.,4.922372,33862
+"Radisson Blu Jaipur, Bangalore",I love how this hotel focuses on renewable energy sources.,5.313884,35103
+"Taj Lake Palace, Kolkata",The hotel's commitment to sustainability is commendable.,2.906692,45951
+"Hyatt Regency Chennai, Jaipur",A perfect mix of luxury and responsibility towards the environment.,6.108569,27336
+"ITC Gardenia, Pune",A perfect mix of luxury and responsibility towards the environment.,9.242069,41366
+"Oberoi Udaivilas, Pune",A luxurious stay with a strong focus on eco-friendly practices.,7.351651,36106
+"The Oberoi Bangalore, Goa",A luxurious stay with a strong focus on eco-friendly practices.,5.676136,11335
+"Taj Mahal Palace, Mumbai","Excellent sustainable practices, including waste management.",8.825328,47804
+"ITC Gardenia, Udaipur",Amazing experience with a conscious approach towards sustainability.,9.080561,46604
+"Radisson Blu Jaipur, Chennai",Great hospitality with responsible tourism initiatives.,1.875965,36674
+"The Oberoi Bangalore, Hyderabad",Great hospitality with responsible tourism initiatives.,2.923472,24121
+"ITC Gardenia, Goa","Excellent sustainable practices, including waste management.",1.16455,31147
+"Oberoi Udaivilas, Jaipur",The hotel's commitment to sustainability is commendable.,6.456583,29453
+"Hyatt Regency Chennai, Udaipur",The eco-friendly policies of this hotel make the stay even better.,3.210497,9054
+"The Leela Goa, New Delhi",I love how this hotel focuses on renewable energy sources.,1.31526,38396
+"JW Marriott Mumbai, Kolkata",A perfect mix of luxury and responsibility towards the environment.,8.914696,46030
+"Taj Mahal Palace, Mumbai",A breathtaking location with a strong emphasis on green energy.,3.491756,38092
+"The Leela Goa, Hyderabad",The hotel's sustainability initiatives are impressive.,4.452335,6052
+"Leela Palace, Bangalore",The eco-friendly policies of this hotel make the stay even better.,6.444004,45916
+"JW Marriott Mumbai, Hyderabad","Excellent sustainable practices, including waste management.",9.743195,36337
+"Hyatt Regency Chennai, Mumbai",The hotel's commitment to sustainability is commendable.,5.166169,33392
+"ITC Gardenia, Udaipur",A breathtaking location with a strong emphasis on green energy.,7.146606,8678
+"Oberoi Udaivilas, Goa",The eco-friendly policies of this hotel make the stay even better.,4.32343,6119
+"Taj Mahal Palace, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,7.089355,12236
+"Leela Palace, Chennai",The eco-friendly policies of this hotel make the stay even better.,1.131979,8169
+"Leela Palace, Chennai",The eco-friendly policies of this hotel make the stay even better.,9.642803,24555
+"ITC Gardenia, Bangalore",The hotel's sustainability initiatives are impressive.,3.725696,11952
+"Oberoi Udaivilas, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,3.633741,22149
+"Oberoi Udaivilas, Goa",Great hospitality with responsible tourism initiatives.,5.602115,44799
+"ITC Gardenia, Kolkata",The hotel's commitment to sustainability is commendable.,6.645105,47632
+"ITC Gardenia, Bangalore","Excellent sustainable practices, including waste management.",6.344579,44957
+"Taj Mahal Palace, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,5.148998,49636
+"Radisson Blu Jaipur, Chennai",Amazing experience with a conscious approach towards sustainability.,2.518851,5017
+"The Oberoi Bangalore, Goa",Amazing experience with a conscious approach towards sustainability.,3.056506,37426
+"Radisson Blu Jaipur, Jaipur","Excellent sustainable practices, including waste management.",5.382401,33530
+"Hyatt Regency Chennai, Jaipur",A breathtaking location with a strong emphasis on green energy.,3.171295,46425
+"Radisson Blu Jaipur, New Delhi",Amazing experience with a conscious approach towards sustainability.,6.646488,41995
+"The Oberoi Bangalore, Bangalore","Excellent sustainable practices, including waste management.",1.068917,23964
+"JW Marriott Mumbai, Chennai",A breathtaking location with a strong emphasis on green energy.,8.811637,5022
+"Radisson Blu Jaipur, Chennai",The hotel's sustainability initiatives are impressive.,5.626943,16531
+"Leela Palace, Hyderabad",The hotel's commitment to sustainability is commendable.,4.471385,21856
+"Taj Mahal Palace, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,1.952315,34309
+"Taj Mahal Palace, Goa",A perfect mix of luxury and responsibility towards the environment.,2.711376,40144
+"The Leela Goa, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,8.117166,27311
+"JW Marriott Mumbai, Jaipur",Great hospitality with responsible tourism initiatives.,7.481467,46081
+"Radisson Blu Jaipur, Pune",I love how this hotel focuses on renewable energy sources.,7.944498,43692
+"The Leela Goa, Udaipur",The eco-friendly policies of this hotel make the stay even better.,9.03481,18331
+"Radisson Blu Jaipur, Kolkata",The hotel's sustainability initiatives are impressive.,4.304785,45040
+"Radisson Blu Jaipur, Mumbai",The hotel's commitment to sustainability is commendable.,2.459821,17805
+"Leela Palace, Pune",A perfect mix of luxury and responsibility towards the environment.,2.440896,6726
+"Oberoi Udaivilas, Bangalore",The hotel's commitment to sustainability is commendable.,4.891661,6852
+"The Oberoi Bangalore, Goa",The eco-friendly policies of this hotel make the stay even better.,8.358484,48826
+"The Oberoi Bangalore, Chennai",Great hospitality with responsible tourism initiatives.,7.325649,40274
+"Taj Lake Palace, Jaipur",The hotel's sustainability initiatives are impressive.,1.962223,41644
+"Hyatt Regency Chennai, New Delhi",I love how this hotel focuses on renewable energy sources.,2.990699,9623
+"The Oberoi Bangalore, Udaipur",A perfect mix of luxury and responsibility towards the environment.,7.369491,49962
+"Taj Mahal Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,1.992613,32521
+"The Leela Goa, New Delhi",The eco-friendly policies of this hotel make the stay even better.,6.194095,28003
+"JW Marriott Mumbai, Goa",I love how this hotel focuses on renewable energy sources.,2.861617,25079
+"Taj Mahal Palace, Hyderabad",The hotel's sustainability initiatives are impressive.,5.49741,23653
+"Oberoi Udaivilas, Jaipur",A breathtaking location with a strong emphasis on green energy.,1.827866,24040
+"Taj Lake Palace, Jaipur",The eco-friendly policies of this hotel make the stay even better.,5.763581,18302
+"JW Marriott Mumbai, Bangalore",The hotel's commitment to sustainability is commendable.,1.575052,46300
+"Taj Mahal Palace, Pune",Great hospitality with responsible tourism initiatives.,4.987955,24908
+"Hyatt Regency Chennai, Udaipur",A breathtaking location with a strong emphasis on green energy.,7.163476,26259
+"ITC Gardenia, Udaipur",The hotel's commitment to sustainability is commendable.,9.715335,29371
+"ITC Gardenia, New Delhi",Amazing experience with a conscious approach towards sustainability.,3.614698,38892
+"Leela Palace, Bangalore",I love how this hotel focuses on renewable energy sources.,4.23849,28282
+"Hyatt Regency Chennai, Mumbai",Great hospitality with responsible tourism initiatives.,7.956006,24562
+"The Leela Goa, Goa",A luxurious stay with a strong focus on eco-friendly practices.,7.614142,6834
+"Leela Palace, Pune",A luxurious stay with a strong focus on eco-friendly practices.,7.104938,40710
+"Hyatt Regency Chennai, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,3.244549,35894
+"Radisson Blu Jaipur, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,5.369334,29224
+"ITC Gardenia, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,3.183841,29844
+"Taj Lake Palace, Bangalore",The hotel's commitment to sustainability is commendable.,5.251946,31343
+"Leela Palace, Mumbai",Great hospitality with responsible tourism initiatives.,9.255265,41792
+"The Oberoi Bangalore, Goa",Amazing experience with a conscious approach towards sustainability.,7.225277,5035
+"Taj Mahal Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,8.008094,47078
+"ITC Gardenia, New Delhi","Excellent sustainable practices, including waste management.",8.274317,16107
+"The Oberoi Bangalore, Mumbai",Amazing experience with a conscious approach towards sustainability.,9.805021,32209
+"ITC Gardenia, Hyderabad",A breathtaking location with a strong emphasis on green energy.,3.933486,22945
+"Oberoi Udaivilas, Chennai",The hotel's commitment to sustainability is commendable.,1.306368,28171
+"Taj Mahal Palace, Pune",I love how this hotel focuses on renewable energy sources.,3.567322,49872
+"The Oberoi Bangalore, Chennai",The hotel's sustainability initiatives are impressive.,4.884801,10680
+"Taj Lake Palace, Hyderabad","Excellent sustainable practices, including waste management.",4.20708,27340
+"Leela Palace, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,7.970681,44980
+"Radisson Blu Jaipur, New Delhi",Amazing experience with a conscious approach towards sustainability.,9.583701,5230
+"Taj Mahal Palace, Chennai",The hotel's sustainability initiatives are impressive.,5.40026,6047
+"JW Marriott Mumbai, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,7.559116,25077
+"Oberoi Udaivilas, Hyderabad","Excellent sustainable practices, including waste management.",7.850089,48335
+"Leela Palace, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,8.694659,12641
+"Leela Palace, New Delhi",A breathtaking location with a strong emphasis on green energy.,5.474826,15359
+"Leela Palace, Udaipur","Excellent sustainable practices, including waste management.",2.770006,18764
+"Leela Palace, Bangalore","Excellent sustainable practices, including waste management.",1.253174,43622
+"Taj Lake Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,4.18607,13883
+"Leela Palace, Mumbai",The hotel's commitment to sustainability is commendable.,8.261115,9352
+"ITC Gardenia, Kolkata",The hotel's commitment to sustainability is commendable.,3.69567,47974
+"The Leela Goa, Pune",Great hospitality with responsible tourism initiatives.,9.449385,30741
+"Leela Palace, Kolkata",A breathtaking location with a strong emphasis on green energy.,2.308425,22401
+"Oberoi Udaivilas, New Delhi",A perfect mix of luxury and responsibility towards the environment.,7.990256,38719
+"Leela Palace, Jaipur",The eco-friendly policies of this hotel make the stay even better.,4.588543,16963
+"Taj Mahal Palace, Jaipur","Excellent sustainable practices, including waste management.",8.859234,28776
+"Hyatt Regency Chennai, Bangalore",I love how this hotel focuses on renewable energy sources.,6.425362,25797
+"The Oberoi Bangalore, Udaipur",I love how this hotel focuses on renewable energy sources.,4.5099,7258
+"Hyatt Regency Chennai, Udaipur",Great hospitality with responsible tourism initiatives.,2.531696,47107
+"Radisson Blu Jaipur, Goa",The hotel's commitment to sustainability is commendable.,7.444748,47524
+"JW Marriott Mumbai, Jaipur",A perfect mix of luxury and responsibility towards the environment.,1.031743,18799
+"Taj Mahal Palace, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,1.049878,43161
+"The Oberoi Bangalore, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,3.502642,17501
+"The Oberoi Bangalore, Goa",Great hospitality with responsible tourism initiatives.,7.784114,34893
+"Taj Lake Palace, Mumbai",The hotel's commitment to sustainability is commendable.,9.221245,35736
+"Oberoi Udaivilas, Goa",A breathtaking location with a strong emphasis on green energy.,9.654259,7293
+"Oberoi Udaivilas, Bangalore",The eco-friendly policies of this hotel make the stay even better.,6.760825,20349
+"Radisson Blu Jaipur, Kolkata",A perfect mix of luxury and responsibility towards the environment.,2.650383,21992
+"Taj Mahal Palace, Udaipur",Amazing experience with a conscious approach towards sustainability.,2.503174,33479
+"JW Marriott Mumbai, Goa",A perfect mix of luxury and responsibility towards the environment.,5.874344,42239
+"Radisson Blu Jaipur, Udaipur",Great hospitality with responsible tourism initiatives.,5.306713,24565
+"ITC Gardenia, Chennai",A perfect mix of luxury and responsibility towards the environment.,3.037719,46308
+"Radisson Blu Jaipur, New Delhi",Amazing experience with a conscious approach towards sustainability.,9.378496,42806
+"The Leela Goa, Kolkata",A breathtaking location with a strong emphasis on green energy.,8.695718,14152
+"Oberoi Udaivilas, Chennai","Excellent sustainable practices, including waste management.",9.615669,38691
+"Taj Lake Palace, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,8.239034,18149
+"JW Marriott Mumbai, Udaipur",Amazing experience with a conscious approach towards sustainability.,4.152363,37407
+"ITC Gardenia, Pune",A breathtaking location with a strong emphasis on green energy.,7.768828,47422
+"The Oberoi Bangalore, Goa",A luxurious stay with a strong focus on eco-friendly practices.,4.096477,49193
+"The Leela Goa, Bangalore",The hotel's sustainability initiatives are impressive.,5.937063,21835
+"The Leela Goa, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,8.725,46196
+"Hyatt Regency Chennai, Pune",The hotel's commitment to sustainability is commendable.,2.181462,38436
+"Taj Mahal Palace, Hyderabad",The hotel's commitment to sustainability is commendable.,8.914185,7612
+"Taj Mahal Palace, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,5.701356,20575
+"Hyatt Regency Chennai, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,9.106178,35286
+"Radisson Blu Jaipur, Jaipur",A perfect mix of luxury and responsibility towards the environment.,9.658408,39449
+"Leela Palace, Goa",I love how this hotel focuses on renewable energy sources.,6.477303,31411
+"Oberoi Udaivilas, Goa",Amazing experience with a conscious approach towards sustainability.,2.716396,39208
+"ITC Gardenia, Chennai",The eco-friendly policies of this hotel make the stay even better.,6.012923,44687
+"JW Marriott Mumbai, Chennai","Excellent sustainable practices, including waste management.",2.671656,49556
+"Hyatt Regency Chennai, Pune",The hotel's sustainability initiatives are impressive.,1.314629,48558
+"JW Marriott Mumbai, Udaipur","Excellent sustainable practices, including waste management.",2.533753,44910
+"Leela Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,7.871549,6304
+"The Leela Goa, Goa",A luxurious stay with a strong focus on eco-friendly practices.,4.973569,7927
+"Radisson Blu Jaipur, Kolkata",A breathtaking location with a strong emphasis on green energy.,9.189576,32441
+"JW Marriott Mumbai, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,9.892329,40490
+"Taj Lake Palace, Chennai",The hotel's sustainability initiatives are impressive.,6.025742,30586
+"The Oberoi Bangalore, New Delhi","Excellent sustainable practices, including waste management.",6.304753,35208
+"ITC Gardenia, Kolkata",The eco-friendly policies of this hotel make the stay even better.,7.835969,11918
+"Taj Mahal Palace, Bangalore",I love how this hotel focuses on renewable energy sources.,5.758803,15677
+"Taj Mahal Palace, Udaipur",A breathtaking location with a strong emphasis on green energy.,9.71864,25336
+"The Oberoi Bangalore, Pune","Excellent sustainable practices, including waste management.",2.086113,24682
+"Taj Lake Palace, Jaipur","Excellent sustainable practices, including waste management.",7.269904,24939
+"The Leela Goa, Goa",A perfect mix of luxury and responsibility towards the environment.,6.478779,11790
+"ITC Gardenia, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,8.401804,13025
+"Oberoi Udaivilas, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.932907,10919
+"The Oberoi Bangalore, Udaipur",I love how this hotel focuses on renewable energy sources.,5.285592,13287
+"Leela Palace, Kolkata",A perfect mix of luxury and responsibility towards the environment.,4.506838,23939
+"Taj Lake Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,7.104459,19696
+"JW Marriott Mumbai, Jaipur",The hotel's sustainability initiatives are impressive.,3.465656,21304
+"Oberoi Udaivilas, Jaipur",The hotel's commitment to sustainability is commendable.,4.770781,37034
+"Hyatt Regency Chennai, Goa",Amazing experience with a conscious approach towards sustainability.,8.783227,33731
+"ITC Gardenia, Hyderabad",I love how this hotel focuses on renewable energy sources.,6.961357,11176
+"Radisson Blu Jaipur, Goa",The eco-friendly policies of this hotel make the stay even better.,7.577395,20404
+"Hyatt Regency Chennai, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,8.843446,5487
+"Radisson Blu Jaipur, Pune",Great hospitality with responsible tourism initiatives.,2.067135,6874
+"The Leela Goa, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,4.75379,25997
+"Radisson Blu Jaipur, Chennai",The hotel's commitment to sustainability is commendable.,2.583276,30676
+"Taj Lake Palace, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,7.845213,7623
+"JW Marriott Mumbai, Jaipur",Amazing experience with a conscious approach towards sustainability.,7.371144,38232
+"Leela Palace, Mumbai","Excellent sustainable practices, including waste management.",2.544136,30683
+"Taj Lake Palace, Bangalore",Amazing experience with a conscious approach towards sustainability.,5.559151,44790
+"Taj Lake Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,1.549889,11542
+"Leela Palace, Pune",The hotel's commitment to sustainability is commendable.,2.617836,8877
+"Taj Mahal Palace, Mumbai",A breathtaking location with a strong emphasis on green energy.,4.349356,42884
+"The Leela Goa, Udaipur","Excellent sustainable practices, including waste management.",8.750048,46482
+"Leela Palace, Chennai",A breathtaking location with a strong emphasis on green energy.,4.595018,42181
+"JW Marriott Mumbai, Goa","Excellent sustainable practices, including waste management.",3.075646,11888
+"JW Marriott Mumbai, Udaipur",A breathtaking location with a strong emphasis on green energy.,6.304902,33153
+"Leela Palace, Udaipur",Great hospitality with responsible tourism initiatives.,7.842519,36092
+"JW Marriott Mumbai, Pune",The hotel's sustainability initiatives are impressive.,1.094552,27206
+"Taj Mahal Palace, Mumbai",Amazing experience with a conscious approach towards sustainability.,4.126486,20912
+"Taj Mahal Palace, Mumbai",A perfect mix of luxury and responsibility towards the environment.,3.436423,5768
+"Taj Lake Palace, Chennai",Great hospitality with responsible tourism initiatives.,7.697435,8855
+"The Oberoi Bangalore, Pune",Amazing experience with a conscious approach towards sustainability.,5.556056,10767
+"JW Marriott Mumbai, Pune",Great hospitality with responsible tourism initiatives.,2.317708,43333
+"JW Marriott Mumbai, Mumbai","Excellent sustainable practices, including waste management.",2.921745,11800
+"Radisson Blu Jaipur, Hyderabad",Great hospitality with responsible tourism initiatives.,9.632597,22815
+"Hyatt Regency Chennai, Udaipur",A perfect mix of luxury and responsibility towards the environment.,7.412483,15267
+"Oberoi Udaivilas, Kolkata",I love how this hotel focuses on renewable energy sources.,4.446119,43181
+"Taj Mahal Palace, Goa",Great hospitality with responsible tourism initiatives.,8.559485,31859
+"ITC Gardenia, Kolkata",I love how this hotel focuses on renewable energy sources.,1.323469,16376
+"JW Marriott Mumbai, Bangalore",A perfect mix of luxury and responsibility towards the environment.,5.433511,12397
+"Taj Lake Palace, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,1.244549,30607
+"ITC Gardenia, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,6.28443,42898
+"The Leela Goa, New Delhi",A perfect mix of luxury and responsibility towards the environment.,6.350972,30184
+"The Leela Goa, Mumbai",Amazing experience with a conscious approach towards sustainability.,4.322261,21139
+"The Leela Goa, Kolkata",The hotel's sustainability initiatives are impressive.,4.214089,24354
+"Leela Palace, Jaipur",The hotel's commitment to sustainability is commendable.,9.930375,45598
+"The Leela Goa, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,9.018068,45023
+"Hyatt Regency Chennai, Kolkata",The eco-friendly policies of this hotel make the stay even better.,7.779669,14028
+"Taj Mahal Palace, Chennai",The hotel's sustainability initiatives are impressive.,4.636285,20484
+"Oberoi Udaivilas, Mumbai",The hotel's sustainability initiatives are impressive.,2.332198,19287
+"JW Marriott Mumbai, Hyderabad","Excellent sustainable practices, including waste management.",4.795984,29484
+"Leela Palace, Hyderabad","Excellent sustainable practices, including waste management.",1.34683,24727
+"Taj Lake Palace, Pune","Excellent sustainable practices, including waste management.",2.497307,45550
+"The Oberoi Bangalore, Hyderabad",The hotel's commitment to sustainability is commendable.,9.607009,16656
+"Taj Mahal Palace, Chennai","Excellent sustainable practices, including waste management.",9.472797,10391
+"Oberoi Udaivilas, Udaipur",A perfect mix of luxury and responsibility towards the environment.,3.898042,43413
+"Taj Mahal Palace, Udaipur",The eco-friendly policies of this hotel make the stay even better.,4.54259,23277
+"Oberoi Udaivilas, Pune",Great hospitality with responsible tourism initiatives.,1.325116,33453
+"The Oberoi Bangalore, Kolkata",Great hospitality with responsible tourism initiatives.,3.57426,16515
+"Radisson Blu Jaipur, Jaipur",A perfect mix of luxury and responsibility towards the environment.,5.527641,15805
+"Hyatt Regency Chennai, Goa",The hotel's commitment to sustainability is commendable.,3.330325,39011
+"Taj Lake Palace, Udaipur",The hotel's sustainability initiatives are impressive.,7.436939,31955
+"ITC Gardenia, Kolkata",A breathtaking location with a strong emphasis on green energy.,8.542152,18256
+"Leela Palace, Goa",A perfect mix of luxury and responsibility towards the environment.,8.636087,22514
+"The Oberoi Bangalore, New Delhi",The hotel's sustainability initiatives are impressive.,9.574131,48432
+"The Leela Goa, Pune",A perfect mix of luxury and responsibility towards the environment.,8.138391,6836
+"Leela Palace, Goa",A breathtaking location with a strong emphasis on green energy.,5.817464,14343
+"Leela Palace, Udaipur",The eco-friendly policies of this hotel make the stay even better.,7.01501,33497
+"Leela Palace, Bangalore","Excellent sustainable practices, including waste management.",2.69775,36837
+"Oberoi Udaivilas, New Delhi",Amazing experience with a conscious approach towards sustainability.,6.48512,48576
+"Taj Lake Palace, Mumbai",Amazing experience with a conscious approach towards sustainability.,3.180001,15511
+"The Leela Goa, Mumbai",Amazing experience with a conscious approach towards sustainability.,5.863502,24127
+"Taj Mahal Palace, Pune",A luxurious stay with a strong focus on eco-friendly practices.,9.025223,21827
+"The Oberoi Bangalore, Bangalore",A perfect mix of luxury and responsibility towards the environment.,2.773918,31471
+"The Oberoi Bangalore, Mumbai",The eco-friendly policies of this hotel make the stay even better.,2.025648,38354
+"The Leela Goa, Pune",The eco-friendly policies of this hotel make the stay even better.,2.023748,37907
+"Taj Mahal Palace, Udaipur",I love how this hotel focuses on renewable energy sources.,6.347375,29641
+"Taj Lake Palace, Hyderabad","Excellent sustainable practices, including waste management.",1.912915,43887
+"Taj Mahal Palace, Jaipur",The eco-friendly policies of this hotel make the stay even better.,9.540092,17837
+"Taj Mahal Palace, Pune",A perfect mix of luxury and responsibility towards the environment.,5.853484,18577
+"The Leela Goa, Mumbai",I love how this hotel focuses on renewable energy sources.,2.98435,32803
+"Taj Lake Palace, Hyderabad",Amazing experience with a conscious approach towards sustainability.,7.462128,43539
+"Hyatt Regency Chennai, Hyderabad",Amazing experience with a conscious approach towards sustainability.,4.935478,12793
+"Leela Palace, Chennai",I love how this hotel focuses on renewable energy sources.,8.199696,15586
+"The Leela Goa, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,5.643867,18066
+"The Oberoi Bangalore, Jaipur",The hotel's commitment to sustainability is commendable.,3.446242,22938
+"Radisson Blu Jaipur, Mumbai",A perfect mix of luxury and responsibility towards the environment.,8.059433,24192
+"Oberoi Udaivilas, Hyderabad",A breathtaking location with a strong emphasis on green energy.,9.179849,16241
+"JW Marriott Mumbai, Pune",Great hospitality with responsible tourism initiatives.,8.324504,15783
+"Radisson Blu Jaipur, Jaipur",I love how this hotel focuses on renewable energy sources.,5.635261,35787
+"The Leela Goa, Kolkata",The eco-friendly policies of this hotel make the stay even better.,7.228221,12734
+"JW Marriott Mumbai, New Delhi",The hotel's sustainability initiatives are impressive.,7.504391,32672
+"The Leela Goa, Kolkata",The eco-friendly policies of this hotel make the stay even better.,3.23739,16432
+"ITC Gardenia, Mumbai",A perfect mix of luxury and responsibility towards the environment.,7.45107,28342
+"Hyatt Regency Chennai, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,3.380726,41042
+"Taj Lake Palace, Hyderabad",Amazing experience with a conscious approach towards sustainability.,9.236982,7897
+"JW Marriott Mumbai, Chennai",Great hospitality with responsible tourism initiatives.,4.404641,14797
+"Leela Palace, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,5.950295,44953
+"Oberoi Udaivilas, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,2.345125,24293
+"Taj Mahal Palace, Kolkata","Excellent sustainable practices, including waste management.",7.499291,47925
+"The Leela Goa, Hyderabad",I love how this hotel focuses on renewable energy sources.,6.787582,5634
+"Oberoi Udaivilas, Jaipur",The hotel's sustainability initiatives are impressive.,1.266836,21845
+"Radisson Blu Jaipur, Kolkata",A perfect mix of luxury and responsibility towards the environment.,8.132541,31079
+"Leela Palace, Chennai",Great hospitality with responsible tourism initiatives.,8.592213,33902
+"Oberoi Udaivilas, New Delhi",The eco-friendly policies of this hotel make the stay even better.,1.539627,18987
+"ITC Gardenia, Udaipur",The eco-friendly policies of this hotel make the stay even better.,8.556279,49328
+"Hyatt Regency Chennai, Jaipur",A breathtaking location with a strong emphasis on green energy.,6.819399,43575
+"The Leela Goa, Kolkata",Amazing experience with a conscious approach towards sustainability.,6.058013,14295
+"Taj Lake Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,8.238058,21963
+"Taj Mahal Palace, Jaipur",A breathtaking location with a strong emphasis on green energy.,2.981651,9429
+"ITC Gardenia, Goa",I love how this hotel focuses on renewable energy sources.,3.611453,12090
+"Taj Mahal Palace, Udaipur",The hotel's commitment to sustainability is commendable.,2.241548,19168
+"Leela Palace, New Delhi",Great hospitality with responsible tourism initiatives.,4.382889,9326
+"The Leela Goa, Udaipur","Excellent sustainable practices, including waste management.",5.557455,35552
+"JW Marriott Mumbai, Udaipur",I love how this hotel focuses on renewable energy sources.,2.580416,8104
+"Leela Palace, Pune","Excellent sustainable practices, including waste management.",4.532192,27162
+"Hyatt Regency Chennai, Hyderabad",A breathtaking location with a strong emphasis on green energy.,5.315687,25168
+"Taj Mahal Palace, Udaipur",The hotel's sustainability initiatives are impressive.,7.69516,33199
+"JW Marriott Mumbai, Kolkata",Great hospitality with responsible tourism initiatives.,2.297083,22657
+"Oberoi Udaivilas, Jaipur",I love how this hotel focuses on renewable energy sources.,5.311663,21996
+"JW Marriott Mumbai, Udaipur",Amazing experience with a conscious approach towards sustainability.,6.982926,45410
+"Taj Lake Palace, Mumbai","Excellent sustainable practices, including waste management.",2.478619,30515
+"Leela Palace, Udaipur",I love how this hotel focuses on renewable energy sources.,2.535613,20925
+"Taj Mahal Palace, New Delhi",The hotel's commitment to sustainability is commendable.,1.134897,37973
+"Oberoi Udaivilas, Udaipur",The hotel's sustainability initiatives are impressive.,2.3908,49746
+"Taj Mahal Palace, Chennai",A perfect mix of luxury and responsibility towards the environment.,8.609293,7978
+"ITC Gardenia, Udaipur","Excellent sustainable practices, including waste management.",3.493293,47310
+"Radisson Blu Jaipur, Chennai",A perfect mix of luxury and responsibility towards the environment.,7.309736,42169
+"Radisson Blu Jaipur, Jaipur",A breathtaking location with a strong emphasis on green energy.,5.503174,22945
+"Taj Mahal Palace, Goa",The eco-friendly policies of this hotel make the stay even better.,8.969769,34730
+"The Oberoi Bangalore, New Delhi",A breathtaking location with a strong emphasis on green energy.,4.328016,42035
+"ITC Gardenia, Chennai","Excellent sustainable practices, including waste management.",7.334628,41024
+"Taj Mahal Palace, Bangalore",A perfect mix of luxury and responsibility towards the environment.,5.331062,45148
+"Taj Mahal Palace, Goa","Excellent sustainable practices, including waste management.",2.413553,45109
+"The Oberoi Bangalore, New Delhi",Amazing experience with a conscious approach towards sustainability.,7.150042,23555
+"Hyatt Regency Chennai, Kolkata",A breathtaking location with a strong emphasis on green energy.,5.344027,49628
+"Leela Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,5.61902,25850
+"JW Marriott Mumbai, Kolkata","Excellent sustainable practices, including waste management.",2.129727,37305
+"The Leela Goa, Pune",The hotel's sustainability initiatives are impressive.,9.047534,29028
+"Leela Palace, Pune",The eco-friendly policies of this hotel make the stay even better.,1.051587,27973
+"Oberoi Udaivilas, Pune",The hotel's sustainability initiatives are impressive.,1.156759,34666
+"Hyatt Regency Chennai, Pune",The hotel's commitment to sustainability is commendable.,3.770589,19547
+"The Leela Goa, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,6.441909,24330
+"Radisson Blu Jaipur, Pune",A perfect mix of luxury and responsibility towards the environment.,7.331821,24569
+"The Leela Goa, Bangalore",The eco-friendly policies of this hotel make the stay even better.,6.999887,28382
+"The Oberoi Bangalore, Bangalore",A perfect mix of luxury and responsibility towards the environment.,9.861376,37507
+"Leela Palace, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,3.591369,8197
+"Oberoi Udaivilas, New Delhi",Amazing experience with a conscious approach towards sustainability.,6.662514,49889
+"Oberoi Udaivilas, Hyderabad",The hotel's commitment to sustainability is commendable.,8.84914,44881
+"The Leela Goa, Kolkata",Amazing experience with a conscious approach towards sustainability.,1.510375,49372
+"Hyatt Regency Chennai, Hyderabad",Great hospitality with responsible tourism initiatives.,6.598571,17263
+"ITC Gardenia, Pune",Amazing experience with a conscious approach towards sustainability.,7.570806,8036
+"Taj Lake Palace, Mumbai",The hotel's commitment to sustainability is commendable.,5.896082,21148
+"Radisson Blu Jaipur, Pune",A perfect mix of luxury and responsibility towards the environment.,7.471442,39227
+"Hyatt Regency Chennai, Udaipur",Amazing experience with a conscious approach towards sustainability.,2.251591,41090
+"Taj Lake Palace, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,5.273317,7815
+"Leela Palace, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,8.930867,14585
+"Radisson Blu Jaipur, Kolkata",I love how this hotel focuses on renewable energy sources.,1.487445,23245
+"The Leela Goa, Udaipur",The eco-friendly policies of this hotel make the stay even better.,5.056002,21822
+"ITC Gardenia, Udaipur",The eco-friendly policies of this hotel make the stay even better.,6.186183,38431
+"Taj Mahal Palace, Goa",A luxurious stay with a strong focus on eco-friendly practices.,5.523472,9380
+"JW Marriott Mumbai, Bangalore",Great hospitality with responsible tourism initiatives.,2.065905,6353
+"Radisson Blu Jaipur, Pune",A perfect mix of luxury and responsibility towards the environment.,5.491903,5078
+"The Oberoi Bangalore, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,4.658344,21306
+"JW Marriott Mumbai, Hyderabad",I love how this hotel focuses on renewable energy sources.,7.035115,37627
+"JW Marriott Mumbai, Udaipur",A perfect mix of luxury and responsibility towards the environment.,2.060094,47521
+"JW Marriott Mumbai, Kolkata",A perfect mix of luxury and responsibility towards the environment.,4.345773,21851
+"ITC Gardenia, Jaipur",A perfect mix of luxury and responsibility towards the environment.,3.866398,36368
+"JW Marriott Mumbai, Jaipur",I love how this hotel focuses on renewable energy sources.,1.216269,20068
+"The Oberoi Bangalore, Chennai",Great hospitality with responsible tourism initiatives.,1.250155,12475
+"Taj Mahal Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,2.370922,46609
+"Leela Palace, Udaipur",The eco-friendly policies of this hotel make the stay even better.,3.791793,36786
+"Taj Lake Palace, Hyderabad",A breathtaking location with a strong emphasis on green energy.,8.693386,14005
+"The Leela Goa, Kolkata","Excellent sustainable practices, including waste management.",3.152188,9127
+"Taj Mahal Palace, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,3.333232,28218
+"ITC Gardenia, Bangalore",Great hospitality with responsible tourism initiatives.,9.312366,18986
+"The Oberoi Bangalore, Chennai",A perfect mix of luxury and responsibility towards the environment.,7.447549,10997
+"The Leela Goa, Hyderabad",The hotel's commitment to sustainability is commendable.,2.755372,23121
+"Oberoi Udaivilas, Jaipur","Excellent sustainable practices, including waste management.",3.463906,34614
+"Radisson Blu Jaipur, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,1.063158,18697
+"JW Marriott Mumbai, Bangalore",The eco-friendly policies of this hotel make the stay even better.,6.350886,29803
+"Leela Palace, Jaipur",Amazing experience with a conscious approach towards sustainability.,4.611194,43059
+"Taj Lake Palace, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,9.991603,49579
+"Taj Mahal Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,5.552451,41879
+"ITC Gardenia, Jaipur",The hotel's sustainability initiatives are impressive.,9.928426,21172
+"Taj Mahal Palace, Jaipur",The eco-friendly policies of this hotel make the stay even better.,8.133696,14426
+"JW Marriott Mumbai, New Delhi",A breathtaking location with a strong emphasis on green energy.,4.299031,10300
+"ITC Gardenia, Kolkata",A perfect mix of luxury and responsibility towards the environment.,1.327305,5761
+"Oberoi Udaivilas, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,7.684167,27707
+"Leela Palace, Hyderabad",A perfect mix of luxury and responsibility towards the environment.,2.032269,29290
+"Taj Lake Palace, Chennai",Amazing experience with a conscious approach towards sustainability.,5.018673,34231
+"Radisson Blu Jaipur, Mumbai",I love how this hotel focuses on renewable energy sources.,3.159756,6262
+"Taj Mahal Palace, Pune",The hotel's sustainability initiatives are impressive.,1.888597,41435
+"The Oberoi Bangalore, Bangalore",Great hospitality with responsible tourism initiatives.,9.547094,28692
+"ITC Gardenia, Mumbai",I love how this hotel focuses on renewable energy sources.,8.159779,27247
+"Radisson Blu Jaipur, New Delhi",Amazing experience with a conscious approach towards sustainability.,1.411119,41529
+"Radisson Blu Jaipur, Udaipur","Excellent sustainable practices, including waste management.",8.46423,45622
+"Hyatt Regency Chennai, Chennai",The eco-friendly policies of this hotel make the stay even better.,4.014079,26209
+"Taj Lake Palace, Kolkata",The eco-friendly policies of this hotel make the stay even better.,7.626829,44306
+"Oberoi Udaivilas, Pune",A luxurious stay with a strong focus on eco-friendly practices.,9.593409,19376
+"Leela Palace, Mumbai",A breathtaking location with a strong emphasis on green energy.,3.328287,14465
+"Taj Lake Palace, Bangalore",The hotel's sustainability initiatives are impressive.,9.195031,26922
+"Hyatt Regency Chennai, Mumbai",The hotel's sustainability initiatives are impressive.,9.095772,6231
+"ITC Gardenia, Pune",Great hospitality with responsible tourism initiatives.,4.775376,33258
+"JW Marriott Mumbai, Goa",The hotel's sustainability initiatives are impressive.,8.585599,10158
+"ITC Gardenia, Pune",The hotel's commitment to sustainability is commendable.,2.838849,23222
+"Hyatt Regency Chennai, Bangalore",The hotel's commitment to sustainability is commendable.,5.236119,36957
+"Oberoi Udaivilas, Udaipur","Excellent sustainable practices, including waste management.",3.514235,7007
+"JW Marriott Mumbai, Kolkata","Excellent sustainable practices, including waste management.",6.949859,17224
+"The Oberoi Bangalore, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,5.970631,17471
+"JW Marriott Mumbai, Hyderabad",I love how this hotel focuses on renewable energy sources.,4.835436,36024
+"Radisson Blu Jaipur, Hyderabad",The hotel's sustainability initiatives are impressive.,2.506077,31234
+"Hyatt Regency Chennai, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,7.408264,25568
+"The Leela Goa, Bangalore",The eco-friendly policies of this hotel make the stay even better.,5.246361,9942
+"ITC Gardenia, Chennai",The hotel's sustainability initiatives are impressive.,3.648063,5525
+"ITC Gardenia, Chennai","Excellent sustainable practices, including waste management.",3.304996,19150
+"Taj Lake Palace, Udaipur",The hotel's sustainability initiatives are impressive.,1.794219,28373
+"The Oberoi Bangalore, Bangalore",The hotel's sustainability initiatives are impressive.,4.777153,13192
+"Leela Palace, Chennai",I love how this hotel focuses on renewable energy sources.,7.01224,21873
+"The Leela Goa, Bangalore","Excellent sustainable practices, including waste management.",8.620065,27605
+"Oberoi Udaivilas, New Delhi",A breathtaking location with a strong emphasis on green energy.,2.440512,45802
+"Leela Palace, Pune",A breathtaking location with a strong emphasis on green energy.,3.372919,39180
+"ITC Gardenia, New Delhi",Great hospitality with responsible tourism initiatives.,4.83258,11815
+"The Leela Goa, Pune",I love how this hotel focuses on renewable energy sources.,1.503139,16313
+"Radisson Blu Jaipur, Bangalore",The hotel's sustainability initiatives are impressive.,9.109205,35260
+"Taj Mahal Palace, Hyderabad","Excellent sustainable practices, including waste management.",7.153104,9457
+"Oberoi Udaivilas, Chennai",The hotel's sustainability initiatives are impressive.,7.169964,6200
+"Taj Lake Palace, Chennai",The hotel's sustainability initiatives are impressive.,5.416717,26143
+"Radisson Blu Jaipur, Mumbai",A perfect mix of luxury and responsibility towards the environment.,7.962516,39777
+"Radisson Blu Jaipur, Kolkata",A breathtaking location with a strong emphasis on green energy.,3.404083,43641
+"Oberoi Udaivilas, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,1.266747,29560
+"Radisson Blu Jaipur, Jaipur",Amazing experience with a conscious approach towards sustainability.,3.917011,19557
+"The Leela Goa, Hyderabad",I love how this hotel focuses on renewable energy sources.,7.95288,22916
+"JW Marriott Mumbai, Jaipur",I love how this hotel focuses on renewable energy sources.,1.574444,10252
+"ITC Gardenia, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,8.836929,26060
+"Hyatt Regency Chennai, New Delhi",A perfect mix of luxury and responsibility towards the environment.,9.691269,14369
+"JW Marriott Mumbai, Jaipur",A breathtaking location with a strong emphasis on green energy.,1.791454,37615
+"Radisson Blu Jaipur, Jaipur",I love how this hotel focuses on renewable energy sources.,9.562883,8444
+"Hyatt Regency Chennai, Udaipur",The hotel's sustainability initiatives are impressive.,1.660297,23505
+"Radisson Blu Jaipur, Goa",Amazing experience with a conscious approach towards sustainability.,8.666626,18732
+"JW Marriott Mumbai, Goa",Great hospitality with responsible tourism initiatives.,2.934448,5975
+"Hyatt Regency Chennai, Hyderabad",Great hospitality with responsible tourism initiatives.,9.038736,31449
+"Taj Lake Palace, Kolkata",Amazing experience with a conscious approach towards sustainability.,1.389355,12592
+"Taj Lake Palace, Chennai",Great hospitality with responsible tourism initiatives.,4.125283,25143
+"Taj Lake Palace, Udaipur",The hotel's sustainability initiatives are impressive.,7.355589,49695
+"Taj Lake Palace, Chennai",Amazing experience with a conscious approach towards sustainability.,4.704666,18899
+"The Leela Goa, Jaipur",A breathtaking location with a strong emphasis on green energy.,4.658832,47764
+"Taj Mahal Palace, Kolkata",I love how this hotel focuses on renewable energy sources.,8.945917,20935
+"Taj Lake Palace, Kolkata",I love how this hotel focuses on renewable energy sources.,7.047775,49914
+"Taj Lake Palace, Chennai",A perfect mix of luxury and responsibility towards the environment.,9.884212,24026
+"JW Marriott Mumbai, Pune",The hotel's sustainability initiatives are impressive.,3.360517,18386
+"Leela Palace, Udaipur",Amazing experience with a conscious approach towards sustainability.,5.4562,41569
+"JW Marriott Mumbai, Hyderabad","Excellent sustainable practices, including waste management.",6.04464,32084
+"Hyatt Regency Chennai, Jaipur",I love how this hotel focuses on renewable energy sources.,9.435274,21494
+"The Leela Goa, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,9.149888,19713
+"Radisson Blu Jaipur, Bangalore",The eco-friendly policies of this hotel make the stay even better.,3.324385,47023
+"JW Marriott Mumbai, Bangalore",A perfect mix of luxury and responsibility towards the environment.,7.990361,33787
+"Radisson Blu Jaipur, Goa",The eco-friendly policies of this hotel make the stay even better.,8.695037,29720
+"Oberoi Udaivilas, Udaipur",The hotel's commitment to sustainability is commendable.,5.800426,29103
+"Radisson Blu Jaipur, Goa","Excellent sustainable practices, including waste management.",6.115365,22417
+"JW Marriott Mumbai, Chennai",Amazing experience with a conscious approach towards sustainability.,6.96504,20461
+"Leela Palace, New Delhi",I love how this hotel focuses on renewable energy sources.,4.329981,16740
+"Taj Mahal Palace, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,8.677622,27649
+"Oberoi Udaivilas, Bangalore",The hotel's sustainability initiatives are impressive.,9.625434,12550
+"Taj Mahal Palace, Pune",I love how this hotel focuses on renewable energy sources.,3.719016,17017
+"Leela Palace, Hyderabad",The hotel's sustainability initiatives are impressive.,5.545417,49632
+"Taj Lake Palace, Udaipur",I love how this hotel focuses on renewable energy sources.,6.810257,12903
+"ITC Gardenia, Bangalore",A perfect mix of luxury and responsibility towards the environment.,7.498314,34796
+"ITC Gardenia, Chennai",The hotel's sustainability initiatives are impressive.,8.304321,47938
+"Oberoi Udaivilas, Goa","Excellent sustainable practices, including waste management.",4.208686,34313
+"Radisson Blu Jaipur, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,4.701951,37903
+"Taj Mahal Palace, Mumbai",The hotel's sustainability initiatives are impressive.,9.773507,48014
+"Leela Palace, Goa",A luxurious stay with a strong focus on eco-friendly practices.,1.395489,19210
+"Leela Palace, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,6.682263,11048
+"The Oberoi Bangalore, Chennai",The eco-friendly policies of this hotel make the stay even better.,8.757453,32882
+"Radisson Blu Jaipur, Udaipur",The hotel's commitment to sustainability is commendable.,7.617809,7532
+"JW Marriott Mumbai, Jaipur",The hotel's sustainability initiatives are impressive.,9.121046,5488
+"JW Marriott Mumbai, Bangalore",The hotel's commitment to sustainability is commendable.,7.32735,46040
+"Hyatt Regency Chennai, Chennai",Amazing experience with a conscious approach towards sustainability.,1.800331,27835
+"Radisson Blu Jaipur, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,6.165573,11967
+"Oberoi Udaivilas, New Delhi",I love how this hotel focuses on renewable energy sources.,6.885905,26760
+"Hyatt Regency Chennai, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,3.837493,14917
+"The Leela Goa, Jaipur","Excellent sustainable practices, including waste management.",3.23509,39748
+"Leela Palace, Chennai",Amazing experience with a conscious approach towards sustainability.,3.404034,25146
+"Leela Palace, Udaipur",The eco-friendly policies of this hotel make the stay even better.,7.581225,23872
+"Oberoi Udaivilas, Pune",A breathtaking location with a strong emphasis on green energy.,7.285316,49985
+"The Oberoi Bangalore, Kolkata",The hotel's commitment to sustainability is commendable.,8.646047,21619
+"The Leela Goa, Kolkata",The eco-friendly policies of this hotel make the stay even better.,8.812678,17801
+"The Leela Goa, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,3.967203,11993
+"Hyatt Regency Chennai, Kolkata",I love how this hotel focuses on renewable energy sources.,1.161197,19715
+"Hyatt Regency Chennai, Bangalore",A perfect mix of luxury and responsibility towards the environment.,3.912177,49068
+"Taj Mahal Palace, Chennai",The hotel's commitment to sustainability is commendable.,7.003446,26632
+"The Leela Goa, Udaipur",A breathtaking location with a strong emphasis on green energy.,4.118325,34404
+"Taj Mahal Palace, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,1.969447,17665
+"Hyatt Regency Chennai, Pune",A breathtaking location with a strong emphasis on green energy.,7.922093,32420
+"ITC Gardenia, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,8.308176,22340
+"Oberoi Udaivilas, Goa",A breathtaking location with a strong emphasis on green energy.,5.947132,10762
+"Taj Lake Palace, Bangalore",Amazing experience with a conscious approach towards sustainability.,6.893451,28139
+"Oberoi Udaivilas, Pune",A perfect mix of luxury and responsibility towards the environment.,2.26509,42158
+"Taj Lake Palace, Pune",The eco-friendly policies of this hotel make the stay even better.,3.499466,39200
+"JW Marriott Mumbai, Hyderabad",The hotel's commitment to sustainability is commendable.,8.063304,27910
+"The Oberoi Bangalore, Jaipur",Amazing experience with a conscious approach towards sustainability.,8.44918,31592
+"Radisson Blu Jaipur, Udaipur",The hotel's commitment to sustainability is commendable.,1.851933,25764
+"The Leela Goa, Udaipur","Excellent sustainable practices, including waste management.",8.253435,29286
+"Radisson Blu Jaipur, Udaipur",The eco-friendly policies of this hotel make the stay even better.,8.819243,10295
+"Leela Palace, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,9.579085,7857
+"The Leela Goa, New Delhi","Excellent sustainable practices, including waste management.",4.917132,18938
+"ITC Gardenia, New Delhi",I love how this hotel focuses on renewable energy sources.,3.980577,21216
+"JW Marriott Mumbai, Kolkata",The eco-friendly policies of this hotel make the stay even better.,2.763855,5328
+"Taj Mahal Palace, Hyderabad",Amazing experience with a conscious approach towards sustainability.,4.255724,38229
+"ITC Gardenia, Mumbai",A breathtaking location with a strong emphasis on green energy.,2.904766,29327
+"Taj Lake Palace, Udaipur",The hotel's commitment to sustainability is commendable.,9.966892,42999
+"Hyatt Regency Chennai, Kolkata",The hotel's commitment to sustainability is commendable.,6.401718,14928
+"Leela Palace, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,8.109319,32684
+"Taj Mahal Palace, Pune",Great hospitality with responsible tourism initiatives.,8.110224,19440
+"The Oberoi Bangalore, New Delhi",Amazing experience with a conscious approach towards sustainability.,5.82263,45422
+"The Oberoi Bangalore, Kolkata",A breathtaking location with a strong emphasis on green energy.,2.813675,29043
+"The Leela Goa, Bangalore",The eco-friendly policies of this hotel make the stay even better.,6.506891,48692
+"Radisson Blu Jaipur, Kolkata",The hotel's commitment to sustainability is commendable.,1.064201,10223
+"Taj Lake Palace, New Delhi",The eco-friendly policies of this hotel make the stay even better.,7.691288,46461
+"Taj Mahal Palace, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,4.883195,6898
+"Hyatt Regency Chennai, Mumbai",Great hospitality with responsible tourism initiatives.,7.011525,44362
+"Taj Lake Palace, Goa","Excellent sustainable practices, including waste management.",3.170361,7001
+"ITC Gardenia, Goa",A luxurious stay with a strong focus on eco-friendly practices.,1.690658,27165
+"Hyatt Regency Chennai, Hyderabad",The hotel's commitment to sustainability is commendable.,6.822588,27100
+"Hyatt Regency Chennai, Jaipur",The eco-friendly policies of this hotel make the stay even better.,6.155423,43803
+"Oberoi Udaivilas, Mumbai",A perfect mix of luxury and responsibility towards the environment.,8.096654,29086
+"Taj Lake Palace, Bangalore",A perfect mix of luxury and responsibility towards the environment.,1.212552,45993
+"The Leela Goa, Pune",A luxurious stay with a strong focus on eco-friendly practices.,3.791099,8936
+"Radisson Blu Jaipur, Udaipur",Amazing experience with a conscious approach towards sustainability.,4.525917,6372
+"Radisson Blu Jaipur, Goa",The eco-friendly policies of this hotel make the stay even better.,5.56777,21026
+"The Leela Goa, Jaipur",Amazing experience with a conscious approach towards sustainability.,6.197632,39272
+"Hyatt Regency Chennai, Chennai","Excellent sustainable practices, including waste management.",4.164579,41910
+"Oberoi Udaivilas, Goa",Great hospitality with responsible tourism initiatives.,6.29417,31558
+"Taj Lake Palace, Goa",The hotel's sustainability initiatives are impressive.,3.320168,20462
+"Oberoi Udaivilas, Pune",A breathtaking location with a strong emphasis on green energy.,4.74761,40310
+"ITC Gardenia, Pune",A perfect mix of luxury and responsibility towards the environment.,9.982926,46518
+"The Oberoi Bangalore, Kolkata",A perfect mix of luxury and responsibility towards the environment.,2.264872,21578
+"Oberoi Udaivilas, Pune",The hotel's sustainability initiatives are impressive.,5.061498,7482
+"Oberoi Udaivilas, Pune",The hotel's sustainability initiatives are impressive.,4.226819,10058
+"Taj Mahal Palace, Bangalore",Amazing experience with a conscious approach towards sustainability.,8.754785,33454
+"Leela Palace, Bangalore",Great hospitality with responsible tourism initiatives.,5.746637,32949
+"Oberoi Udaivilas, New Delhi",Amazing experience with a conscious approach towards sustainability.,2.202691,7122
+"Radisson Blu Jaipur, New Delhi",The hotel's sustainability initiatives are impressive.,6.08649,22241
+"ITC Gardenia, Bangalore",The hotel's commitment to sustainability is commendable.,2.613393,48768
+"Taj Mahal Palace, Goa",I love how this hotel focuses on renewable energy sources.,6.594659,22806
+"The Leela Goa, Goa",A luxurious stay with a strong focus on eco-friendly practices.,9.603764,27889
+"Hyatt Regency Chennai, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,8.295925,5213
+"Leela Palace, Jaipur",The hotel's commitment to sustainability is commendable.,5.012326,25877
+"Radisson Blu Jaipur, Pune",Great hospitality with responsible tourism initiatives.,5.946567,45569
+"The Oberoi Bangalore, Pune","Excellent sustainable practices, including waste management.",1.007604,44321
+"Taj Lake Palace, Goa",The hotel's commitment to sustainability is commendable.,4.396619,33705
+"Taj Mahal Palace, Udaipur",The hotel's commitment to sustainability is commendable.,2.817777,22746
+"The Oberoi Bangalore, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.343092,32400
+"Taj Lake Palace, Bangalore",A perfect mix of luxury and responsibility towards the environment.,6.384612,17444
+"Taj Mahal Palace, New Delhi",Amazing experience with a conscious approach towards sustainability.,5.695234,13436
+"The Leela Goa, Jaipur",The hotel's sustainability initiatives are impressive.,1.322334,8908
+"ITC Gardenia, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,1.774262,36209
+"Oberoi Udaivilas, Udaipur",The eco-friendly policies of this hotel make the stay even better.,7.047519,19767
+"Leela Palace, Kolkata",A perfect mix of luxury and responsibility towards the environment.,4.224225,12111
+"Taj Lake Palace, Chennai",I love how this hotel focuses on renewable energy sources.,1.35657,23852
+"Oberoi Udaivilas, Mumbai",A breathtaking location with a strong emphasis on green energy.,6.722089,23730
+"The Leela Goa, New Delhi",Great hospitality with responsible tourism initiatives.,3.976717,27025
+"JW Marriott Mumbai, Goa",A perfect mix of luxury and responsibility towards the environment.,3.413996,49810
+"ITC Gardenia, Pune",The hotel's commitment to sustainability is commendable.,6.935633,14180
+"Radisson Blu Jaipur, Bangalore",I love how this hotel focuses on renewable energy sources.,9.817946,43818
+"Hyatt Regency Chennai, Bangalore",Amazing experience with a conscious approach towards sustainability.,8.58795,36369
+"Taj Lake Palace, Hyderabad","Excellent sustainable practices, including waste management.",3.922276,35702
+"Hyatt Regency Chennai, Udaipur","Excellent sustainable practices, including waste management.",9.330698,5140
+"Radisson Blu Jaipur, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,7.611215,26074
+"Oberoi Udaivilas, Kolkata",The eco-friendly policies of this hotel make the stay even better.,1.541368,48992
+"The Oberoi Bangalore, Kolkata","Excellent sustainable practices, including waste management.",8.980735,10091
+"Hyatt Regency Chennai, Pune",A breathtaking location with a strong emphasis on green energy.,3.506634,5466
+"ITC Gardenia, Chennai",Great hospitality with responsible tourism initiatives.,2.409543,18716
+"ITC Gardenia, Chennai",A breathtaking location with a strong emphasis on green energy.,7.1935,39624
+"Taj Mahal Palace, Goa",A luxurious stay with a strong focus on eco-friendly practices.,2.782112,30034
+"The Oberoi Bangalore, Jaipur",The eco-friendly policies of this hotel make the stay even better.,8.051584,33085
+"Oberoi Udaivilas, Mumbai",I love how this hotel focuses on renewable energy sources.,8.347015,43963
+"The Leela Goa, Mumbai",A breathtaking location with a strong emphasis on green energy.,4.469342,45442
+"JW Marriott Mumbai, Chennai",I love how this hotel focuses on renewable energy sources.,2.014126,21465
+"Taj Lake Palace, Goa",Great hospitality with responsible tourism initiatives.,4.958129,33617
+"The Oberoi Bangalore, Goa","Excellent sustainable practices, including waste management.",1.498593,21611
+"Oberoi Udaivilas, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.478205,38918
+"Taj Mahal Palace, Chennai",The eco-friendly policies of this hotel make the stay even better.,8.704333,39595
+"Taj Mahal Palace, Jaipur",Great hospitality with responsible tourism initiatives.,4.716215,37525
+"Taj Lake Palace, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.762426,36254
+"JW Marriott Mumbai, Bangalore",A luxurious stay with a strong focus on eco-friendly practices.,5.61015,9439
+"Hyatt Regency Chennai, Mumbai",The hotel's sustainability initiatives are impressive.,7.405948,47672
+"Leela Palace, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,1.18843,7539
+"JW Marriott Mumbai, New Delhi",The hotel's commitment to sustainability is commendable.,3.04149,18911
+"ITC Gardenia, Udaipur","Excellent sustainable practices, including waste management.",1.618178,41133
+"The Oberoi Bangalore, Bangalore",Great hospitality with responsible tourism initiatives.,7.736911,41761
+"The Leela Goa, New Delhi",The eco-friendly policies of this hotel make the stay even better.,1.057412,28854
+"ITC Gardenia, Hyderabad",Great hospitality with responsible tourism initiatives.,1.623132,7616
+"The Leela Goa, Udaipur",The hotel's sustainability initiatives are impressive.,7.129838,25535
+"Taj Mahal Palace, Mumbai",The hotel's sustainability initiatives are impressive.,1.681186,10496
+"Taj Lake Palace, Jaipur",The hotel's commitment to sustainability is commendable.,8.627783,42775
+"Taj Mahal Palace, Udaipur",Great hospitality with responsible tourism initiatives.,8.430772,23531
+"Taj Lake Palace, Udaipur",A luxurious stay with a strong focus on eco-friendly practices.,8.499977,40886
+"Taj Mahal Palace, Hyderabad",The eco-friendly policies of this hotel make the stay even better.,6.221114,26196
+"The Leela Goa, Udaipur","Excellent sustainable practices, including waste management.",9.248951,27664
+"JW Marriott Mumbai, Hyderabad",The hotel's commitment to sustainability is commendable.,2.467614,39712
+"JW Marriott Mumbai, New Delhi",I love how this hotel focuses on renewable energy sources.,9.02544,22561
+"Taj Lake Palace, Jaipur",A luxurious stay with a strong focus on eco-friendly practices.,3.879613,25459
+"Radisson Blu Jaipur, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,8.089471,14534
+"Taj Lake Palace, New Delhi",A luxurious stay with a strong focus on eco-friendly practices.,2.905984,20260
+"The Leela Goa, Pune",Amazing experience with a conscious approach towards sustainability.,7.614638,48338
+"ITC Gardenia, Chennai",The hotel's commitment to sustainability is commendable.,5.395183,39578
+"Taj Lake Palace, Pune",I love how this hotel focuses on renewable energy sources.,7.014904,26000
+"Radisson Blu Jaipur, Udaipur",A breathtaking location with a strong emphasis on green energy.,9.524725,25488
+"JW Marriott Mumbai, Mumbai",I love how this hotel focuses on renewable energy sources.,5.702961,47927
+"JW Marriott Mumbai, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,5.004779,28927
+"The Oberoi Bangalore, Hyderabad",Great hospitality with responsible tourism initiatives.,3.814347,34978
+"Taj Lake Palace, Udaipur",A perfect mix of luxury and responsibility towards the environment.,6.523678,19382
+"Hyatt Regency Chennai, Pune",The hotel's sustainability initiatives are impressive.,7.581171,34231
+"Radisson Blu Jaipur, Pune",A perfect mix of luxury and responsibility towards the environment.,5.20613,37660
+"Oberoi Udaivilas, Jaipur",The hotel's sustainability initiatives are impressive.,8.463709,23528
+"Oberoi Udaivilas, Hyderabad",The hotel's commitment to sustainability is commendable.,3.935572,37304
+"ITC Gardenia, Bangalore",Great hospitality with responsible tourism initiatives.,8.514748,24632
+"Taj Lake Palace, Jaipur",A breathtaking location with a strong emphasis on green energy.,6.026694,17247
+"ITC Gardenia, Bangalore",The hotel's sustainability initiatives are impressive.,5.329007,15310
+"ITC Gardenia, Udaipur",Amazing experience with a conscious approach towards sustainability.,6.893408,33990
+"Taj Mahal Palace, Mumbai",A luxurious stay with a strong focus on eco-friendly practices.,5.729771,25954
+"Radisson Blu Jaipur, Udaipur",A perfect mix of luxury and responsibility towards the environment.,7.364335,34586
+"The Oberoi Bangalore, Jaipur",The hotel's sustainability initiatives are impressive.,6.474991,6535
+"Hyatt Regency Chennai, Udaipur",Amazing experience with a conscious approach towards sustainability.,5.05752,10228
+"Hyatt Regency Chennai, Hyderabad",Amazing experience with a conscious approach towards sustainability.,6.701801,21408
+"Radisson Blu Jaipur, Mumbai",A perfect mix of luxury and responsibility towards the environment.,9.711822,13963
+"Oberoi Udaivilas, New Delhi",I love how this hotel focuses on renewable energy sources.,9.979425,9195
+"Taj Mahal Palace, Jaipur",A breathtaking location with a strong emphasis on green energy.,3.029031,15633
+"Hyatt Regency Chennai, Chennai","Excellent sustainable practices, including waste management.",1.812429,27036
+"Radisson Blu Jaipur, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,2.948617,13422
+"The Leela Goa, Mumbai",A breathtaking location with a strong emphasis on green energy.,5.533067,17132
+"The Leela Goa, Jaipur",I love how this hotel focuses on renewable energy sources.,5.797153,9324
+"The Leela Goa, New Delhi",The hotel's sustainability initiatives are impressive.,8.967835,48621
+"Radisson Blu Jaipur, New Delhi","Excellent sustainable practices, including waste management.",4.776387,40911
+"JW Marriott Mumbai, New Delhi",The hotel's commitment to sustainability is commendable.,5.663691,17797
+"Taj Lake Palace, Kolkata","Excellent sustainable practices, including waste management.",7.919477,47972
+"JW Marriott Mumbai, New Delhi",A breathtaking location with a strong emphasis on green energy.,7.718021,13154
+"The Leela Goa, Bangalore",A breathtaking location with a strong emphasis on green energy.,3.211681,17533
+"Taj Mahal Palace, Pune",A luxurious stay with a strong focus on eco-friendly practices.,8.235077,27240
+"Leela Palace, Udaipur",Great hospitality with responsible tourism initiatives.,4.155145,26674
+"ITC Gardenia, Jaipur",The hotel's sustainability initiatives are impressive.,1.764061,41050
+"Taj Lake Palace, Goa",A perfect mix of luxury and responsibility towards the environment.,6.644218,15249
+"Leela Palace, Jaipur",A perfect mix of luxury and responsibility towards the environment.,8.515385,9518
+"The Leela Goa, Jaipur",I love how this hotel focuses on renewable energy sources.,5.069185,42506
+"Oberoi Udaivilas, Kolkata",Amazing experience with a conscious approach towards sustainability.,4.71924,34897
+"Oberoi Udaivilas, New Delhi",Amazing experience with a conscious approach towards sustainability.,9.753773,33621
+"ITC Gardenia, Jaipur",Amazing experience with a conscious approach towards sustainability.,9.175136,31575
+"Leela Palace, Jaipur","Excellent sustainable practices, including waste management.",9.066424,43697
+"The Oberoi Bangalore, Chennai",A luxurious stay with a strong focus on eco-friendly practices.,9.913592,23937
+"Taj Lake Palace, Hyderabad",Great hospitality with responsible tourism initiatives.,3.487418,28115
+"ITC Gardenia, Bangalore","Excellent sustainable practices, including waste management.",1.891325,11755
+"Taj Lake Palace, Goa",The hotel's sustainability initiatives are impressive.,2.121627,24248
+"Taj Lake Palace, Chennai","Excellent sustainable practices, including waste management.",7.276617,32922
+"Radisson Blu Jaipur, Goa",A luxurious stay with a strong focus on eco-friendly practices.,7.812057,9829
+"Oberoi Udaivilas, Mumbai",A perfect mix of luxury and responsibility towards the environment.,5.086004,38949
+"The Oberoi Bangalore, New Delhi",A perfect mix of luxury and responsibility towards the environment.,5.702779,41251
+"JW Marriott Mumbai, Hyderabad","Excellent sustainable practices, including waste management.",7.943632,10536
+"The Oberoi Bangalore, New Delhi",The hotel's commitment to sustainability is commendable.,2.962908,47247
+"Leela Palace, Udaipur",A perfect mix of luxury and responsibility towards the environment.,4.679614,43174
+"Taj Mahal Palace, Hyderabad",Amazing experience with a conscious approach towards sustainability.,5.354183,29867
+"Leela Palace, Bangalore",I love how this hotel focuses on renewable energy sources.,7.323287,16126
+"Leela Palace, Pune",A luxurious stay with a strong focus on eco-friendly practices.,6.075352,19239
+"The Oberoi Bangalore, Kolkata",A luxurious stay with a strong focus on eco-friendly practices.,5.60271,37302
+"Oberoi Udaivilas, Hyderabad","Excellent sustainable practices, including waste management.",7.678468,19610
+"Hyatt Regency Chennai, Kolkata",The hotel's commitment to sustainability is commendable.,9.074103,9295
+"Hyatt Regency Chennai, Goa",The hotel's commitment to sustainability is commendable.,4.535689,35998
+"Hyatt Regency Chennai, New Delhi",The hotel's sustainability initiatives are impressive.,7.569881,23606
+"Radisson Blu Jaipur, Hyderabad",A breathtaking location with a strong emphasis on green energy.,7.470743,8721
+"Hyatt Regency Chennai, Pune",A luxurious stay with a strong focus on eco-friendly practices.,8.907205,9251
+"The Leela Goa, Goa",The hotel's commitment to sustainability is commendable.,1.167691,30275
+"Leela Palace, New Delhi",Amazing experience with a conscious approach towards sustainability.,2.126363,32819
+"ITC Gardenia, Pune",The hotel's sustainability initiatives are impressive.,4.753199,30006
+"The Oberoi Bangalore, Jaipur",Amazing experience with a conscious approach towards sustainability.,6.003862,31094
+"The Oberoi Bangalore, Goa",A breathtaking location with a strong emphasis on green energy.,1.323051,13865
+"The Oberoi Bangalore, Hyderabad",A luxurious stay with a strong focus on eco-friendly practices.,9.32003,22607
+"ITC Gardenia, Kolkata",Amazing experience with a conscious approach towards sustainability.,2.414715,17206
+"JW Marriott Mumbai, Hyderabad",The hotel's sustainability initiatives are impressive.,9.362728,5365
+"Radisson Blu Jaipur, New Delhi",Great hospitality with responsible tourism initiatives.,4.491697,49169
