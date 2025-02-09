@@ -11,16 +11,16 @@ import { LevelDisplay } from "./LevelDisplay";
 export function Navbar() {
     // Retrieve our login state and actions from Zustand
     const { isLoggedIn, logout } = useAuthStore();
-        const router = useRouter();
+    const router = useRouter();
 
-        const handleAuthAction = async () => {
-            if (isLoggedIn) {
-                logout(); // Update Zustand state first
-                await serverLogout(); // This will redirect to login page
-            } else {
-                router.push("/login");
-            }
-        };
+    const handleAuthAction = async () => {
+        if (isLoggedIn) {
+            logout(); // Update Zustand state first
+            await serverLogout(); // This will redirect to login page
+        } else {
+            router.push("/login");
+        }
+    };
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-forest-50/90 border-b border-forest-200">
@@ -51,7 +51,13 @@ export function Navbar() {
                     </motion.div>
 
                     <div className="hidden md:flex items-center space-x-8">
-                        {["MERCHANTS", "ITINERARY"].map((item) => (
+                        {[
+                            "MAIN",
+                            "WASTE-MANAGEMENT",
+                            "MERCHANTS",
+                            "ITINERARY",
+                            "CHATBOT",
+                        ].map((item) => (
                             <motion.div
                                 key={item}
                                 whileHover={{ y: -2 }}
@@ -76,12 +82,12 @@ export function Navbar() {
                         >
                             {/* Search icon */}
                             {isLoggedIn && (
-                              <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                              >
-                                <LevelDisplay />
-                              </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <LevelDisplay />
+                                </motion.div>
                             )}
                         </motion.button>
 
