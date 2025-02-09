@@ -14,6 +14,7 @@ export default function RelatedUsersCard() {
             const { data, error } = await supabase
                 .from("itineraries")
                 .select("*");
+            console.log(data);
             if (error) {
                 setError(error.message);
                 setLoading(false);

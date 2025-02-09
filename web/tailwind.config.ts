@@ -105,6 +105,7 @@ export default {
             fontFamily: {
                 grotesk: ["var(--font-host-grotesk)"],
                 sans: ["Inter var", "sans-serif"],
+                opendyslexic: ["OpenDyslexic", "sans-serif"],
             },
             animation: {
                 "fade-in": "fadeIn 0.5s ease-out",
