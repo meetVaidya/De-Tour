@@ -22,6 +22,7 @@ export interface TravelFormData {
     daysOfVisit: string;
     placesToVisit: string[];
     currentStay: string;
+    budget?: number;
 }
 
 interface NominatimResult {
