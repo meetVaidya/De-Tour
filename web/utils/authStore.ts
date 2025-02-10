@@ -9,6 +9,7 @@ export interface User {
 
 interface AuthState {
     isLoggedIn: boolean;
+    user: any; // or define a proper User type
     login: () => void;
     logout: () => void;
     setAuth: (auth: boolean) => void;
@@ -16,6 +17,7 @@ interface AuthState {
 
 export const useAuthStore = create<AuthState>((set) => ({
     isLoggedIn: false,
+    user: null,
     login: () => set({ isLoggedIn: true }),
     logout: () => set({ isLoggedIn: false }),
     setAuth: (auth) => set({ isLoggedIn: auth }),
