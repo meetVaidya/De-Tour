@@ -1,0 +1,36 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment directories
+venv/
+env/
+.env/
+.venv/
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore lock files
+*.lock
+
+# Ignore image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Ignore other common files
+*.log
+*.tmp
+*.bak
+
+.env
+.python-version

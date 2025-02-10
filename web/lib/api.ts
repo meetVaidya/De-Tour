@@ -2,14 +2,34 @@ import type { TravelFormData } from "@/components/TravelForm";
 import { supabase } from "./supabaseClient";
 
 export interface TripItinerary {
-    dates: string;
-    location: string;
-    stay: {
-        hotel: string;
-        check_in: string;
-        check_out: string;
+    title: string;
+    startDate: string;
+    endDate: string;
+    notes: string;
+    accommodation: {
+        address: string;
+        name: string;
+        phone: string;
     };
-    schedule: any;
+    contacts: Array<{
+        name: string;
+        phone: string;
+        email?: string;
+        role: string;
+    }>;
+    days: Array<{
+        day: number;
+        date: string;
+        title: string;
+        activities: Array<{
+            title: string;
+            description: string;
+            location: string;
+            time: string;
+            type: string;
+            included?: boolean;
+        }>;
+    }>;
 }
 
 export interface SustainableRoute {
@@ -55,21 +75,36 @@ export async function generateItinerary(
             throw new Error(`Failed to save itinerary: ${error.message}`);
         }
 
+        // Call the external itinerary generation API
         const response = await fetch(`${API_URL}/generate-itinerary`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         });
 
+        console.log("Response:", response);
+
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || "Request failed");
+            let errorData;
+            try {
+                errorData = await response.json();
+            } catch {
+                throw new Error("Request failed");
+            }
+
+            // Map the "list index out of range" error to a more user-friendly message
+            if (errorData?.error === "list index out of range") {
+                throw new Error(
+                    "Itinerary generation failed due to an internal error. Please review your inputs or try again.",
+                );
+            }
+
+            throw new Error(errorData?.error || "Request failed");
         }
 
         return await response.json();
-    } catch (error) {
+    } catch (error: any) {
         console.error("API Error:", error);
-        // Handle network/SSL issues
         if (error instanceof TypeError) {
             throw new Error(
                 "Cannot connect to the server. Check your network.",
@@ -80,19 +115,34 @@ export async function generateItinerary(
 }
 
 export async function generateOptimizedItinerary(
-    formData: TravelFormData
+    formData: TravelFormData,
 ): Promise<OptimizedItinerary> {
-    const response = await fetch('http://localhost:5000/generate-sustainable-route', {
-        method: 'POST',
+    const response = await fetch(`${API_URL}/generate-itinerary`, {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.message || 'Failed to generate optimized itinerary');
+        let error;
+        try {
+            error = await response.json();
+        } catch {
+            throw new Error("Failed to generate optimized itinerary");
+        }
+
+        // Map the "list index out of range" error to a more user-friendly message
+        if (error?.error === "list index out of range") {
+            throw new Error(
+                "Itinerary generation failed due to an internal error. Please review your inputs or try again.",
+            );
+        }
+
+        throw new Error(
+            error?.message || "Failed to generate optimized itinerary",
+        );
     }
 
     const result = await response.json();

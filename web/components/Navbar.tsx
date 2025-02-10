@@ -57,6 +57,7 @@ export function Navbar() {
                             "MERCHANTS",
                             "ITINERARY",
                             "CHATBOT",
+                            "DISABILITY",
                         ].map((item) => (
                             <motion.div
                                 key={item}

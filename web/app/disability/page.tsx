@@ -1,24 +1,16 @@
-'use client'
+"use client";
 
-import { useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import debounce from "lodash/debounce";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-// Fix Leaflet icon issue in Next.js
-const icon = L.icon({
-    iconUrl: "/marker-icon.png",
-    iconRetinaUrl: "/marker-icon-2x.png",
-    shadowUrl: "/marker-shadow.png",
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-});
+interface CityCoordinates {
+    name: string;
+    lat: string;
+    lon: string;
+    display_name: string;
+}
 
-interface Place {
+interface AccessiblePlace {
     name: string;
     address: string;
     location: {
@@ -26,121 +18,183 @@ interface Place {
         lng: number;
     };
     rating?: number;
-    user_ratings_total?: number;
-    place_id: string;
+    total_ratings?: number;
 }
 
-export default function AccessiblePlacesPage() {
-    const [searchQuery, setSearchQuery] = useState("");
-    const [selectedLocation, setSelectedLocation] = useState<[number, number] | null>(null);
-    const [places, setPlaces] = useState<Place[]>([]);
+export default function CoordinatesPage() {
+    const [city, setCity] = useState("");
+    const [coordinates, setCoordinates] = useState<CityCoordinates | null>(
+        null,
+    );
+    const [accessiblePlaces, setAccessiblePlaces] = useState<AccessiblePlace[]>(
+        [],
+    );
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const fetchAccessiblePlaces = async (lat: number, lng: number) => {
-        setIsLoading(true);
-        setError(null);
-
+    const fetchAccessiblePlaces = async (lat: string, lon: string) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/accessible-places?lat=${lat}&lng=${lng}`
+                "http://localhost:5001/api/wheelchair-accessible",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ lat, lon }),
+                },
             );
 
             if (!response.ok) {
-                throw new Error('Failed to fetch accessible places');
+                throw new Error("Failed to fetch accessible places");
             }
 
             const data = await response.json();
-            if (data.status === 'success') {
-                setPlaces(data.data);
-                setSelectedLocation([lat, lng]);
+            if (data.status === "success") {
+                setAccessiblePlaces(data.data);
             } else {
-                throw new Error(data.message || 'Failed to fetch places');
+                throw new Error(data.message || "Failed to fetch places");
             }
         } catch (error: any) {
-            console.error('Error:', error);
-            setError(error.message || 'An error occurred');
-            setPlaces([]);
-        } finally {
-            setIsLoading(false);
+            setError(error.message || "Failed to fetch accessible places");
+            setAccessiblePlaces([]);
         }
     };
 
-    const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!searchQuery.trim()) return;
+        if (!city.trim()) return;
 
         setIsLoading(true);
+        setError(null);
+        setCoordinates(null);
+        setAccessiblePlaces([]);
+
         try {
-            // Use Nominatim to convert address to coordinates
             const response = await fetch(
-                `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}`
+                `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}`,
             );
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch coordinates");
+            }
+
             const data = await response.json();
 
             if (data && data[0]) {
-                await fetchAccessiblePlaces(parseFloat(data[0].lat), parseFloat(data[0].lon));
+                const coords = {
+                    name: city,
+                    lat: data[0].lat,
+                    lon: data[0].lon,
+                    display_name: data[0].display_name,
+                };
+                setCoordinates(coords);
+                await fetchAccessiblePlaces(coords.lat, coords.lon);
             } else {
-                setError('Location not found');
+                setError("City not found");
             }
         } catch (error: any) {
-            setError(error.message || 'Failed to search location');
+            setError(error.message || "An error occurred");
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100 p-8">
-            <div className="max-w-7xl mx-auto">
-                <h1 className="text-3xl font-bold text-forest-800 mb-8 text-center">
-                    Find Wheelchair Accessible Places
-                </h1>
+        <div className="min-h-screen bg-gradient-to-b from-forest-50 to-sage-100 p-4">
+            <div className="max-w-4xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-white rounded-xl shadow-lg p-6 space-y-6 mb-6"
+                >
+                    <h1 className="text-2xl font-bold text-forest-800 text-center">
+                        Find Wheelchair Accessible Places
+                    </h1>
 
-                {/* Search Form */}
-                <form onSubmit={handleSearch} className="mb-8">
-                    <div className="flex gap-4">
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Enter a location..."
-                            className="flex-1 px-4 py-2 rounded-lg border border-forest-200 focus:ring-forest-500 focus:border-forest-500"
-                        />
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label
+                                htmlFor="city"
+                                className="block text-sm font-medium text-forest-700 mb-1"
+                            >
+                                Enter City Name
+                            </label>
+                            <input
+                                id="city"
+                                type="text"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                                placeholder="e.g., Mumbai"
+                                className="w-full px-4 py-2 rounded-lg border border-forest-200 focus:ring-forest-500 focus:border-forest-500"
+                            />
+                        </div>
+
                         <motion.button
                             type="submit"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-6 py-2 bg-forest-600 text-white rounded-lg hover:bg-forest-700 transition-colors"
                             disabled={isLoading}
+                            className={`
+                                w-full py-2 px-4 bg-forest-600 text-white rounded-lg
+                                hover:bg-forest-700 transition-colors
+                                disabled:opacity-50 disabled:cursor-not-allowed
+                            `}
                         >
-                            {isLoading ? 'Searching...' : 'Search'}
+                            {isLoading ? "Searching..." : "Search"}
                         </motion.button>
-                    </div>
-                </form>
+                    </form>
 
-                {error && (
-                    <div className="bg-red-50 text-red-600 p-4 rounded-lg mb-6">
-                        {error}
-                    </div>
-                )}
+                    {error && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="bg-red-50 text-red-600 p-4 rounded-lg text-sm"
+                        >
+                            {error}
+                        </motion.div>
+                    )}
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Results List */}
-                    <div className="space-y-4 max-h-[600px] overflow-y-auto">
-                        {places.map((place, index) => (
+                    {coordinates && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="bg-forest-50 rounded-lg p-4 space-y-2"
+                        >
+                            <h2 className="font-semibold text-forest-800">
+                                Selected Location: {coordinates.name}
+                            </h2>
+                            <div className="text-sm text-forest-600">
+                                <p>
+                                    Coordinates: {coordinates.lat},{" "}
+                                    {coordinates.lon}
+                                </p>
+                            </div>
+                        </motion.div>
+                    )}
+                </motion.div>
+
+                {/* Accessible Places Results */}
+                {accessiblePlaces.length > 0 && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                    >
+                        {accessiblePlaces.map((place, index) => (
                             <motion.div
-                                key={place.place_id}
+                                key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
                             >
-                                <h2 className="text-xl font-semibold text-forest-800 mb-2">
+                                <h3 className="text-lg font-semibold text-forest-800 mb-2">
                                     {place.name}
-                                </h2>
-                                <p className="text-forest-600 mb-4">{place.address}</p>
-
+                                </h3>
+                                <p className="text-forest-600 mb-2">
+                                    {place.address}
+                                </p>
                                 {place.rating && (
                                     <div className="flex items-center space-x-2">
                                         <div className="flex items-center">
@@ -148,7 +202,8 @@ export default function AccessiblePlacesPage() {
                                                 <svg
                                                     key={i}
                                                     className={`w-5 h-5 ${
-                                                        i < Math.floor(place.rating)
+                                                        i <
+                                                        Math.floor(place.rating)
                                                             ? "text-yellow-400"
                                                             : "text-gray-300"
                                                     }`}
@@ -160,52 +215,20 @@ export default function AccessiblePlacesPage() {
                                             ))}
                                         </div>
                                         <span className="text-forest-600">
-                                            ({place.user_ratings_total} reviews)
+                                            ({place.total_ratings} reviews)
                                         </span>
                                     </div>
                                 )}
                             </motion.div>
                         ))}
+                    </motion.div>
+                )}
 
-                        {places.length === 0 && !isLoading && (
-                            <div className="text-center text-forest-600 py-12">
-                                No accessible places found in this area.
-                            </div>
-                        )}
+                {isLoading && (
+                    <div className="flex justify-center items-center py-12">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-forest-600"></div>
                     </div>
-
-                    {/* Map */}
-                    <div className="h-[600px] rounded-xl overflow-hidden shadow-lg">
-                        <MapContainer
-                            center={selectedLocation || [20.5937, 78.9629]} // Default to India's center
-                            zoom={selectedLocation ? 12 : 5}
-                            style={{ height: "100%", width: "100%" }}
-                        >
-                            <TileLayer
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            />
-
-                            {selectedLocation && places.map((place) => (
-                                <Marker
-                                    key={place.place_id}
-                                    position={[place.location.lat, place.location.lng]}
-                                    icon={icon}
-                                >
-                                    <Popup>
-                                        <div>
-                                            <h3 className="font-semibold">{place.name}</h3>
-                                            <p>{place.address}</p>
-                                            {place.rating && (
-                                                <p>Rating: {place.rating} ⭐</p>
-                                            )}
-                                        </div>
-                                    </Popup>
-                                </Marker>
-                            ))}
-                        </MapContainer>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     );
