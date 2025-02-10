@@ -203,7 +203,7 @@ export default function CoordinatesPage() {
                                                     key={i}
                                                     className={`w-5 h-5 ${
                                                         i <
-                                                        Math.floor(place.rating)
+                                                        Math.floor(place.rating || 0)
                                                             ? "text-yellow-400"
                                                             : "text-gray-300"
                                                     }`}

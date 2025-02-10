@@ -62,7 +62,7 @@ export default function MainPage() {
 
             const { error } = await supabase
                 .from("user_points")
-                .update({ points: supabase.raw(`points + ${pointsToAdd}`) })
+                .update({ points: stats.points + pointsToAdd })
                 .eq("user_id", user.id);
 
             if (error) throw error;

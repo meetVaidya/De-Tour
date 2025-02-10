@@ -1,18 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { supabase } from "@/lib/supabaseClient";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-
-// Fix Leaflet marker icon issues in Next.js
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: "/marker-icon-2x.png",
-    iconUrl: "/marker-icon.png",
-    shadowUrl: "/marker-shadow.png",
-});
 
 interface Location {
     latitude: number;
@@ -20,18 +12,9 @@ interface Location {
     address: string;
 }
 
-function LocationMarker({
-    onLocationSelect,
-}: {
-    onLocationSelect: (lat: number, lng: number) => void;
-}) {
-    useMapEvents({
-        click(e) {
-            onLocationSelect(e.latlng.lat, e.latlng.lng);
-        },
-    });
-    return null;
-}
+const DynamicWasteMap = dynamic(() => import("@/components/WasteMap"), {
+    ssr: false,
+});
 
 export default function UploadPage() {
     const [file, setFile] = useState<File | null>(null);
@@ -43,6 +26,18 @@ export default function UploadPage() {
     const [selectedPosition, setSelectedPosition] = useState<
         [number, number] | null
     >(null);
+
+    useEffect(() => {
+        // Fix Leaflet marker icon issues in Next.js
+        if (typeof window !== "undefined") {
+            delete (L.Icon.Default.prototype as any)._getIconUrl;
+            L.Icon.Default.mergeOptions({
+                iconRetinaUrl: "/marker-icon-2x.png",
+                iconUrl: "/marker-icon.png",
+                shadowUrl: "/marker-shadow.png",
+            });
+        }
+    }, []);
 
     useEffect(() => {
         const fetchUserId = async () => {
@@ -207,19 +202,10 @@ export default function UploadPage() {
                                 Select Location on Map:
                             </p>
                             <div className="h-[400px] rounded-xl overflow-hidden border-2 border-forest-200 shadow-md">
-                                <MapContainer
-                                    center={[0, 0]}
-                                    zoom={2}
-                                    className="h-full w-full"
-                                >
-                                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                                    <LocationMarker
-                                        onLocationSelect={handleLocationSelect}
-                                    />
-                                    {selectedPosition && (
-                                        <Marker position={selectedPosition} />
-                                    )}
-                                </MapContainer>
+                                <DynamicWasteMap
+                                    selectedPosition={selectedPosition}
+                                    onLocationSelect={handleLocationSelect}
+                                />
                             </div>
                         </div>
                     )}
