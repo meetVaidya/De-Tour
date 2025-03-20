@@ -5,9 +5,9 @@ import os
 load_dotenv()
 
 # Access the variables
-api_key = os.getenv("API_KEY")
 bot_token = os.getenv("BOT_TOKEN")
 chat_id = os.getenv("CHAT_ID")
+
 # Format message for Telegram
 message = f"🚨 *Waste Alert!* 🚨\n\nDetected waste:\n{waste_info}\n\nPlease take immediate action to clean the area. Thank you for keeping our surroundings clean! 🌿"
 

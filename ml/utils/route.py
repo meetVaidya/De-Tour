@@ -1,6 +1,5 @@
 import os
 import openai
-import json
 import dotenv
 import random
 from pymongo import MongoClient

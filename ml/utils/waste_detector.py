@@ -1,16 +1,11 @@
-# RAHAN/utils/waste_detector.py
-import requests
 from groq import Groq
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
 load_dotenv()
 
 # Access the variables
-api_key = os.getenv("API_KEY")
-bot_token = os.getenv("BOT_TOKEN")
-chat_id = os.getenv("CHAT_ID")
+api_key = os.getenv("GROQ_API_KEY")
 
 client = Groq(api_key=api_key)
 
@@ -44,13 +39,3 @@ def analyze_waste_from_url(image_url):
     )
 
     return chat_completion.choices[0].message.content
-
-def send_telegram_message(bot_token, chat_id, message):
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    data = {
-        "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "Markdown"
-    }
-    response = requests.post(url, data=data)
-    return response.json()

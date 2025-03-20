@@ -11,7 +11,7 @@ def get_image_gps_from_url(image_url):
     try:
         # Download image from URL
         response = requests.get(image_url)
-        response.raise_for_status()  # Raise an exception for bad status codes
+        response.raise_for_status()
 
         # Open image from bytes
         img = Image.open(BytesIO(response.content))
@@ -52,6 +52,10 @@ def get_nearest_address(latitude, longitude):
     coordinates = f"{latitude}, {longitude}"
     try:
         location = geolocator.reverse(coordinates, exactly_one=True)
-        return location.address
+
+        if location:
+            return location.address
+        else:
+            return "Address not found for these coordinates"
     except Exception as e:
         return f"Error: {e}"

@@ -3,6 +3,9 @@ Pillow
 piexif
 geopy
 python-dotenv
-Flask
+flask
 langchain-openai
 textblob
+flask-cors
+supabase
+openai

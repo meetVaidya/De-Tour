@@ -1,22 +1,24 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
-from utils.itinerary import generate_itinerary
-from utils.reviews import analyze_reviews
-from utils.route import get_sustainable_transport
-import logging
-from utils.likeminds import match_tourists
-from utils.get_photo_location import get_image_gps_from_url, get_nearest_address
-from utils.chatbot_text import get_chat_response
-from utils.waste_detector import analyze_waste_from_url  # We'll create this new function
-import os
-from dotenv import load_dotenv
-import requests
-import time
 import json
-from supabase import create_client, Client
-from werkzeug.utils import secure_filename
-from utils.pdf_parsing_itinerary import process_cv
+import logging
+import os
+import time
 
+import requests
+from dotenv import load_dotenv
+from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
+from supabase import Client, create_client
+from werkzeug.utils import secure_filename
+
+from utils.chatbot_text import get_chat_response
+from utils.get_photo_location import get_image_gps_from_url, get_nearest_address
+from utils.itinerary import generate_itinerary
+from utils.likeminds import match_tourists
+from utils.pdf_parsing_itinerary import process_cv
+from utils.route import get_sustainable_transport
+from utils.waste_detector import (
+    analyze_waste_from_url,
+)
 
 # Load environment variables
 load_dotenv()
@@ -26,8 +28,7 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 from utils.route import generate_routes
-import logging
-from utils.likeminds import match_tourists
+
 app = Flask(__name__)
 CORS(app)
 
@@ -51,34 +52,38 @@ def allowed_file(filename):
 def process_itinerary():
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
-    
+
     file = request.files['file']
-    
+
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
-    
+
+    if file.filename is None:
+        return jsonify({'error': 'No filename provided in the file part'}), 400
+
+
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        
+
         try:
             # Process the file and get JSON output
             result = process_cv(filepath)
-            
+
             # Clean up the uploaded file
             os.remove(filepath)
-            
+
             if result is None:
                 return jsonify({'error': 'Failed to process itinerary'}), 500
-                
+
             return jsonify(result)
         except Exception as e:
             # Clean up the uploaded file in case of error
             if os.path.exists(filepath):
                 os.remove(filepath)
             return jsonify({'error': str(e)}), 500
-    
+
     return jsonify({'error': 'Invalid file type'}), 400
 
 @app.route('/health', methods=['GET'])
@@ -91,7 +96,7 @@ def health_check():
 @app.route("/generate-itinerary", methods=["POST"])
 def generate_travel_itinerary():
     """Endpoint to generate and store an itinerary based on user input."""
-    
+
     data = request.get_json()
 
     # Validate required fields
@@ -101,7 +106,7 @@ def generate_travel_itinerary():
 
     # Call the itinerary generation logic
     response, status_code = generate_itinerary(data)
-    
+
     return jsonify(response), status_code
 
 # @app.route('/analyze-reviews', methods=['POST'])
@@ -216,7 +221,7 @@ def chat():
     response = get_chat_response(user_input)
     return jsonify(json.loads(response))
 
-@app.route("/detect_waste/", methods=["POST"])
+@app.route("/detect-waste/", methods=["POST"])
 def detect_waste():
     input_data = request.get_json()
     image_url = input_data.get("image_url")

@@ -1,7 +1,6 @@
 import os
 import json
 import dotenv
-import openai
 from langchain_openai import ChatOpenAI
 
 # Load environment variables
@@ -9,7 +8,7 @@ dotenv.load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize OpenAI API
-chatopenai = ChatOpenAI(model="gpt-3.5-turbo")
+chatopenai = ChatOpenAI(model="gpt-4o-mini")
 
 # Track conversation history
 conversation_history = []

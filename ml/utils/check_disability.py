@@ -1,27 +1,17 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
 import requests
+import os
+from dotenv import load_dotenv
 
-app = Flask(__name__)
-CORS(app)
+load_dotenv()
 
-API_KEY = "AIzaSyC4SlUlOwZ-2aHhWYplqYJ6YoUE8U_8b6s"
+API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
 
-@app.route('/api/wheelchair-accessible', methods=['POST'])
-def get_wheelchair_accessible():
+def get_wheelchair_accessible(lat, lon, radius):
     try:
-        data = request.json
-        lat = data.get('lat')
-        lon = data.get('lon')
-
         if not lat or not lon:
-            return jsonify({
-                'status': 'error',
-                'message': 'Latitude and longitude are required'
-            }), 400
+            raise ValueError("Latitude and longitude are required")
 
         location = f"{lat}, {lon}"
-        radius = 50000  # 50 km radius
 
         url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={location}&radius={radius}&type=tourist_attraction&keyword=wheelchair+accessible&key={API_KEY}"
 
@@ -37,16 +27,7 @@ def get_wheelchair_accessible():
             'total_ratings': place.get('user_ratings_total')
         } for place in places_data.get('results', [])]
 
-        return jsonify({
-            'status': 'success',
-            'data': accessible_places
-        })
+        return accessible_places
 
     except Exception as e:
-        return jsonify({
-            'status': 'error',
-            'message': str(e)
-        }), 500
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+        raise Exception(f"Error fetching wheelchair accessible places: {str(e)}")
