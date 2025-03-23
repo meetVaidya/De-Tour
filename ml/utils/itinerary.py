@@ -3,7 +3,6 @@ import openai
 import re
 import json
 import dotenv
-from flask import jsonify
 
 dotenv.load_dotenv()
 
@@ -96,8 +95,14 @@ def generate_itinerary(data):
     date = data["dateOfVisit"]
     hotel = data["currentStay"]
 
-    prompt = (
-        f"You are a highly advanced AI travel planner. Your task is to create a detailed, structured {days}-day itinerary for {place}, "
+    system_message = (
+            "You are a professional AI itinerary planner specialized in creating detailed travel plans. "
+            "You excel at producing structured, well-organized itineraries in JSON format. "
+            "Always consider optimal timing, local customs, and tourist preferences in your recommendations."
+        )
+
+    user_prompt = (
+        f"Create a detailed, structured {days}-day itinerary for {place}, "
         f"starting from {date}, for {tourists} tourists staying at {hotel}. Your name is {user_name}.\n\n"
         "The itinerary must be well-organized, structured in JSON format, and divided into:\n"
         "- Morning: Sightseeing, activities, tours.\n"
@@ -238,18 +243,22 @@ def generate_itinerary(data):
     try:
         openai_client = openai.OpenAI()
         response = openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "You are a professional AI itinerary planner with expertise in structured travel planning."},
-                {"role": "user", "content": prompt}
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_prompt}
             ]
         )
 
         raw_itinerary = response.choices[0].message.content
         print("RAW ITINERARY RESPONSE:", raw_itinerary)
-        ressp = raw_itinerary.strip().split("```json")[1].split("```")[0]
-        ressp_json = json.loads(ressp)
-        return ressp_json, 200
+
+        if raw_itinerary is None:
+            raise Exception("Failed to generate itinerary")
+
+        response = raw_itinerary.strip().split("```json")[1].split("```")[0]
+        response_json = json.loads(response)
+        return response_json, 200
 
     except Exception as e:
         return {"error": str(e)}, 500

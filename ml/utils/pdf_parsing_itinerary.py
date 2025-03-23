@@ -4,10 +4,17 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.summarize import load_summarize_chain
 from langchain.prompts import PromptTemplate
 from langchain.text_splitter import CharacterTextSplitter
+from pydantic import SecretStr
 import os
 import json
 
 load_dotenv()
+
+# Convert the API key to SecretStr when getting it from environment
+api_key = os.getenv('GEMINI_API_KEY')
+if api_key is None:
+    raise ValueError("GEMINI_API_KEY environment variable is not set")
+gemini_api_key = SecretStr(api_key)
 
 def process_docx(docx_file_path):
     loader = Docx2txtLoader(docx_file_path)
@@ -34,7 +41,7 @@ def process_pdf(pdf_file_path):
 
 def process_cv(file_path):
     file_extension = file_path.split('.')[-1].lower()
-    
+
     print("File Details:")
     print(f"File Path: {file_path}")
     print(f"File Type: {file_extension}")
@@ -46,15 +53,15 @@ def process_cv(file_path):
     else:
         raise ValueError("Unsupported file format. Please provide a .docx or .pdf file.")
 
-    # Initialize Gemini LLM
+    # Initialize Gemini LLM with SecretStr api_key
     llm = ChatGoogleGenerativeAI(
         temperature=0,
-        model="gemini-pro",
-        google_api_key=os.getenv('GOOGLE_GEMINI_API_KEY')
+        model="gemini-2.0-flash",
+        api_key=gemini_api_key
     )
 
-    prompt_template = """You have been given a Itinerary to analyse. 
-    Extract the following information in a structured format: 
+    prompt_template = """You have been given a Itinerary to analyse.
+    Extract the following information in a structured format:
     {text}
     Details:"""
     prompt = PromptTemplate.from_template(prompt_template)
@@ -90,7 +97,7 @@ def process_cv(file_path):
     )
 
     result = chain({"input_documents": text}, return_only_outputs=True)
-    
+
     # Parse the output text as JSON
     try:
         json_output = json.loads(result['output_text'])
@@ -101,17 +108,3 @@ def process_cv(file_path):
         print(f"Error parsing JSON: {e}")
         print("Raw output:", result['output_text'])
         return None
-
-if __name__ == "_main_":
-    # Example usage
-    file_path = "C:/Users/rahan/Downloads/south-africa-itinerary-2024.pdf"  # Replace with your file path
-    itinerary_data = process_cv(file_path)
-    
-    if itinerary_data:
-        # Access the data using your schema
-        user_name = itinerary_data["name"]
-        tourists = itinerary_data["numberOfPeople"]
-        days = itinerary_data["daysOfVisit"]
-        places = itinerary_data["placesToVisit"]
-        date = itinerary_data["dateOfVisit"]
-        hotel = itinerary_data["currentStay"]
