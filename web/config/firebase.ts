@@ -2,22 +2,20 @@ import { initializeApp, getApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-const apiKey = process.env.API_KEY;
-const authDomain = process.env.AUTH_DOMAIN;
-const projectId = process.env.PROJECT_ID;
-const storageBucket = process.env.STORAGE_BUCKET;
-const messagingSenderId = process.env.MESSAGING_SENDER_ID;
-const appId = process.env.APP_ID;
-const measurementId = process.env.MEASUREMENT_ID;
-
 const firebaseConfig = {
-  apiKey: apiKey,
-  authDomain: authDomain,
-  projectId: projectId,
-  storageBucket: storageBucket,
-  messagingSenderId: messagingSenderId,
-  appId: appId,
-  measurementId: measurementId,
+  apiKey: "AIzaSyANnRIFcoWkivMBzKBKnXqmMm_9LVdxpaE",
+
+  authDomain: "detour-a4970.firebaseapp.com",
+
+  projectId: "detour-a4970",
+
+  storageBucket: "detour-a4970.firebasestorage.app",
+
+  messagingSenderId: "403703017604",
+
+  appId: "1:403703017604:web:f52a5ea23fb33d5fbf92d1",
+
+  measurementId: "G-KVRRY14CZJ",
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();

@@ -6,7 +6,7 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 type MerchantData = {
   name: string;
@@ -119,21 +119,4 @@ export const logOut = async () => {
   } catch (error) {
     throw error;
   }
-};
-
-export const getUserDocument = async (uid: string) => {
-  // Check in both collections
-  const userDoc = await getDoc(doc(db, "users", uid));
-  if (userDoc.exists()) return userDoc;
-
-  const merchantDoc = await getDoc(doc(db, "merchants", uid));
-  return merchantDoc;
-};
-
-export const saveUserData = async (uid: string, data: any) => {
-  const collection = data.businessName ? "merchants" : "users";
-  await setDoc(doc(db, collection, uid), {
-    ...data,
-    createdAt: new Date().toISOString(),
-  });
 };
