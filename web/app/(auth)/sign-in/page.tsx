@@ -1,26 +1,28 @@
-// app/(auth)/sign-in/page.tsx
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { signInWithEmail, signInWithGoogle } from '@/lib/firebase/auth';
-import { useAuth } from '@/context/AuthContext'; // Use auth context
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { signInWithEmail, signInWithGoogle } from "@/lib/firebase/auth";
+import { useAuth } from "@/context/AuthContext";
+import { User as FirebaseUser } from "firebase/auth";
+
+type UserType = "user" | "merchant";
 
 export default function SignInPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState<UserType>("user");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const { user, loading: authLoading } = useAuth(); // Get user and loading state
+  const { user, loading: authLoading } = useAuth();
 
   // Redirect if user is already logged in
   useEffect(() => {
     if (!authLoading && user) {
-      router.replace('/dashboard'); // Or appropriate landing page
+      router.replace("/dashboard"); // Or appropriate landing page
     }
   }, [user, authLoading, router]);
-
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,25 +87,48 @@ export default function SignInPage() {
         </div>
         {error && <p style={styles.error}>{error}</p>}
         <button type="submit" disabled={loading} style={styles.button}>
-          {loading ? 'Signing In...' : 'Sign In with Email'}
+          {loading ? "Signing In..." : "Sign In with Email"}
         </button>
       </form>
-      <button onClick={handleGoogleSignIn} disabled={loading} style={{ ...styles.button, ...styles.googleButton }}>
-        {loading ? 'Processing...' : 'Sign In with Google'}
+      <button
+        onClick={handleGoogleSignIn}
+        disabled={loading}
+        style={{ ...styles.button, ...styles.googleButton }}
+      >
+        {loading ? "Processing..." : "Sign In with Google"}
       </button>
-      <p>Need an account? <a href="/sign-up">Sign Up</a></p>
+      <p>
+        Need an account? <a href="/sign-up">Sign Up</a>
+      </p>
     </div>
   );
 }
 
 // Re-use or define styles similar to SignUpPage
 const styles = {
-  container: { maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' },
-  form: { display: 'flex', flexDirection: 'column' as 'column', gap: '15px' },
-  inputGroup: { display: 'flex', flexDirection: 'column' as 'column', gap: '5px' },
-  label: { fontWeight: 'bold' },
-  input: { padding: '10px', border: '1px solid #ccc', borderRadius: '4px' },
-  button: { padding: '10px 15px', backgroundColor: '#0070f3', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' },
-  googleButton: { backgroundColor: '#db4437', marginTop: '10px' },
-  error: { color: 'red', marginTop: '10px' },
+  container: {
+    maxWidth: "400px",
+    margin: "50px auto",
+    padding: "20px",
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+  },
+  form: { display: "flex", flexDirection: "column" as "column", gap: "15px" },
+  inputGroup: {
+    display: "flex",
+    flexDirection: "column" as "column",
+    gap: "5px",
+  },
+  label: { fontWeight: "bold" },
+  input: { padding: "10px", border: "1px solid #ccc", borderRadius: "4px" },
+  button: {
+    padding: "10px 15px",
+    backgroundColor: "#0070f3",
+    color: "white",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+  },
+  googleButton: { backgroundColor: "#db4437", marginTop: "10px" },
+  error: { color: "red", marginTop: "10px" },
 };
