@@ -1,8 +1,7 @@
-// app/(protected)/layout.tsx
 "use client";
 
 import React, { useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation"; // Import usePathname
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -14,8 +13,7 @@ export default function ProtectedLayout({
 }) {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const pathname = usePathname(); // Get current path
-
+  const pathname = usePathname();
   useEffect(() => {
     if (loading) return; // Wait until loading is finished
 

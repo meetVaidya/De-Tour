@@ -35,7 +35,7 @@ function OnboardingContent() {
     setError(null);
     try {
       await createMerchantProfile(firebaseUser, data);
-      router.push('/dashboard'); // Or merchant-specific dashboard
+      router.push('/merchant-dashboard'); // Or merchant-specific dashboard
     } catch (err: any) {
       setError(err.message);
     } finally {
