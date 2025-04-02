@@ -1,4 +1,12 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import {
+  Calendar,
+  Delete,
+  Home,
+  Inbox,
+  LogOut,
+  Search,
+  Settings,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -10,17 +18,20 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
+import { deleteCurrentUser, signOutUser } from "@/lib/firebase/auth";
 
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "#",
+    title: "Dashboard",
+    url: "/dashboard",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
+    title: "Travel Assistant",
+    url: "/travel-assistant",
     icon: Inbox,
   },
   {
@@ -41,6 +52,26 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await signOutUser();
+      router.push("/");
+    } catch (error) {
+      console.log("Failed to logout: ", error);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await deleteCurrentUser("email"); // Added required argument
+      router.push("/");
+    } catch (error) {
+      console.log("Failed to delete the user", error);
+    }
+  };
+
   return (
     <Sidebar>
       <SidebarContent>
@@ -58,6 +89,29 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup className="mt-auto">
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  onClick={handleLogout}
+                  className="cursor-pointer"
+                >
+                  <LogOut />
+                  <span>Logout</span>
+                </SidebarMenuButton>
+                <SidebarMenuButton
+                  onClick={handleDelete}
+                  className="cursor-pointer"
+                >
+                  <Delete />
+                  <span>Delete Account</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
