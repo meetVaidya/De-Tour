@@ -1,68 +1,71 @@
+// context/AuthContext.tsx
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth, firestore } from '@/lib/firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 
-interface UserProfile {
-  uid: string;
-  email: string | null;
-  name?: string;
-  role: 'user' | 'merchant' | null; // Role determined after onboarding
-  // Add other common fields or role-specific fields if needed after fetch
-  [key: string]: any; // Allow additional properties
-}
-
 interface AuthContextType {
-  user: UserProfile | null;
-  firebaseUser: FirebaseUser | null; // Raw Firebase user object
+  user: User | null;
   loading: boolean;
-  error: string | null;
+  userType: 'user' | 'merchant' | null; // Add userType
+  profileComplete: boolean; // Add profile completion status
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType>({
+  user: null,
+  loading: true,
+  userType: null,
+  profileComplete: false,
+});
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [userType, setUserType] = useState<'user' | 'merchant' | null>(null);
+  const [profileComplete, setProfileComplete] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setLoading(true);
-      setError(null);
-      if (user) {
-        setFirebaseUser(user);
-        // Attempt to fetch user profile from Firestore
-        const userDocRef = doc(firestore, 'users', user.uid);
-        const merchantDocRef = doc(firestore, 'merchants', user.uid);
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      setLoading(true); // Start loading when auth state might change
+      if (firebaseUser) {
+        setUser(firebaseUser);
+        // Check if profile exists in Firestore to determine type and completion
+        const userDocRef = doc(firestore, 'users', firebaseUser.uid);
+        const merchantDocRef = doc(firestore, 'merchants', firebaseUser.uid);
 
         try {
           const userDocSnap = await getDoc(userDocRef);
           if (userDocSnap.exists()) {
-            setUserProfile({ ...userDocSnap.data(), uid: user.uid, email: user.email } as UserProfile);
+            setUserType('user');
+            setProfileComplete(true); // Assume profile exists means complete for now
           } else {
             const merchantDocSnap = await getDoc(merchantDocRef);
             if (merchantDocSnap.exists()) {
-              setUserProfile({ ...merchantDocSnap.data(), uid: user.uid, email: user.email } as UserProfile);
+              setUserType('merchant');
+              setProfileComplete(true); // Assume profile exists means complete for now
             } else {
-              // User exists in Auth but not in Firestore (likely mid-onboarding)
-              setUserProfile({ uid: user.uid, email: user.email, role: null }); // Indicate onboarding needed
+              // User is authenticated but profile doesn't exist yet
+              setUserType(null);
+              setProfileComplete(false);
             }
           }
-        } catch (err) {
-          console.error("Error fetching user profile:", err);
-          setError("Failed to load user profile.");
-          setUserProfile({ uid: user.uid, email: user.email, role: null }); // Basic info on error
+        } catch (error) {
+          console.error("Error checking user profile:", error);
+          setUserType(null);
+          setProfileComplete(false);
         }
-
       } else {
-        setFirebaseUser(null);
-        setUserProfile(null);
+        setUser(null);
+        setUserType(null);
+        setProfileComplete(false);
       }
-      setLoading(false);
+      setLoading(false); // Finish loading
     });
 
     // Cleanup subscription on unmount
@@ -70,16 +73,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: userProfile, firebaseUser, loading, error }}>
+    <AuthContext.Provider value={{ user, loading, userType, profileComplete }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = (): AuthContextType => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
+export const useAuth = () => useContext(AuthContext);
