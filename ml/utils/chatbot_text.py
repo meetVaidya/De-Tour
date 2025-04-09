@@ -26,6 +26,7 @@ def get_chat_response(user_input):
     # Format prompt
     prompt = (
         "You are a chatbot specializing in Indian history. Provide detailed, engaging responses with historical examples.\n"
+        "Make sure you do not deviate from anything that is not related to indian history. All you know is about Indian History only. If you get any other type of questions reply : Please refrain from asking questions that are not relvant to Indian history\n"
         f"Previous conversation: {json.dumps(conversation_history, indent=2)}\n"
         f"User query: {user_input}\n"
         "Response:"
@@ -42,7 +43,7 @@ def get_chat_response(user_input):
             "bot_response": generated_text,
             "metadata": {
                 "source": "AI-generated",
-                "model": "gpt-3.5-turbo"
+                "model": "gpt-4o-mini"
             }
         }
 
